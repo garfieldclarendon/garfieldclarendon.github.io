@@ -1,0 +1,140 @@
+\hypertarget{class_a_p_i_entity}{}\section{A\+P\+I\+Entity Class Reference}
+\label{class_a_p_i_entity}\index{A\+P\+I\+Entity@{A\+P\+I\+Entity}}
+
+
+A\+PI handler class for L\+CS database entities. This class handles basic database fetch and C\+R\+UD operations (Create, Update and Delete). See the A\+PI documentation for more information.  
+
+
+
+
+{\ttfamily \#include $<$A\+P\+I\+Entity.\+h$>$}
+
+Inheritance diagram for A\+P\+I\+Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_p_i_entity}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_p_i_entity_a1408a64bcc760d3add4f9d5d67903e96}\label{class_a_p_i_entity_a1408a64bcc760d3add4f9d5d67903e96}} 
+\hyperlink{class_a_p_i_entity_a1408a64bcc760d3add4f9d5d67903e96}{A\+P\+I\+Entity} (Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Contstructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_p_i_entity_a66ea6b2523afbb3acebaadf3aea1ec6c}{handle\+Client} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+Q\+Byte\+Array \hyperlink{class_a_p_i_entity_a4ff9b9128b1ad595dd07006544c99dee}{fetch\+Entity} (const Q\+String \&name, const Q\+Url \&url)
+\item 
+Q\+Byte\+Array \hyperlink{class_a_p_i_entity_a5f2de518701f362000bb6eb341fbf95b}{save\+Entity} (const Q\+String \&name, const Q\+String \&json\+Text)
+\item 
+Q\+Byte\+Array \hyperlink{class_a_p_i_entity_a8bbe43bbc389472d7a7fd9e8a2283c82}{add\+Entity} (const Q\+String \&name, const Q\+String \&json\+Text)
+\item 
+void \hyperlink{class_a_p_i_entity_ade40ac225523f1d00ed7c1eb8bdfec96}{delete\+Entity} (const Q\+String \&name, const Q\+String \&json\+Text)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+PI handler class for L\+CS database entities. This class handles basic database fetch and C\+R\+UD operations (Create, Update and Delete). See the A\+PI documentation for more information. 
+
+\{get\} /api/entity/\mbox{[}Entity\+Name\mbox{]}\+:where Fetch  Fetch\+Entity  Entity
+
+\{String\} field\+Name (optional) Any combination of Field\+Name=value pairs can be passed to filter the list returned. Multiple field/value pairs are joined as an \char`\"{}\+A\+N\+D\char`\"{} in the generated W\+H\+E\+RE clause.  Fetches records from the \mbox{[}Entity\+Name\mbox{]} table with the optional filters applied.  This example fetches all controller\+Modules with an address of 2\+: \href{http://localhost:8080/api/entity/controllerModule?address=2}{\tt http\+://localhost\+:8080/api/entity/controller\+Module?address=2}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \mbox{[}\{ \char`\"{}address\char`\"{}\+: \char`\"{}2\char`\"{}, \char`\"{}controller\+I\+D\char`\"{}\+: \char`\"{}24\char`\"{}, \char`\"{}disable\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}id\char`\"{}\+: \char`\"{}6\char`\"{}, \char`\"{}module\+Class\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}module\+Name\char`\"{}\+: \char`\"{}\+T\+Y30-\/4\char`\"{} \}, \{ \char`\"{}address\char`\"{}\+: \char`\"{}2\char`\"{}, \char`\"{}controller\+I\+D\char`\"{}\+: \char`\"{}31\char`\"{}, \char`\"{}disable\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}id\char`\"{}\+: \char`\"{}18\char`\"{}, \char`\"{}module\+Class\char`\"{}\+: \char`\"{}9\char`\"{}, \char`\"{}module\+Name\char`\"{}\+: \char`\"{}\+C\+A Panel1 Output 2\char`\"{} \}, \{ \char`\"{}address\char`\"{}\+: \char`\"{}2\char`\"{}, \char`\"{}controller\+I\+D\char`\"{}\+: \char`\"{}34\char`\"{}, \char`\"{}disable\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}id\char`\"{}\+: \char`\"{}23\char`\"{}, \char`\"{}module\+Class\char`\"{}\+: \char`\"{}9\char`\"{}, \char`\"{}module\+Name\char`\"{}\+: \char`\"{}\+C\+A Aux Panel Output 2\char`\"{} \} \mbox{]}  \{put\} /api/entity/\mbox{[}Entity\+Name\mbox{]} Update an Entity  Update\+Entity  Entity
+
+Updates a specific record in the \mbox{[}Entity\+Name\mbox{]} table. The entity is sent as a J\+S\+ON document.  This example updates a \char`\"{}route\char`\"{} with an ID of 7. Note\+: You only need to supply the fields that are modified, however like this example, you may include all fields. \+: \href{http://localhost:8080/api/entity/route}{\tt http\+://localhost\+:8080/api/entity/route} \begin{DoxyVerb}body:
+{
+  "id": 7,
+  "routeName": "CA 1"
+  "routeDescription": "New Description"
+}\end{DoxyVerb}
+
+
+\{post\} /api/entity/\mbox{[}Entity\+Name\mbox{]} Add a new Entity  Add\+Entity  Entity
+
+Adds a new record into the \mbox{[}Entity\+Name\mbox{]} table. The entity is sent as a J\+S\+ON document.  This example adds a new \char`\"{}route\char`\"{}. Note\+: Exclude the ID field as this field will be auto-\/generated. The newly generated id is part of the returned J\+S\+ON payload. \+: \href{http://localhost:8080/api/entity/route}{\tt http\+://localhost\+:8080/api/entity/route} \begin{DoxyVerb}body:
+{
+  "routeName": "New Route"
+  "routeDescription": "New Route Description"
+}
+\end{DoxyVerb}
+
+
+\{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \mbox{[}\{ \char`\"{}id\char`\"{}\+: \char`\"{}15\char`\"{}, \char`\"{}route\+Description\char`\"{}\+: \char`\"{}\+New Route\char`\"{}, \char`\"{}route\+Name\char`\"{}\+: \char`\"{}\+New Route Description\char`\"{} \} \mbox{]}  \{delete\} /api/entity/\mbox{[}Entity\+Name\mbox{]} Delete an Entity  Delete\+Entity  Entity
+
+Deletes a specific record in the \mbox{[}Entity\+Name\mbox{]} table. The entity is sent as a J\+S\+ON document.  This example deletes a \char`\"{}route\char`\"{} with an ID of 7.\+: \href{http://localhost:8080/api/entity/route}{\tt http\+://localhost\+:8080/api/entity/route} \begin{DoxyVerb}body:
+{
+  "id": 7,
+}\end{DoxyVerb}
+ \hyperlink{class_a_p_i_entity}{A\+P\+I\+Entity} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_p_i_entity_a8bbe43bbc389472d7a7fd9e8a2283c82}\label{class_a_p_i_entity_a8bbe43bbc389472d7a7fd9e8a2283c82}} 
+\index{A\+P\+I\+Entity@{A\+P\+I\+Entity}!add\+Entity@{add\+Entity}}
+\index{add\+Entity@{add\+Entity}!A\+P\+I\+Entity@{A\+P\+I\+Entity}}
+\subsubsection{\texorpdfstring{add\+Entity()}{addEntity()}}
+{\footnotesize\ttfamily Q\+Byte\+Array A\+P\+I\+Entity\+::add\+Entity (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name,  }\item[{const Q\+String \&}]{json\+Text }\end{DoxyParamCaption})}
+
+Adds a new row into the \mbox{[}name\mbox{]} table in the database. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Q\+String containing the table name. \\
+\hline
+{\em json\+Text} & Q\+String containing the data to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_entity_ade40ac225523f1d00ed7c1eb8bdfec96}\label{class_a_p_i_entity_ade40ac225523f1d00ed7c1eb8bdfec96}} 
+\index{A\+P\+I\+Entity@{A\+P\+I\+Entity}!delete\+Entity@{delete\+Entity}}
+\index{delete\+Entity@{delete\+Entity}!A\+P\+I\+Entity@{A\+P\+I\+Entity}}
+\subsubsection{\texorpdfstring{delete\+Entity()}{deleteEntity()}}
+{\footnotesize\ttfamily void A\+P\+I\+Entity\+::delete\+Entity (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name,  }\item[{const Q\+String \&}]{json\+Text }\end{DoxyParamCaption})}
+
+Deletes a specific row in the \mbox{[}name\mbox{]} table in the database. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Q\+String containing the table name. \\
+\hline
+{\em json\+Text} & Q\+String containing key data for the row to be deleted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_entity_a4ff9b9128b1ad595dd07006544c99dee}\label{class_a_p_i_entity_a4ff9b9128b1ad595dd07006544c99dee}} 
+\index{A\+P\+I\+Entity@{A\+P\+I\+Entity}!fetch\+Entity@{fetch\+Entity}}
+\index{fetch\+Entity@{fetch\+Entity}!A\+P\+I\+Entity@{A\+P\+I\+Entity}}
+\subsubsection{\texorpdfstring{fetch\+Entity()}{fetchEntity()}}
+{\footnotesize\ttfamily Q\+Byte\+Array A\+P\+I\+Entity\+::fetch\+Entity (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name,  }\item[{const Q\+Url \&}]{url }\end{DoxyParamCaption})}
+
+Fetches an entity list from the database with optional where clause values. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Q\+String containing the table name from which data is fetched. \\
+\hline
+{\em url} & Q\+Url containing optional field/value pairs used in the W\+H\+E\+RE clause. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_entity_a66ea6b2523afbb3acebaadf3aea1ec6c}\label{class_a_p_i_entity_a66ea6b2523afbb3acebaadf3aea1ec6c}} 
+\index{A\+P\+I\+Entity@{A\+P\+I\+Entity}!handle\+Client@{handle\+Client}}
+\index{handle\+Client@{handle\+Client}!A\+P\+I\+Entity@{A\+P\+I\+Entity}}
+\subsubsection{\texorpdfstring{handle\+Client()}{handleClient()}}
+{\footnotesize\ttfamily void A\+P\+I\+Entity\+::handle\+Client (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})}
+
+A\+PI \char`\"{}/api/entity/\mbox{[}\+Entity\+Name\mbox{]}\char`\"{} Handles fetch, add, update and delete functions on a database table. \mbox{[}Entity\+Name\mbox{]} represents the target table. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request. Used by the fetch (get) operation as optional where clause entries. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the data returned from the database. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_entity_a5f2de518701f362000bb6eb341fbf95b}\label{class_a_p_i_entity_a5f2de518701f362000bb6eb341fbf95b}} 
+\index{A\+P\+I\+Entity@{A\+P\+I\+Entity}!save\+Entity@{save\+Entity}}
+\index{save\+Entity@{save\+Entity}!A\+P\+I\+Entity@{A\+P\+I\+Entity}}
+\subsubsection{\texorpdfstring{save\+Entity()}{saveEntity()}}
+{\footnotesize\ttfamily Q\+Byte\+Array A\+P\+I\+Entity\+::save\+Entity (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name,  }\item[{const Q\+String \&}]{json\+Text }\end{DoxyParamCaption})}
+
+Updates a specific row in the \mbox{[}name\mbox{]} table in the database. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Q\+String containing the table name. \\
+\hline
+{\em json\+Text} & Q\+String containing the data to be updated. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+L\+C\+S\+Server/A\+P\+I\+Entity.\+h\item 
+L\+C\+S\+Server/A\+P\+I\+Entity.\+cpp\end{DoxyCompactItemize}

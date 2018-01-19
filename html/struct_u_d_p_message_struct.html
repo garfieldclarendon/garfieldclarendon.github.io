@@ -66,7 +66,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Structure used the by the <a class="el" href="class_u_d_p_message.html">UDPMessage</a> class which contains the actual data of a UDP Message.  
+<p>Structure used the by the <a class="el" href="class_u_d_p_message.html" title="A class for handling UDP messages sent between controllers and the application server. This class along with the Message Structure contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of &quot;controllers to notify&quot; in its configuration data. Each time a device needs to send a command or status message, the controller&#39;s Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the SYS_CONTROLLER_ONLINE broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller&#39;s ID is contained in its notification list and, if so, stores the address of the sending controller which is stored in field[0] - field[3] and then responds by sending device status messages. If the controller misses this message, the controller sends a SYS_FIND_CONTROLLER broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding SYS_CONTROLLER_ONLINE message from each controller. ">UDPMessage</a> class which contains the actual data of a UDP Message.  
  <a href="struct_u_d_p_message_struct.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_u_d_p_message_8h_source.html">UDPMessage.h</a>&gt;</code></p>
@@ -87,7 +87,7 @@ long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 <tr class="separator:a363553f26a5a6b317dc5b0b4c227f966"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98ed3cc3a244ee9637f6b85fcf6165b8"><td class="memItemLeft" align="right" valign="top"><a id="a98ed3cc3a244ee9637f6b85fcf6165b8"></a>
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_u_d_p_message_struct.html#a98ed3cc3a244ee9637f6b85fcf6165b8">transactionNumber</a></td></tr>
-<tr class="memdesc:a98ed3cc3a244ee9637f6b85fcf6165b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message transaction number. <br /></td></tr>
+<tr class="memdesc:a98ed3cc3a244ee9637f6b85fcf6165b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message transaction number. A unique number auto-generated for each message. <br /></td></tr>
 <tr class="separator:a98ed3cc3a244ee9637f6b85fcf6165b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52de02b6a926e10a0ef99c1ae965719e"><td class="memItemLeft" align="right" valign="top"><a id="a52de02b6a926e10a0ef99c1ae965719e"></a>
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_u_d_p_message_struct.html#a52de02b6a926e10a0ef99c1ae965719e">payload</a> [14]</td></tr>
@@ -99,7 +99,7 @@ unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <tr class="separator:a68c8ce1a9f79ecb4b3955eaf98a4781c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Structure used the by the <a class="el" href="class_u_d_p_message.html">UDPMessage</a> class which contains the actual data of a UDP Message. </p>
+<div class="textblock"><p>Structure used the by the <a class="el" href="class_u_d_p_message.html" title="A class for handling UDP messages sent between controllers and the application server. This class along with the Message Structure contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of &quot;controllers to notify&quot; in its configuration data. Each time a device needs to send a command or status message, the controller&#39;s Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the SYS_CONTROLLER_ONLINE broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller&#39;s ID is contained in its notification list and, if so, stores the address of the sending controller which is stored in field[0] - field[3] and then responds by sending device status messages. If the controller misses this message, the controller sends a SYS_FIND_CONTROLLER broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding SYS_CONTROLLER_ONLINE message from each controller. ">UDPMessage</a> class which contains the actual data of a UDP Message. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>libraries/shared/<a class="el" href="_u_d_p_message_8h_source.html">UDPMessage.h</a></li>
 </ul>

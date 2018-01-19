@@ -1,0 +1,198 @@
+\hypertarget{class_a_p_i_controller}{}\section{A\+P\+I\+Controller Class Reference}
+\label{class_a_p_i_controller}\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+
+
+A\+PI handler class for a L\+CS controller. This class handles all A\+PI requests for a controller. Two types of requests are made as it relates to a L\+CS controller; \char`\"{}/\+A\+P\+I/...\char`\"{} requests sent from an external source like a web page or an application and a \char`\"{}/controller/...\char`\"{} requests sent by a L\+CS controller to download information from the application server.  
+
+
+
+
+{\ttfamily \#include $<$A\+P\+I\+Controller.\+h$>$}
+
+Inheritance diagram for A\+P\+I\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_p_i_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_a_p_i_controller_ac1fe4dd7b8df2e4cceb554e46bea894d}{handle\+Config\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_a6274380cb71807d07d813b7e67e0c0c2}{handle\+Module\+Config\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_a3d32a4cf1f6a06697b09d43a2be140cf}{handle\+Device\+Config\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_a3217b84dcc811d83e4c7241a5e19c35c}{handle\+Get\+Notification\+List\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_afb480d438e18a2551229810280a65806}{handle\+Download\+Firmware\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_ad37a3ecaf99e3b7c43ecb4ec4873fea9}{handle\+Get\+Controller\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_a20ce823aeb786d2af26fde41c2dc74a1}{handle\+Get\+Controller\+Module\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_a0e01eab749423dcfff0b595abf4175ad}{handle\+Controller\+Reset} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_a0d4deeaff703bb7d60eb344e6ee9f8cb}{handle\+Controller\+Reset\+Config} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_a9b2f08f4b0a67c0a4f6891a9d8601b93}{handle\+Reset\+Notification\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_p_i_controller_a779b634bce4b7fcbec9fca8f5f8f63e6}{A\+P\+I\+Controller} (Q\+Object $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+PI handler class for a L\+CS controller. This class handles all A\+PI requests for a controller. Two types of requests are made as it relates to a L\+CS controller; \char`\"{}/\+A\+P\+I/...\char`\"{} requests sent from an external source like a web page or an application and a \char`\"{}/controller/...\char`\"{} requests sent by a L\+CS controller to download information from the application server. 
+
+\hyperlink{class_a_p_i_controller}{A\+P\+I\+Controller} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_p_i_controller_a779b634bce4b7fcbec9fca8f5f8f63e6}\label{class_a_p_i_controller_a779b634bce4b7fcbec9fca8f5f8f63e6}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{A\+P\+I\+Controller()}{APIController()}}
+{\footnotesize\ttfamily A\+P\+I\+Controller\+::\+A\+P\+I\+Controller (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Contstructor Creates a controller A\+PI handler. The constructor registers a \hyperlink{class_url_handler}{Url Handler} object for the following url\textquotesingle{}s\+: \char`\"{}/controller/config\char`\"{} Download the controller\textquotesingle{}s configuration. \char`\"{}/controller/module/config\char`\"{} Download a controller module\textquotesingle{}s configuration. \char`\"{}/controller/device/config\char`\"{} Download a device\textquotesingle{}s configuration. \char`\"{}/controller/notification\+\_\+list\char`\"{} Download a controller\textquotesingle{}s list of \char`\"{}\+Controllers to Notify\char`\"{}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_p_i_controller_ac1fe4dd7b8df2e4cceb554e46bea894d}\label{class_a_p_i_controller_ac1fe4dd7b8df2e4cceb554e46bea894d}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Config\+Url@{handle\+Config\+Url}}
+\index{handle\+Config\+Url@{handle\+Config\+Url}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Config\+Url}{handleConfigUrl}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Config\+Url (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/controller/config\char`\"{} Downloads a controller\textquotesingle{}s configuration 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the serial number of the controller. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the controller\textquotesingle{}s configuration information in J\+S\+ON format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_a0e01eab749423dcfff0b595abf4175ad}\label{class_a_p_i_controller_a0e01eab749423dcfff0b595abf4175ad}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Controller\+Reset@{handle\+Controller\+Reset}}
+\index{handle\+Controller\+Reset@{handle\+Controller\+Reset}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Controller\+Reset}{handleControllerReset}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Controller\+Reset (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/api/send\+\_\+controller\+\_\+reset\char`\"{} Sends a S\+Y\+S\+\_\+\+R\+E\+B\+O\+O\+T\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER broadcast U\+DP message instructing the controller(s) to restart. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the controller\textquotesingle{}s serial number. If the serial number is less than 1, all controllers are restarted. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} unused. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_a0d4deeaff703bb7d60eb344e6ee9f8cb}\label{class_a_p_i_controller_a0d4deeaff703bb7d60eb344e6ee9f8cb}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Controller\+Reset\+Config@{handle\+Controller\+Reset\+Config}}
+\index{handle\+Controller\+Reset\+Config@{handle\+Controller\+Reset\+Config}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Controller\+Reset\+Config}{handleControllerResetConfig}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Controller\+Reset\+Config (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/api/send\+\_\+controller\+\_\+reset\+\_\+config\char`\"{} Sends a S\+Y\+S\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+O\+N\+F\+IG broadcast U\+DP message instructing the controller(s) to delete all configuration data. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the controller\textquotesingle{}s serial number. If the serial number is less than 1, all controllers delete their configuration data. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} unused. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_a3d32a4cf1f6a06697b09d43a2be140cf}\label{class_a_p_i_controller_a3d32a4cf1f6a06697b09d43a2be140cf}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Device\+Config\+Url@{handle\+Device\+Config\+Url}}
+\index{handle\+Device\+Config\+Url@{handle\+Device\+Config\+Url}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Device\+Config\+Url}{handleDeviceConfigUrl}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Device\+Config\+Url (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/controller/device/config\char`\"{} Downloads a device\textquotesingle{}s configuration 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the device\+ID. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the device\textquotesingle{}s configuration information in J\+S\+ON format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_afb480d438e18a2551229810280a65806}\label{class_a_p_i_controller_afb480d438e18a2551229810280a65806}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Download\+Firmware\+Url@{handle\+Download\+Firmware\+Url}}
+\index{handle\+Download\+Firmware\+Url@{handle\+Download\+Firmware\+Url}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Download\+Firmware\+Url}{handleDownloadFirmwareUrl}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Download\+Firmware\+Url (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/controller/firmware\char`\"{} Downloads a controller\textquotesingle{}s firmware. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the controller\textquotesingle{}s serial number. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} not used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_ad37a3ecaf99e3b7c43ecb4ec4873fea9}\label{class_a_p_i_controller_ad37a3ecaf99e3b7c43ecb4ec4873fea9}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Get\+Controller\+List@{handle\+Get\+Controller\+List}}
+\index{handle\+Get\+Controller\+List@{handle\+Get\+Controller\+List}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Get\+Controller\+List}{handleGetControllerList}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Get\+Controller\+List (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/api/controller\+\_\+list\char`\"{} Downloads a list of all controllers. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the controller\textquotesingle{}s serial number. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the list of controllers in J\+S\+ON format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_a20ce823aeb786d2af26fde41c2dc74a1}\label{class_a_p_i_controller_a20ce823aeb786d2af26fde41c2dc74a1}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Get\+Controller\+Module\+List@{handle\+Get\+Controller\+Module\+List}}
+\index{handle\+Get\+Controller\+Module\+List@{handle\+Get\+Controller\+Module\+List}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Get\+Controller\+Module\+List}{handleGetControllerModuleList}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Get\+Controller\+Module\+List (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/api/controller\+\_\+module\+\_\+list\char`\"{} Downloads a list of modules for a controller or a specific module. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the controller\textquotesingle{}s ID or a specific module ID. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the list of controller modules in J\+S\+ON format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_a3217b84dcc811d83e4c7241a5e19c35c}\label{class_a_p_i_controller_a3217b84dcc811d83e4c7241a5e19c35c}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Get\+Notification\+List\+Url@{handle\+Get\+Notification\+List\+Url}}
+\index{handle\+Get\+Notification\+List\+Url@{handle\+Get\+Notification\+List\+Url}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Get\+Notification\+List\+Url}{handleGetNotificationListUrl}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Get\+Notification\+List\+Url (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/controller/notification\+\_\+list\char`\"{} Downloads a controller\textquotesingle{}s controllers-\/to-\/notify list. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the controller\textquotesingle{}s serial number. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the controller\textquotesingle{}s list of controllers-\/to-\/notify in J\+S\+ON format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_a6274380cb71807d07d813b7e67e0c0c2}\label{class_a_p_i_controller_a6274380cb71807d07d813b7e67e0c0c2}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Module\+Config\+Url@{handle\+Module\+Config\+Url}}
+\index{handle\+Module\+Config\+Url@{handle\+Module\+Config\+Url}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Module\+Config\+Url}{handleModuleConfigUrl}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Module\+Config\+Url (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/controller/module/config\char`\"{} Downloads a controller module\textquotesingle{}s configuration 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the serial number of the controller and the address of the module. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the controller module\textquotesingle{}s configuration information in J\+S\+ON format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_a9b2f08f4b0a67c0a4f6891a9d8601b93}\label{class_a_p_i_controller_a9b2f08f4b0a67c0a4f6891a9d8601b93}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Reset\+Notification\+List@{handle\+Reset\+Notification\+List}}
+\index{handle\+Reset\+Notification\+List@{handle\+Reset\+Notification\+List}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Reset\+Notification\+List}{handleResetNotificationList}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Reset\+Notification\+List (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/api/send\+\_\+controller\+\_\+reset\+\_\+notification\+\_\+list\char`\"{} Sends a S\+Y\+S\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+O\+T\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+L\+I\+ST broadcast U\+DP message instructing the controller(s) to delete controllers-\/to-\/notify list. The controller responds by sending a /controller/notification\+\_\+list to the application server. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the controller\textquotesingle{}s serial number. If the serial number is less than 1, all controllers delete their controllers-\/to-\/notify list. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} unused. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+L\+C\+S\+Server/A\+P\+I\+Controller.\+h\item 
+L\+C\+S\+Server/A\+P\+I\+Controller.\+cpp\end{DoxyCompactItemize}

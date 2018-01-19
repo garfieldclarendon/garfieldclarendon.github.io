@@ -66,56 +66,378 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A class for handling UDP messages sent between controllers and the application server. This class along with the <a class="el" href="struct_u_d_p_message_struct.html">Message Structure</a> contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of "controllers to notify" in its configuration data. Each time a device needs to send a command or status message, the controller's Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the <a class="el" href="group___u_d_p_message_i_d.html#ga23aab89076591390a1dbc412a3a07314">SYS_CONTROLLER_ONLINE</a> broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller's ID is contained in its notification list and, if so, stores the address of the sending controller which is stored in field[0] - field[3] and then responds by sending device status messages. If the controller misses this message, the controller sends a <a class="el" href="group___u_d_p_message_i_d.html#gadfda0e5a5a6a08de555dd55182a4cd87">SYS_FIND_CONTROLLER</a> broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding <a class="el" href="group___u_d_p_message_i_d.html#ga23aab89076591390a1dbc412a3a07314">SYS_CONTROLLER_ONLINE</a> message from each controller.  
+ <a href="class_u_d_p_message.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_u_d_p_message_8h_source.html">UDPMessage.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adbc0139ef0249efd4a932bbc0b57fe13"><td class="memItemLeft" align="right" valign="top"><a id="adbc0139ef0249efd4a932bbc0b57fe13"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>UDPMessage</b> (const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;other)</td></tr>
+<tr class="memitem:a823351519fc5818ccc03030c6947e620"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a823351519fc5818ccc03030c6947e620">UDPMessage</a> (void)</td></tr>
+<tr class="separator:a823351519fc5818ccc03030c6947e620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbc0139ef0249efd4a932bbc0b57fe13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#adbc0139ef0249efd4a932bbc0b57fe13">UDPMessage</a> (const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;other)</td></tr>
 <tr class="separator:adbc0139ef0249efd4a932bbc0b57fe13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6edf87f4f8f441edf2064d5f6fa5cd02"><td class="memItemLeft" align="right" valign="top"><a id="a6edf87f4f8f441edf2064d5f6fa5cd02"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>UDPMessage</b> (const <a class="el" href="struct_u_d_p_message_struct.html">UDPMessageStruct</a> &amp;other)</td></tr>
+<tr class="memitem:a6edf87f4f8f441edf2064d5f6fa5cd02"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a6edf87f4f8f441edf2064d5f6fa5cd02">UDPMessage</a> (const <a class="el" href="struct_u_d_p_message_struct.html">UDPMessageStruct</a> &amp;other)</td></tr>
 <tr class="separator:a6edf87f4f8f441edf2064d5f6fa5cd02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3bb7f16fec948bcfbf99646b79c5c58"><td class="memItemLeft" align="right" valign="top"><a id="af3bb7f16fec948bcfbf99646b79c5c58"></a>
-<a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;other)</td></tr>
+<tr class="memitem:af3bb7f16fec948bcfbf99646b79c5c58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#af3bb7f16fec948bcfbf99646b79c5c58">operator=</a> (const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;other)</td></tr>
 <tr class="separator:af3bb7f16fec948bcfbf99646b79c5c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad732ecdc07825ce944b251b0e8f55e90"><td class="memItemLeft" align="right" valign="top"><a id="ad732ecdc07825ce944b251b0e8f55e90"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValid</b> (void) const</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#ad732ecdc07825ce944b251b0e8f55e90">isValid</a> (void) const</td></tr>
+<tr class="memdesc:ad732ecdc07825ce944b251b0e8f55e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the message is considered valid. At minimum, a valid message has its message ID set to a value greater than zero. <br /></td></tr>
 <tr class="separator:ad732ecdc07825ce944b251b0e8f55e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba4aadebe7b1aa92ba558f3cd4319e79"><td class="memItemLeft" align="right" valign="top"><a id="aba4aadebe7b1aa92ba558f3cd4319e79"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setMessageID</b> (unsigned char value)</td></tr>
+<tr class="memitem:aba4aadebe7b1aa92ba558f3cd4319e79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#aba4aadebe7b1aa92ba558f3cd4319e79">setMessageID</a> (unsigned char value)</td></tr>
 <tr class="separator:aba4aadebe7b1aa92ba558f3cd4319e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fcacc64fbb5598848a391c9fd9aa8c2"><td class="memItemLeft" align="right" valign="top"><a id="a2fcacc64fbb5598848a391c9fd9aa8c2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setID</b> (long value)</td></tr>
+<tr class="memitem:a2fcacc64fbb5598848a391c9fd9aa8c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a2fcacc64fbb5598848a391c9fd9aa8c2">setID</a> (long value)</td></tr>
 <tr class="separator:a2fcacc64fbb5598848a391c9fd9aa8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7f1c729cf357be18e6cda695f5e5d99"><td class="memItemLeft" align="right" valign="top"><a id="ad7f1c729cf357be18e6cda695f5e5d99"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setField</b> (unsigned char fieldIndex, unsigned char value)</td></tr>
+<tr class="memitem:ad7f1c729cf357be18e6cda695f5e5d99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#ad7f1c729cf357be18e6cda695f5e5d99">setField</a> (unsigned char fieldIndex, unsigned char value)</td></tr>
 <tr class="separator:ad7f1c729cf357be18e6cda695f5e5d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeea2288e53b4c6db7861181b5fc8aa5e"><td class="memItemLeft" align="right" valign="top"><a id="aeea2288e53b4c6db7861181b5fc8aa5e"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>getRef</b> (void) const</td></tr>
+char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#aeea2288e53b4c6db7861181b5fc8aa5e">getRef</a> (void) const</td></tr>
+<tr class="memdesc:aeea2288e53b4c6db7861181b5fc8aa5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a reference to the internal <a class="el" href="struct_u_d_p_message_struct.html">UDPMessageStruct</a> <br /></td></tr>
 <tr class="separator:aeea2288e53b4c6db7861181b5fc8aa5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e762f6c16fa298afe87b9dd6cee41c2"><td class="memItemLeft" align="right" valign="top"><a id="a9e762f6c16fa298afe87b9dd6cee41c2"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>getMessageID</b> (void) const</td></tr>
+unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a9e762f6c16fa298afe87b9dd6cee41c2">getMessageID</a> (void) const</td></tr>
+<tr class="memdesc:a9e762f6c16fa298afe87b9dd6cee41c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the messageID. <br /></td></tr>
 <tr class="separator:a9e762f6c16fa298afe87b9dd6cee41c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add45e9751d72e7d789ed6dcdb06c23d2"><td class="memItemLeft" align="right" valign="top"><a id="add45e9751d72e7d789ed6dcdb06c23d2"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>getID</b> (void) const</td></tr>
+long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#add45e9751d72e7d789ed6dcdb06c23d2">getID</a> (void) const</td></tr>
+<tr class="memdesc:add45e9751d72e7d789ed6dcdb06c23d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the ID <br /></td></tr>
 <tr class="separator:add45e9751d72e7d789ed6dcdb06c23d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65fed9ee9c6dc936e1c9d1ae3052d1f7"><td class="memItemLeft" align="right" valign="top"><a id="a65fed9ee9c6dc936e1c9d1ae3052d1f7"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>getTransactionNumber</b> (void) const</td></tr>
+unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a65fed9ee9c6dc936e1c9d1ae3052d1f7">getTransactionNumber</a> (void) const</td></tr>
+<tr class="memdesc:a65fed9ee9c6dc936e1c9d1ae3052d1f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the transaction number <br /></td></tr>
 <tr class="separator:a65fed9ee9c6dc936e1c9d1ae3052d1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27629d5cab43160d53cedfd894e1c216"><td class="memItemLeft" align="right" valign="top"><a id="a27629d5cab43160d53cedfd894e1c216"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTransactionNumber</b> (unsigned char value)</td></tr>
+<tr class="memitem:a27629d5cab43160d53cedfd894e1c216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a27629d5cab43160d53cedfd894e1c216">setTransactionNumber</a> (unsigned char value)</td></tr>
 <tr class="separator:a27629d5cab43160d53cedfd894e1c216"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a869585e0916d3b9edf99111f8fc74709"><td class="memItemLeft" align="right" valign="top"><a id="a869585e0916d3b9edf99111f8fc74709"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>getField</b> (unsigned char fieldIndex) const</td></tr>
+<tr class="memitem:a869585e0916d3b9edf99111f8fc74709"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a869585e0916d3b9edf99111f8fc74709">getField</a> (unsigned char fieldIndex) const</td></tr>
 <tr class="separator:a869585e0916d3b9edf99111f8fc74709"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a313c116a2f7f0f134745ed0c4a759733"><td class="memItemLeft" align="right" valign="top"><a id="a313c116a2f7f0f134745ed0c4a759733"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>copyFrom</b> (const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;other)</td></tr>
+<tr class="memitem:a313c116a2f7f0f134745ed0c4a759733"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a313c116a2f7f0f134745ed0c4a759733">copyFrom</a> (const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;other)</td></tr>
 <tr class="separator:a313c116a2f7f0f134745ed0c4a759733"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_u_d_p_message.html">UDPMessage</a>  Class for handling UDP messages sent between controllers and the application server. This class along with the <a class="el" href="struct_u_d_p_message_struct.html">Message Structure</a> contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of "controllers to notify" in its configuration data. Each time a device needs to send a command or status message, the controller's Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the <a class="el" href="group___u_d_p_message_i_d.html#ga23aab89076591390a1dbc412a3a07314">SYS_CONTROLLER_ONLINE</a> broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller's ID is contained in its notification list and, if so, responds by sending device status messages to the sending controller. If the controller misses this message, the controller sends a <a class="el" href="group___u_d_p_message_i_d.html#gadfda0e5a5a6a08de555dd55182a4cd87">SYS_FIND_CONTROLLER</a> broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding <a class="el" href="group___u_d_p_message_i_d.html#ga23aab89076591390a1dbc412a3a07314">SYS_CONTROLLER_ONLINE</a> message from each controller. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>A class for handling UDP messages sent between controllers and the application server. This class along with the <a class="el" href="struct_u_d_p_message_struct.html">Message Structure</a> contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of "controllers to notify" in its configuration data. Each time a device needs to send a command or status message, the controller's Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the <a class="el" href="group___u_d_p_message_i_d.html#ga23aab89076591390a1dbc412a3a07314">SYS_CONTROLLER_ONLINE</a> broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller's ID is contained in its notification list and, if so, stores the address of the sending controller which is stored in field[0] - field[3] and then responds by sending device status messages. If the controller misses this message, the controller sends a <a class="el" href="group___u_d_p_message_i_d.html#gadfda0e5a5a6a08de555dd55182a4cd87">SYS_FIND_CONTROLLER</a> broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding <a class="el" href="group___u_d_p_message_i_d.html#ga23aab89076591390a1dbc412a3a07314">SYS_CONTROLLER_ONLINE</a> message from each controller. </p>
+<p><a class="el" href="class_u_d_p_message.html" title="A class for handling UDP messages sent between controllers and the application server. This class along with the Message Structure contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of &quot;controllers to notify&quot; in its configuration data. Each time a device needs to send a command or status message, the controller&#39;s Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the SYS_CONTROLLER_ONLINE broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller&#39;s ID is contained in its notification list and, if so, stores the address of the sending controller which is stored in field[0] - field[3] and then responds by sending device status messages. If the controller misses this message, the controller sends a SYS_FIND_CONTROLLER broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding SYS_CONTROLLER_ONLINE message from each controller. ">UDPMessage</a> </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a823351519fc5818ccc03030c6947e620"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a823351519fc5818ccc03030c6947e620">&#9670;&nbsp;</a></span>UDPMessage() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UDPMessage::UDPMessage </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Contstructor Creates a blank, invalid contsturctor auto-generating the transaction number by incrementing the static </p>
+
+</div>
+</div>
+<a id="adbc0139ef0249efd4a932bbc0b57fe13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbc0139ef0249efd4a932bbc0b57fe13">&#9670;&nbsp;</a></span>UDPMessage() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UDPMessage::UDPMessage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Copy constructor Creates a new <a class="el" href="class_u_d_p_message.html" title="A class for handling UDP messages sent between controllers and the application server. This class along with the Message Structure contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of &quot;controllers to notify&quot; in its configuration data. Each time a device needs to send a command or status message, the controller&#39;s Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the SYS_CONTROLLER_ONLINE broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller&#39;s ID is contained in its notification list and, if so, stores the address of the sending controller which is stored in field[0] - field[3] and then responds by sending device status messages. If the controller misses this message, the controller sends a SYS_FIND_CONTROLLER broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding SYS_CONTROLLER_ONLINE message from each controller. ">UDPMessage</a> copying the information from other creating an exact copy (including the transaction number) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>A <a class="el" href="class_u_d_p_message.html" title="A class for handling UDP messages sent between controllers and the application server. This class along with the Message Structure contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of &quot;controllers to notify&quot; in its configuration data. Each time a device needs to send a command or status message, the controller&#39;s Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the SYS_CONTROLLER_ONLINE broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller&#39;s ID is contained in its notification list and, if so, stores the address of the sending controller which is stored in field[0] - field[3] and then responds by sending device status messages. If the controller misses this message, the controller sends a SYS_FIND_CONTROLLER broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding SYS_CONTROLLER_ONLINE message from each controller. ">UDPMessage</a> to use as the soruce </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6edf87f4f8f441edf2064d5f6fa5cd02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6edf87f4f8f441edf2064d5f6fa5cd02">&#9670;&nbsp;</a></span>UDPMessage() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UDPMessage::UDPMessage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_u_d_p_message_struct.html">UDPMessageStruct</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convenience constructor Creates a new <a class="el" href="class_u_d_p_message.html" title="A class for handling UDP messages sent between controllers and the application server. This class along with the Message Structure contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of &quot;controllers to notify&quot; in its configuration data. Each time a device needs to send a command or status message, the controller&#39;s Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the SYS_CONTROLLER_ONLINE broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller&#39;s ID is contained in its notification list and, if so, stores the address of the sending controller which is stored in field[0] - field[3] and then responds by sending device status messages. If the controller misses this message, the controller sends a SYS_FIND_CONTROLLER broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding SYS_CONTROLLER_ONLINE message from each controller. ">UDPMessage</a> using the data supplied in the supplied <a class="el" href="struct_u_d_p_message_struct.html" title="Structure used the by the UDPMessage class which contains the actual data of a UDP Message...">UDPMessageStruct</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>A <a class="el" href="struct_u_d_p_message_struct.html" title="Structure used the by the UDPMessage class which contains the actual data of a UDP Message...">UDPMessageStruct</a> to use as the soruce </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a313c116a2f7f0f134745ed0c4a759733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313c116a2f7f0f134745ed0c4a759733">&#9670;&nbsp;</a></span>copyFrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPMessage::copyFrom </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>replaces the data of the message creating a copy Replaces the message data; copying the information from other. This function does NOT copy the transaction number, rather, a new transaction number is created. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>A <a class="el" href="class_u_d_p_message.html" title="A class for handling UDP messages sent between controllers and the application server. This class along with the Message Structure contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of &quot;controllers to notify&quot; in its configuration data. Each time a device needs to send a command or status message, the controller&#39;s Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the SYS_CONTROLLER_ONLINE broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller&#39;s ID is contained in its notification list and, if so, stores the address of the sending controller which is stored in field[0] - field[3] and then responds by sending device status messages. If the controller misses this message, the controller sends a SYS_FIND_CONTROLLER broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding SYS_CONTROLLER_ONLINE message from each controller. ">UDPMessage</a> to use as the soruce </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a869585e0916d3b9edf99111f8fc74709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a869585e0916d3b9edf99111f8fc74709">&#9670;&nbsp;</a></span>getField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char UDPMessage::getField </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>fieldIndex</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns one of the bytes in the 14 byte payload. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldIndex</td><td>index of the field to retrieve. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af3bb7f16fec948bcfbf99646b79c5c58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3bb7f16fec948bcfbf99646b79c5c58">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_u_d_p_message.html">UDPMessage</a>&amp; UDPMessage::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Assignment Replaces the message data; copying the information from other creating an exact copy (including the transaction number) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>A <a class="el" href="class_u_d_p_message.html" title="A class for handling UDP messages sent between controllers and the application server. This class along with the Message Structure contains the data layout of a UDP message. Messages are sent from controller-to-controller in a peer-to-peer fasion using UDP uni-cast. Each controller contains a list of &quot;controllers to notify&quot; in its configuration data. Each time a device needs to send a command or status message, the controller&#39;s Network Manager sends the message to all controllers contained in the notification list. Each controller listens for the SYS_CONTROLLER_ONLINE broadcast message which is sent by each controller upon startup. Upon resceiving this message, the controller checks to see if the controller&#39;s ID is contained in its notification list and, if so, stores the address of the sending controller which is stored in field[0] - field[3] and then responds by sending device status messages. If the controller misses this message, the controller sends a SYS_FIND_CONTROLLER broadcast message every 3 seconds for each controller in its notification list until it recieves a corresponding SYS_CONTROLLER_ONLINE message from each controller. ">UDPMessage</a> to use as the soruce </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad7f1c729cf357be18e6cda695f5e5d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f1c729cf357be18e6cda695f5e5d99">&#9670;&nbsp;</a></span>setField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPMessage::setField </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>fieldIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setter function. Sets one of the bytes in the 14 byte payload. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fieldIndex</td><td>index of the field to set </td></tr>
+    <tr><td class="paramname">value</td><td>a byte containing the new value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2fcacc64fbb5598848a391c9fd9aa8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fcacc64fbb5598848a391c9fd9aa8c2">&#9670;&nbsp;</a></span>setID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPMessage::setID </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setter function. Sets the ID. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>an long integer value that represents the controller's ID, serial number or a route ID depending on the <a class="el" href="group___u_d_p_message_i_d.html">message</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aba4aadebe7b1aa92ba558f3cd4319e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba4aadebe7b1aa92ba558f3cd4319e79">&#9670;&nbsp;</a></span>setMessageID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPMessage::setMessageID </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setter function. Sets the message ID. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td><a class="el" href="group___u_d_p_message_i_d.html">Message ID</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a27629d5cab43160d53cedfd894e1c216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27629d5cab43160d53cedfd894e1c216">&#9670;&nbsp;</a></span>setTransactionNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPMessage::setTransactionNumber </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setter function. Sets the transaction number overwriting the auto-generated number; </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the new trasaction number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>libraries/shared/<a class="el" href="_u_d_p_message_8h_source.html">UDPMessage.h</a></li>
 <li>libraries/shared/UDPMessage.cpp</li>
 </ul>
