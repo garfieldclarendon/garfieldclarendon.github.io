@@ -1,33 +1,53 @@
 \hypertarget{class_a_p_i_response}{}\section{A\+P\+I\+Response Class Reference}
 \label{class_a_p_i_response}\index{A\+P\+I\+Response@{A\+P\+I\+Response}}
+
+
+Contains information for a A\+PI web response.  
+
+
+
+
+{\ttfamily \#include $<$A\+P\+I\+Response.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_a_p_i_response_a8819d39477f85cf49f9d951c3f20b48a}\label{class_a_p_i_response_a8819d39477f85cf49f9d951c3f20b48a}} 
+\hyperlink{class_a_p_i_response_a8819d39477f85cf49f9d951c3f20b48a}{A\+P\+I\+Response} (void)
+\begin{DoxyCompactList}\small\item\em Consturctor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_response_ad9f5238fb178a139f7d90f0024c094bd}\label{class_a_p_i_response_ad9f5238fb178a139f7d90f0024c094bd}} 
-{\bfseries A\+P\+I\+Response} (const \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} \&other)
-\item 
+\hyperlink{class_a_p_i_response_ad9f5238fb178a139f7d90f0024c094bd}{A\+P\+I\+Response} (const \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} \&other)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_p_i_response_acd88184e036df13fb200120e545bd1aa}\label{class_a_p_i_response_acd88184e036df13fb200120e545bd1aa}} 
+\hyperlink{class_a_p_i_response_acd88184e036df13fb200120e545bd1aa}{$\sim$\+A\+P\+I\+Response} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_response_a0ac0de9b5ec19f313d1571936d88c2f1}\label{class_a_p_i_response_a0ac0de9b5ec19f313d1571936d88c2f1}} 
-Q\+String {\bfseries get\+Return\+Code} (void) const
-\item 
+Q\+String \hyperlink{class_a_p_i_response_a0ac0de9b5ec19f313d1571936d88c2f1}{get\+Return\+Code} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the H\+T\+TP return code. By default, the return code is set to \char`\"{}200 O\+K\char`\"{}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_response_a4c749e490345ac4d497678d2272dd5f0}\label{class_a_p_i_response_a4c749e490345ac4d497678d2272dd5f0}} 
-void {\bfseries set\+Return\+Code} (const Q\+String \&value)
-\item 
+void \hyperlink{class_a_p_i_response_a4c749e490345ac4d497678d2272dd5f0}{set\+Return\+Code} (const Q\+String \&value)
+\begin{DoxyCompactList}\small\item\em Sets the H\+T\+TP return code that will be returned to the requestor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_response_a6861e22ef4409885114aac404760daeb}\label{class_a_p_i_response_a6861e22ef4409885114aac404760daeb}} 
-Q\+String {\bfseries get\+Content\+Type} (void) const
-\item 
+Q\+String \hyperlink{class_a_p_i_response_a6861e22ef4409885114aac404760daeb}{get\+Content\+Type} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the H\+T\+TP content type. By default, the content type is set to \char`\"{}text/html\char`\"{}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_response_a67c8ba2ac3155ae8472f453a36f469f5}\label{class_a_p_i_response_a67c8ba2ac3155ae8472f453a36f469f5}} 
-void {\bfseries set\+Contenet\+Type} (const Q\+String \&value)
-\item 
+void \hyperlink{class_a_p_i_response_a67c8ba2ac3155ae8472f453a36f469f5}{set\+Contenet\+Type} (const Q\+String \&value)
+\begin{DoxyCompactList}\small\item\em Sets the H\+T\+TP content type. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_response_ae58db2525b25db3b244a71c8d10b6b98}\label{class_a_p_i_response_ae58db2525b25db3b244a71c8d10b6b98}} 
-Q\+Byte\+Array {\bfseries get\+Payload} (void) const
-\item 
+Q\+Byte\+Array \hyperlink{class_a_p_i_response_ae58db2525b25db3b244a71c8d10b6b98}{get\+Payload} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the payload. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_response_a7b36f0565b798ad4740f83b58488f079}\label{class_a_p_i_response_a7b36f0565b798ad4740f83b58488f079}} 
-void {\bfseries set\+Payload} (const Q\+Byte\+Array \&value)
-\item 
+void \hyperlink{class_a_p_i_response_a7b36f0565b798ad4740f83b58488f079}{set\+Payload} (const Q\+Byte\+Array \&value)
+\begin{DoxyCompactList}\small\item\em Sets the payload that is returned to the requestor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_response_a6c757d09db4b79b845b4ecc699c87905}\label{class_a_p_i_response_a6c757d09db4b79b845b4ecc699c87905}} 
-\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} \& {\bfseries operator=} (const \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} \&other)
-\end{DoxyCompactItemize}
+\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} \& \hyperlink{class_a_p_i_response_a6c757d09db4b79b845b4ecc699c87905}{operator=} (const \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Contains information for a A\+PI web response. 
+
+\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} This class contains all information as it relates to a R\+E\+ST A\+PI web response. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

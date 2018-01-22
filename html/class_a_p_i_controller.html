@@ -60,6 +60,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_a_p_i_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -67,7 +68,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>API handler class for a LCS controller. This class handles all API requests for a controller. Two types of requests are made as it relates to a LCS controller; "/API/..." requests sent from an external source like a web page or an application and a "/controller/..." requests sent by a LCS controller to download information from the application server.  
+<p>API handler class for a LCS controller.  
  <a href="class_a_p_i_controller.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_a_p_i_controller_8h_source.html">APIController.h</a>&gt;</code></p>
@@ -82,6 +83,8 @@ Inheritance diagram for APIController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
+<tr class="memitem:a37992872aeb294f51ca323cc25075f69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#a37992872aeb294f51ca323cc25075f69">onControllerStatusChanged</a> (long serialNumber, <a class="el" href="_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480a">ControllerStatusEnum</a> newStatus)</td></tr>
+<tr class="separator:a37992872aeb294f51ca323cc25075f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1fe4dd7b8df2e4cceb554e46bea894d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#ac1fe4dd7b8df2e4cceb554e46bea894d">handleConfigUrl</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
 <tr class="separator:ac1fe4dd7b8df2e4cceb554e46bea894d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6274380cb71807d07d813b7e67e0c0c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#a6274380cb71807d07d813b7e67e0c0c2">handleModuleConfigUrl</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
@@ -103,14 +106,21 @@ Public Slots</h2></td></tr>
 <tr class="memitem:a9b2f08f4b0a67c0a4f6891a9d8601b93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#a9b2f08f4b0a67c0a4f6891a9d8601b93">handleResetNotificationList</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
 <tr class="separator:a9b2f08f4b0a67c0a4f6891a9d8601b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:aa31deccd23ec06a6dc92b449b0bc86f8"><td class="memItemLeft" align="right" valign="top"><a id="aa31deccd23ec06a6dc92b449b0bc86f8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#aa31deccd23ec06a6dc92b449b0bc86f8">sendNotificationMessage</a> (const QString &amp;url, const QJsonObject &amp;obj)</td></tr>
+<tr class="memdesc:aa31deccd23ec06a6dc92b449b0bc86f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies interested parties that a controller's status has changed. <br /></td></tr>
+<tr class="separator:aa31deccd23ec06a6dc92b449b0bc86f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a779b634bce4b7fcbec9fca8f5f8f63e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#a779b634bce4b7fcbec9fca8f5f8f63e6">APIController</a> (QObject *parent=nullptr)</td></tr>
 <tr class="separator:a779b634bce4b7fcbec9fca8f5f8f63e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>API handler class for a LCS controller. This class handles all API requests for a controller. Two types of requests are made as it relates to a LCS controller; "/API/..." requests sent from an external source like a web page or an application and a "/controller/..." requests sent by a LCS controller to download information from the application server. </p>
-<p><a class="el" href="class_a_p_i_controller.html" title="API handler class for a LCS controller. This class handles all API requests for a controller...">APIController</a> </p>
+<div class="textblock"><p>API handler class for a LCS controller. </p>
+<p><a class="el" href="class_a_p_i_controller.html" title="API handler class for a LCS controller. ">APIController</a> This class handles all API requests for a controller. Two types of requests are made as it relates to a LCS controller; "/API/..." requests sent from an external source like a web page or an application and a "/controller/..." requests sent by a LCS controller to download information from the application server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a779b634bce4b7fcbec9fca8f5f8f63e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a779b634bce4b7fcbec9fca8f5f8f63e6">&#9670;&nbsp;</a></span>APIController()</h2>
@@ -135,7 +145,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Contstructor Creates a controller API handler. The constructor registers a <a class="el" href="class_url_handler.html">Url Handler</a> object for the following url's: "/controller/config" Download the controller's configuration. "/controller/module/config" Download a controller module's configuration. "/controller/device/config" Download a device's configuration. "/controller/notification_list" Download a controller's list of "Controllers to Notify". </p>
+<p>Contstructor Creates a controller API handler. The constructor registers a <a class="el" href="class_url_handler.html">Url Handler</a> objects. See the API documentation for information on the URL's handled by this class. </p>
 
 </div>
 </div>
@@ -175,8 +185,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>API "/controller/config" Downloads a controller's configuration </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html">APIRequest</a> containing the url of the request including the serial number of the controller. </td></tr>
-    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html">APIResponse</a> with the payload set to the controller's configuration information in JSON format. </td></tr>
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the serial number of the controller. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> with the payload set to the controller's configuration information in JSON format. </td></tr>
   </table>
   </dd>
 </dl>
@@ -218,8 +228,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>API "/api/send_controller_reset" Sends a SYS_REBOOT_CONTROLLER broadcast UDP message instructing the controller(s) to restart. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html">APIRequest</a> containing the url of the request including the controller's serial number. If the serial number is less than 1, all controllers are restarted. </td></tr>
-    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html">APIResponse</a> unused. </td></tr>
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the controller's serial number. If the serial number is less than 1, all controllers are restarted. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> unused. </td></tr>
   </table>
   </dd>
 </dl>
@@ -261,8 +271,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>API "/api/send_controller_reset_config" Sends a SYS_RESET_CONFIG broadcast UDP message instructing the controller(s) to delete all configuration data. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html">APIRequest</a> containing the url of the request including the controller's serial number. If the serial number is less than 1, all controllers delete their configuration data. </td></tr>
-    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html">APIResponse</a> unused. </td></tr>
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the controller's serial number. If the serial number is less than 1, all controllers delete their configuration data. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> unused. </td></tr>
   </table>
   </dd>
 </dl>
@@ -304,8 +314,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>API "/controller/device/config" Downloads a device's configuration </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html">APIRequest</a> containing the url of the request including the deviceID. </td></tr>
-    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html">APIResponse</a> with the payload set to the device's configuration information in JSON format. </td></tr>
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the deviceID. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> with the payload set to the device's configuration information in JSON format. </td></tr>
   </table>
   </dd>
 </dl>
@@ -347,8 +357,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>API "/controller/firmware" Downloads a controller's firmware. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html">APIRequest</a> containing the url of the request including the controller's serial number. </td></tr>
-    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html">APIResponse</a> not used. </td></tr>
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the controller's serial number. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> not used. </td></tr>
   </table>
   </dd>
 </dl>
@@ -390,8 +400,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>API "/api/controller_list" Downloads a list of all controllers. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html">APIRequest</a> containing the url of the request including the controller's serial number. </td></tr>
-    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html">APIResponse</a> with the payload set to the list of controllers in JSON format. </td></tr>
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the controller's serial number. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> with the payload set to the list of controllers in JSON format. </td></tr>
   </table>
   </dd>
 </dl>
@@ -433,8 +443,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>API "/api/controller_module_list" Downloads a list of modules for a controller or a specific module. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html">APIRequest</a> containing the url of the request including the controller's ID or a specific module ID. </td></tr>
-    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html">APIResponse</a> with the payload set to the list of controller modules in JSON format. </td></tr>
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the controller's ID or a specific module ID. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> with the payload set to the list of controller modules in JSON format. </td></tr>
   </table>
   </dd>
 </dl>
@@ -476,8 +486,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>API "/controller/notification_list" Downloads a controller's controllers-to-notify list. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html">APIRequest</a> containing the url of the request including the controller's serial number. </td></tr>
-    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html">APIResponse</a> with the payload set to the controller's list of controllers-to-notify in JSON format. </td></tr>
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the controller's serial number. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> with the payload set to the controller's list of controllers-to-notify in JSON format. </td></tr>
   </table>
   </dd>
 </dl>
@@ -519,8 +529,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>API "/controller/module/config" Downloads a controller module's configuration </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html">APIRequest</a> containing the url of the request including the serial number of the controller and the address of the module. </td></tr>
-    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html">APIResponse</a> with the payload set to the controller module's configuration information in JSON format. </td></tr>
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the serial number of the controller and the address of the module. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> with the payload set to the controller module's configuration information in JSON format. </td></tr>
   </table>
   </dd>
 </dl>
@@ -562,8 +572,51 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>API "/api/send_controller_reset_notification_list" Sends a SYS_RESET_NOTIFICATION_LIST broadcast UDP message instructing the controller(s) to delete controllers-to-notify list. The controller responds by sending a /controller/notification_list to the application server. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html">APIRequest</a> containing the url of the request including the controller's serial number. If the serial number is less than 1, all controllers delete their controllers-to-notify list. </td></tr>
-    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html">APIResponse</a> unused. </td></tr>
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the controller's serial number. If the serial number is less than 1, all controllers delete their controllers-to-notify list. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> unused. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a37992872aeb294f51ca323cc25075f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37992872aeb294f51ca323cc25075f69">&#9670;&nbsp;</a></span>onControllerStatusChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APIController::onControllerStatusChanged </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>serialNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480a">ControllerStatusEnum</a>&#160;</td>
+          <td class="paramname"><em>newStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Monitors the <a class="el" href="class_controller_manager.html" title="Singleton class manitoring the current state of controllers. ">ControllerManager</a> for controller status changes </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serialNumber</td><td>long Serial number of the controller. </td></tr>
+    <tr><td class="paramname">newStatus</td><td>ControllerStatusEnum The controller's new status. </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,0 +1,77 @@
+\hypertarget{class_a_p_i_route}{}\section{A\+P\+I\+Route Class Reference}
+\label{class_a_p_i_route}\index{A\+P\+I\+Route@{A\+P\+I\+Route}}
+
+
+{\ttfamily \#include $<$A\+P\+I\+Route.\+h$>$}
+
+Inheritance diagram for A\+P\+I\+Route\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_p_i_route}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_a23f1b30a95e806760968daf23e2b3fa1}\label{class_a_p_i_route_a23f1b30a95e806760968daf23e2b3fa1}} 
+void {\bfseries handle\+Activate\+Route\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_a2edf94cf41f8fba5b1ed5f5eca217968}\label{class_a_p_i_route_a2edf94cf41f8fba5b1ed5f5eca217968}} 
+void {\bfseries handle\+Lock\+Route\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_a62f9b2e4addb8b60087a02a3e93c1abf}\label{class_a_p_i_route_a62f9b2e4addb8b60087a02a3e93c1abf}} 
+void {\bfseries handle\+Get\+Route\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_a95f38f3fb39801deba8d4a39e14686d2}\label{class_a_p_i_route_a95f38f3fb39801deba8d4a39e14686d2}} 
+void {\bfseries handle\+Get\+Route\+Entry\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_a345f0a966a94e0915f324aa19f9fb41f}\label{class_a_p_i_route_a345f0a966a94e0915f324aa19f9fb41f}} 
+void {\bfseries device\+Status\+Changed} (int device\+ID, int status)
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_afbd5b3b86ddacee31d16330de4d069df}\label{class_a_p_i_route_afbd5b3b86ddacee31d16330de4d069df}} 
+bool {\bfseries is\+Route\+Active} (int route\+ID)
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_a78e979b1ae56db76fb77de3cb8e54da9}\label{class_a_p_i_route_a78e979b1ae56db76fb77de3cb8e54da9}} 
+bool {\bfseries is\+Route\+Locked} (int route\+ID)
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_ab02063d3a9335d9e3e3ad9160dbb626b}\label{class_a_p_i_route_ab02063d3a9335d9e3e3ad9160dbb626b}} 
+bool {\bfseries can\+Route\+Lock} (int route\+ID)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_ad9db78abae10c20cbbec86378ba94db3}\label{class_a_p_i_route_ad9db78abae10c20cbbec86378ba94db3}} 
+void {\bfseries send\+Notification\+Message} (const Q\+String \&url, const Q\+Json\+Object \&obj)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_ada8e5c770e397fc6ed6602bdbb670a29}\label{class_a_p_i_route_ada8e5c770e397fc6ed6602bdbb670a29}} 
+{\bfseries A\+P\+I\+Route} (Q\+Object $\ast$parent=nullptr)
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_ac110d1999b3afe409d6e341fb9ab06d6}\label{class_a_p_i_route_ac110d1999b3afe409d6e341fb9ab06d6}} 
+void {\bfseries activate\+Route} (int route\+ID)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_p_i_route_af7d8f762fc9a692118fb222ab1aa89a3}\label{class_a_p_i_route_af7d8f762fc9a692118fb222ab1aa89a3}} 
+static \hyperlink{class_a_p_i_route}{A\+P\+I\+Route} $\ast$ {\bfseries instance} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\{get\} /api/activate\+\_\+route\+:route\+ID Activate Route  Activate\+Route  Route
+
+\{Number\} route\+ID The id of the route to activate.  Activates the specified route.  Example usage\+: \href{http://localhost:8080/api/activate_route?routeID=6}{\tt http\+://localhost\+:8080/api/activate\+\_\+route?route\+I\+D=6}  \{get\} /api/lock\+\_\+route\+:route\+ID,lock Lock Route  Lock\+Route  Route
+
+\{Number\} route\+ID The id of the route to lock.  \{Number=0,1\} lock Lock flag. 0 = Unlock, 1 = Lock.  Activates and locks the specified route. Locking a route locks all turnouts in the route\textquotesingle{}s list. The route must be unlocked in in order to activate any turnouts assigned to this route.  Example usage\+: \href{http://localhost:8080/api/lock_route?routeID=6}{\tt http\+://localhost\+:8080/api/lock\+\_\+route?route\+I\+D=6}  \{get\} /api/route\+\_\+list\+: Route List  Route\+List  Route
+
+Returns a list of all routes and the routes current state.  \{Number\} can\+Lock Flag indicating if the route can be locked.  \{Number\} is\+Active Flag indicating if the route is currently active.  \{Number\} is\+Locked Flag indicating if the route is currently locked.  \{String\} route\+Description Route\textquotesingle{}s description.  \{Number\} route\+ID Route\textquotesingle{}s ID.  \{String\} route\+Name Route\textquotesingle{}s name.  Example usage\+: \href{http://localhost:8080/api/route_list}{\tt http\+://localhost\+:8080/api/route\+\_\+list}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \mbox{[}\{ \char`\"{}can\+Lock\char`\"{}\+: true, \char`\"{}is\+Active\char`\"{}\+: false, \char`\"{}is\+Locked\char`\"{}\+: false, \char`\"{}route\+Description\char`\"{}\+: \char`\"{}\+To Mine\char`\"{}, \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}7\char`\"{}, \char`\"{}route\+Name\char`\"{}\+: \char`\"{}\+C\+A 1\char`\"{} \}, \{ \char`\"{}can\+Lock\char`\"{}\+: true, \char`\"{}is\+Active\char`\"{}\+: false, \char`\"{}is\+Locked\char`\"{}\+: false, \char`\"{}route\+Description\char`\"{}\+: \char`\"{}\+West X-\/\+Over 2 (\+Restore)\char`\"{}, \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}16\char`\"{}, \char`\"{}route\+Name\char`\"{}\+: \char`\"{}\+C\+A 10\char`\"{} \} \mbox{]}  \{get\} /api/route\+\_\+entry\+\_\+list\+:route\+ID Route Entry List  Route\+Entry\+List  Route
+
+\{Number\} route\+ID ID of the route.  Returns a list route entries which define the turnouts that are set when the route is activated.  \{Number\} device\+ID device\+ID of the turnout.  \{Number\} route\+Entry\+ID route\+Entry\textquotesingle{}s ID field.  \{Number\} route\+ID route\+ID of the route the entry is assigned to.  \{Number=1,3\} turnout\+State The state the turnout is to be set to when the route is activated. 1 = Normal, 3 = Diverging (thrown)  Example usage\+: \href{http://localhost:8080/api/route_entry_list?routeID=16}{\tt http\+://localhost\+:8080/api/route\+\_\+entry\+\_\+list?route\+I\+D=16}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \mbox{[}\{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}15\char`\"{}, \char`\"{}route\+Entry\+I\+D\char`\"{}\+: \char`\"{}23\char`\"{}, \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}16\char`\"{}, \char`\"{}turnout\+State\char`\"{}\+: \char`\"{}1\char`\"{} \}, \{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}16\char`\"{}, \char`\"{}route\+Entry\+I\+D\char`\"{}\+: \char`\"{}24\char`\"{}, \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}16\char`\"{}, \char`\"{}turnout\+State\char`\"{}\+: \char`\"{}1\char`\"{} \} \mbox{]} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+L\+C\+S\+Server/A\+P\+I\+Route.\+h\item 
+L\+C\+S\+Server/A\+P\+I\+Route.\+cpp\end{DoxyCompactItemize}

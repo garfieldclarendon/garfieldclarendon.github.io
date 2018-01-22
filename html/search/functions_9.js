@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3d',['operator=',['../class_u_d_p_message.html#af3bb7f16fec948bcfbf99646b79c5c58',1,'UDPMessage']]]
+  ['newudpmessage',['newUDPMessage',['../class_controller_manager.html#a5e9480ad4b88ff536ab60dbc9cb6619f',1,'ControllerManager']]]
 ];

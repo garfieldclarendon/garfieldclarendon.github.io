@@ -10,5 +10,7 @@ var searchData=
   ['handlegetcontrollermodulelist',['handleGetControllerModuleList',['../class_a_p_i_controller.html#a20ce823aeb786d2af26fde41c2dc74a1',1,'APIController']]],
   ['handlegetnotificationlisturl',['handleGetNotificationListUrl',['../class_a_p_i_controller.html#a3217b84dcc811d83e4c7241a5e19c35c',1,'APIController']]],
   ['handlemoduleconfigurl',['handleModuleConfigUrl',['../class_a_p_i_controller.html#a6274380cb71807d07d813b7e67e0c0c2',1,'APIController']]],
-  ['handleresetnotificationlist',['handleResetNotificationList',['../class_a_p_i_controller.html#a9b2f08f4b0a67c0a4f6891a9d8601b93',1,'APIController']]]
+  ['handlerequest',['handleRequest',['../class_url_handler.html#a2c3f0bc7731a1eb5d732378c3c876043',1,'UrlHandler']]],
+  ['handleresetnotificationlist',['handleResetNotificationList',['../class_a_p_i_controller.html#a9b2f08f4b0a67c0a4f6891a9d8601b93',1,'APIController']]],
+  ['handleurl',['handleUrl',['../class_url_handler.html#a1a519a9fc5c6e07736f430fb02719b4d',1,'UrlHandler']]]
 ];

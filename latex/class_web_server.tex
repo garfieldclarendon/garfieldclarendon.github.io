@@ -1,5 +1,14 @@
 \hypertarget{class_web_server}{}\section{Web\+Server Class Reference}
 \label{class_web_server}\index{Web\+Server@{Web\+Server}}
+
+
+An H\+T\+TP web server implementation that provides the R\+E\+ST A\+PI.  
+
+
+
+
+{\ttfamily \#include $<$Web\+Server.\+h$>$}
+
 Inheritance diagram for Web\+Server\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,39 +19,46 @@ Inheritance diagram for Web\+Server\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_web_server_a991ba62e7d4044e2f85fe1457aa5bad4}\label{class_web_server_a991ba62e7d4044e2f85fe1457aa5bad4}} 
-\hyperlink{class_url_handler}{Url\+Handler} $\ast$ {\bfseries create\+Url\+Handler} (const Q\+String \&path)
-\item 
+\hyperlink{class_url_handler}{Url\+Handler} $\ast$ \hyperlink{class_web_server_a991ba62e7d4044e2f85fe1457aa5bad4}{create\+Url\+Handler} (const Q\+String \&path)
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{class_url_handler}{Url\+Handler} object and registers the handler for the provided path. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_web_server_ac2d1d9d11eb504321fc4629b0e045ce3}\label{class_web_server_ac2d1d9d11eb504321fc4629b0e045ce3}} 
-\hyperlink{class_url_handler}{Url\+Handler} $\ast$ {\bfseries get\+Url\+Handler} (const Q\+String \&path)
-\item 
-\mbox{\Hypertarget{class_web_server_ae4a36571bfd26bdd42d75613cc990b1e}\label{class_web_server_ae4a36571bfd26bdd42d75613cc990b1e}} 
-bool {\bfseries send\+Message} (Net\+Action\+Type action\+Type, const Q\+String \&uri, const Q\+String \&payload, Q\+String \&return\+Payload)
-\end{DoxyCompactItemize}
+\hyperlink{class_url_handler}{Url\+Handler} $\ast$ \hyperlink{class_web_server_ac2d1d9d11eb504321fc4629b0e045ce3}{get\+Url\+Handler} (const Q\+String \&path)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{class_url_handler}{Url\+Handler} object for the given path. N\+U\+LL is returned if a handler for the path is not found. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_web_server_a2902a8136514bc5a1217a87b7a99ab13}\label{class_web_server_a2902a8136514bc5a1217a87b7a99ab13}} 
-{\bfseries Web\+Server} (Q\+Object $\ast$parent=0)
-\item 
-\mbox{\Hypertarget{class_web_server_ac6a3155a785e42fec310e8457a12d73e}\label{class_web_server_ac6a3155a785e42fec310e8457a12d73e}} 
-void {\bfseries incoming\+Connection} (int socket)
+\hyperlink{class_web_server_a2902a8136514bc5a1217a87b7a99ab13}{Web\+Server} (Q\+Object $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_web_server_ac6a3155a785e42fec310e8457a12d73e}{incoming\+Connection} (int socket)
 \item 
 \mbox{\Hypertarget{class_web_server_ad5f434853f45b795976afb32104c03b3}\label{class_web_server_ad5f434853f45b795976afb32104c03b3}} 
-void {\bfseries start\+Server} (quint16 port)
-\item 
-\mbox{\Hypertarget{class_web_server_afecc771fdf6bece4ba126ce5299b8b6a}\label{class_web_server_afecc771fdf6bece4ba126ce5299b8b6a}} 
-void {\bfseries handle\+Udp\+Message} (Net\+Action\+Type action, const Q\+String \&path, const Q\+String \&payload)
-\end{DoxyCompactItemize}
+void \hyperlink{class_web_server_ad5f434853f45b795976afb32104c03b3}{start\+Server} (quint16 port)
+\begin{DoxyCompactList}\small\item\em Starts the server; listening for incoming connections of the provided port. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_web_server_a6c77ab01f931f6fed751b2496eec8077}\label{class_web_server_a6c77ab01f931f6fed751b2496eec8077}} 
-static \hyperlink{class_web_server}{Web\+Server} $\ast$ {\bfseries instance} (void)
-\item 
+static \hyperlink{class_web_server}{Web\+Server} $\ast$ \hyperlink{class_web_server_a6c77ab01f931f6fed751b2496eec8077}{instance} (void)
+\begin{DoxyCompactList}\small\item\em Returns/creates the singleton instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_web_server_a99f5239a06368b29ca8bfd6a24be1f98}\label{class_web_server_a99f5239a06368b29ca8bfd6a24be1f98}} 
-static Q\+String {\bfseries create\+Header} (const Q\+String \&http\+Code, int body\+Size, const Q\+String \&content\+Type=\char`\"{}text/html\char`\"{})
-\end{DoxyCompactItemize}
+static Q\+String \hyperlink{class_web_server_a99f5239a06368b29ca8bfd6a24be1f98}{create\+Header} (const Q\+String \&http\+Code, int body\+Size, const Q\+String \&content\+Type=\char`\"{}text/html\char`\"{})
+\begin{DoxyCompactList}\small\item\em Creates a standard H\+T\+TP header. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+An H\+T\+TP web server implementation that provides the R\+E\+ST A\+PI. 
+
+\hyperlink{class_web_server}{Web\+Server} This class creates an H\+T\+TP web server based on a Q\+Tcp\+Server. Upon a tcp connection, the class looks for a url handler registered through create\+Url\+Handler. If found, the handler\textquotesingle{}s handle\+Request member is called. A \hyperlink{class_url_handler}{Url\+Handler} instance is created by calling \hyperlink{class_web_server_a991ba62e7d4044e2f85fe1457aa5bad4}{Web\+Server\+::create\+Url\+Handler} for a given url. The web server calls the handle\+Request member which emits the handle\+Url signal. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_web_server_ac6a3155a785e42fec310e8457a12d73e}\label{class_web_server_ac6a3155a785e42fec310e8457a12d73e}} 
+\index{Web\+Server@{Web\+Server}!incoming\+Connection@{incoming\+Connection}}
+\index{incoming\+Connection@{incoming\+Connection}!Web\+Server@{Web\+Server}}
+\subsubsection{\texorpdfstring{incoming\+Connection()}{incomingConnection()}}
+{\footnotesize\ttfamily void Web\+Server\+::incoming\+Connection (\begin{DoxyParamCaption}\item[{int}]{socket }\end{DoxyParamCaption})}
+
+This virtual function is called by Q\+Tcp\+Server when a new connection is available. The socket\+Descriptor argument is the native socket descriptor for the accepted connection. A new \hyperlink{class_web_server_thread}{Web\+Server\+Thread} object is created which handles the socket request. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

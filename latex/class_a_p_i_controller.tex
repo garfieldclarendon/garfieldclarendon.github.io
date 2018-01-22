@@ -2,7 +2,7 @@
 \label{class_a_p_i_controller}\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}}
 
 
-A\+PI handler class for a L\+CS controller. This class handles all A\+PI requests for a controller. Two types of requests are made as it relates to a L\+CS controller; \char`\"{}/\+A\+P\+I/...\char`\"{} requests sent from an external source like a web page or an application and a \char`\"{}/controller/...\char`\"{} requests sent by a L\+CS controller to download information from the application server.  
+A\+PI handler class for a L\+CS controller.  
 
 
 
@@ -17,6 +17,8 @@ Inheritance diagram for A\+P\+I\+Controller\+:\begin{figure}[H]
 \end{figure}
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_a_p_i_controller_a37992872aeb294f51ca323cc25075f69}{on\+Controller\+Status\+Changed} (long serial\+Number, \hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+Status\+Enum} new\+Status)
 \item 
 void \hyperlink{class_a_p_i_controller_ac1fe4dd7b8df2e4cceb554e46bea894d}{handle\+Config\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
 \item 
@@ -38,6 +40,12 @@ void \hyperlink{class_a_p_i_controller_a0d4deeaff703bb7d60eb344e6ee9f8cb}{handle
 \item 
 void \hyperlink{class_a_p_i_controller_a9b2f08f4b0a67c0a4f6891a9d8601b93}{handle\+Reset\+Notification\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
 \end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_p_i_controller_aa31deccd23ec06a6dc92b449b0bc86f8}\label{class_a_p_i_controller_aa31deccd23ec06a6dc92b449b0bc86f8}} 
+void \hyperlink{class_a_p_i_controller_aa31deccd23ec06a6dc92b449b0bc86f8}{send\+Notification\+Message} (const Q\+String \&url, const Q\+Json\+Object \&obj)
+\begin{DoxyCompactList}\small\item\em Notifies interested parties that a controller\textquotesingle{}s status has changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,9 +54,9 @@ void \hyperlink{class_a_p_i_controller_a9b2f08f4b0a67c0a4f6891a9d8601b93}{handle
 
 
 \subsection{Detailed Description}
-A\+PI handler class for a L\+CS controller. This class handles all A\+PI requests for a controller. Two types of requests are made as it relates to a L\+CS controller; \char`\"{}/\+A\+P\+I/...\char`\"{} requests sent from an external source like a web page or an application and a \char`\"{}/controller/...\char`\"{} requests sent by a L\+CS controller to download information from the application server. 
+A\+PI handler class for a L\+CS controller. 
 
-\hyperlink{class_a_p_i_controller}{A\+P\+I\+Controller} 
+\hyperlink{class_a_p_i_controller}{A\+P\+I\+Controller} This class handles all A\+PI requests for a controller. Two types of requests are made as it relates to a L\+CS controller; \char`\"{}/\+A\+P\+I/...\char`\"{} requests sent from an external source like a web page or an application and a \char`\"{}/controller/...\char`\"{} requests sent by a L\+CS controller to download information from the application server. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_a_p_i_controller_a779b634bce4b7fcbec9fca8f5f8f63e6}\label{class_a_p_i_controller_a779b634bce4b7fcbec9fca8f5f8f63e6}} 
@@ -57,7 +65,7 @@ A\+PI handler class for a L\+CS controller. This class handles all A\+PI request
 \subsubsection{\texorpdfstring{A\+P\+I\+Controller()}{APIController()}}
 {\footnotesize\ttfamily A\+P\+I\+Controller\+::\+A\+P\+I\+Controller (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Contstructor Creates a controller A\+PI handler. The constructor registers a \hyperlink{class_url_handler}{Url Handler} object for the following url\textquotesingle{}s\+: \char`\"{}/controller/config\char`\"{} Download the controller\textquotesingle{}s configuration. \char`\"{}/controller/module/config\char`\"{} Download a controller module\textquotesingle{}s configuration. \char`\"{}/controller/device/config\char`\"{} Download a device\textquotesingle{}s configuration. \char`\"{}/controller/notification\+\_\+list\char`\"{} Download a controller\textquotesingle{}s list of \char`\"{}\+Controllers to Notify\char`\"{}. 
+Contstructor Creates a controller A\+PI handler. The constructor registers a \hyperlink{class_url_handler}{Url Handler} objects. See the A\+PI documentation for information on the U\+RL\textquotesingle{}s handled by this class. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_a_p_i_controller_ac1fe4dd7b8df2e4cceb554e46bea894d}\label{class_a_p_i_controller_ac1fe4dd7b8df2e4cceb554e46bea894d}} 
@@ -188,6 +196,19 @@ A\+PI \char`\"{}/api/send\+\_\+controller\+\_\+reset\+\_\+notification\+\_\+list
 {\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the controller\textquotesingle{}s serial number. If the serial number is less than 1, all controllers delete their controllers-\/to-\/notify list. \\
 \hline
 {\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} unused. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_a37992872aeb294f51ca323cc25075f69}\label{class_a_p_i_controller_a37992872aeb294f51ca323cc25075f69}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!on\+Controller\+Status\+Changed@{on\+Controller\+Status\+Changed}}
+\index{on\+Controller\+Status\+Changed@{on\+Controller\+Status\+Changed}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{on\+Controller\+Status\+Changed}{onControllerStatusChanged}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::on\+Controller\+Status\+Changed (\begin{DoxyParamCaption}\item[{long}]{serial\+Number,  }\item[{\hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+Status\+Enum}}]{new\+Status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Monitors the \hyperlink{class_controller_manager}{Controller\+Manager} for controller status changes 
+\begin{DoxyParams}{Parameters}
+{\em serial\+Number} & long Serial number of the controller. \\
+\hline
+{\em new\+Status} & Controller\+Status\+Enum The controller\textquotesingle{}s new status. \\
 \hline
 \end{DoxyParams}
 

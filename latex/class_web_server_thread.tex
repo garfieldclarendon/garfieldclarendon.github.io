@@ -1,5 +1,14 @@
 \hypertarget{class_web_server_thread}{}\section{Web\+Server\+Thread Class Reference}
 \label{class_web_server_thread}\index{Web\+Server\+Thread@{Web\+Server\+Thread}}
+
+
+Handles a H\+T\+TP server socket request on a separate thread.  
+
+
+
+
+{\ttfamily \#include $<$Web\+Server\+Thread.\+h$>$}
+
 Inheritance diagram for Web\+Server\+Thread\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,13 +18,21 @@ Inheritance diagram for Web\+Server\+Thread\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_web_server_thread_a8e66279390f71cac5263689b4fc60c23}\label{class_web_server_thread_a8e66279390f71cac5263689b4fc60c23}} 
-{\bfseries Web\+Server\+Thread} (int socket\+Descriptor, Q\+Object $\ast$parent)
-\item 
+\mbox{\Hypertarget{class_web_server_thread_a1cecaf23741442bf8d58577098d50fc0}\label{class_web_server_thread_a1cecaf23741442bf8d58577098d50fc0}} 
+\hyperlink{class_web_server_thread_a1cecaf23741442bf8d58577098d50fc0}{Web\+Server\+Thread} (int m\+\_\+socket\+Descriptor, Q\+Object $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_web_server_thread_ad8a6737f8667fdc80edde982415ed14d}\label{class_web_server_thread_ad8a6737f8667fdc80edde982415ed14d}} 
+\hyperlink{class_web_server_thread_ad8a6737f8667fdc80edde982415ed14d}{$\sim$\+Web\+Server\+Thread} (void)
+\begin{DoxyCompactList}\small\item\em Descructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_web_server_thread_a301c2ed6e2d0c9a020089862e20b7da6}\label{class_web_server_thread_a301c2ed6e2d0c9a020089862e20b7da6}} 
-void {\bfseries run} ()
-\end{DoxyCompactItemize}
+void \hyperlink{class_web_server_thread_a301c2ed6e2d0c9a020089862e20b7da6}{run} ()
+\begin{DoxyCompactList}\small\item\em This virtual function is called by Q\+Thread when the thread is started. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Handles a H\+T\+TP server socket request on a separate thread. 
+
+\hyperlink{class_web_server_thread}{Web\+Server\+Thread} This class creates a Q\+Tcp\+Socket for a given socket descriptor. The run member creates the socket and parses the incoming H\+T\+TP header and attempts to find a \hyperlink{class_url_handler}{Url\+Handler} for the url specified in the H\+T\+TP header. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

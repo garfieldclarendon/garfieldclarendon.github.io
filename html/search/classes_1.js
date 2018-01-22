@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['blockhandler',['BlockHandler',['../class_block_handler.html',1,'']]]
+  ['controllerentry',['ControllerEntry',['../class_controller_entry.html',1,'']]],
+  ['controllermanager',['ControllerManager',['../class_controller_manager.html',1,'']]]
 ];

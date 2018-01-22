@@ -61,11 +61,17 @@ $(function() {
   <div class="summary">
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_url_handler-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UrlHandler Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A proxy class that connects the web server with the handler of the request.  
+ <a href="class_url_handler.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_web_server_8h_source.html">WebServer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for UrlHandler:</div>
 <div class="dyncontent">
@@ -78,18 +84,52 @@ Inheritance diagram for UrlHandler:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a1a519a9fc5c6e07736f430fb02719b4d"><td class="memItemLeft" align="right" valign="top"><a id="a1a519a9fc5c6e07736f430fb02719b4d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>handleUrl</b> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_url_handler.html#a1a519a9fc5c6e07736f430fb02719b4d">handleUrl</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
+<tr class="memdesc:a1a519a9fc5c6e07736f430fb02719b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objects connect to this signal to handle the API request. <br /></td></tr>
 <tr class="separator:a1a519a9fc5c6e07736f430fb02719b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a69512a069b2c7e6c74c47ee7894744a0"><td class="memItemLeft" align="right" valign="top"><a id="a69512a069b2c7e6c74c47ee7894744a0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>UrlHandler</b> (QObject *parent)</td></tr>
-<tr class="separator:a69512a069b2c7e6c74c47ee7894744a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c3f0bc7731a1eb5d732378c3c876043"><td class="memItemLeft" align="right" valign="top"><a id="a2c3f0bc7731a1eb5d732378c3c876043"></a>
-<a class="el" href="class_a_p_i_response.html">APIResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><b>handleRequest</b> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request)</td></tr>
+<tr class="memitem:a2c3f0bc7731a1eb5d732378c3c876043"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_p_i_response.html">APIResponse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_url_handler.html#a2c3f0bc7731a1eb5d732378c3c876043">handleRequest</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request)</td></tr>
 <tr class="separator:a2c3f0bc7731a1eb5d732378c3c876043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:abdf165e971bc8503e8fcdb3267df5a36"><td class="memItemLeft" align="right" valign="top"><a id="abdf165e971bc8503e8fcdb3267df5a36"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>WebServer</b></td></tr>
+<tr class="separator:abdf165e971bc8503e8fcdb3267df5a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A proxy class that connects the web server with the handler of the request. </p>
+<p><a class="el" href="class_url_handler.html" title="A proxy class that connects the web server with the handler of the request. ">UrlHandler</a> This class acts as a proxy betweent he web server and the object handles the request. <a class="el" href="class_web_server.html">WebServer</a> creates an instance of this class by calling <a class="el" href="class_web_server.html#a991ba62e7d4044e2f85fe1457aa5bad4" title="Creates a new UrlHandler object and registers the handler for the provided path. ">WebServer::createUrlHandler</a> for a given url. The web server calls the handleRequest member which emits the handleUrl signal. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2c3f0bc7731a1eb5d732378c3c876043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c3f0bc7731a1eb5d732378c3c876043">&#9670;&nbsp;</a></span>handleRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_a_p_i_response.html">APIResponse</a> UrlHandler::handleRequest </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;&#160;</td>
+          <td class="paramname"><em>request</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Raises the handleUrl signal. The reference to the <a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> object gets filled with the information to be returned to the caller. This implies that the signal cannot be handled by a Qt::QueuedConnection. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>LCSServer/<a class="el" href="_web_server_8h_source.html">WebServer.h</a></li>
 </ul>

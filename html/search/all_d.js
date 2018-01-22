@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['panelhandler',['PanelHandler',['../class_panel_handler.html',1,'']]],
   ['pause',['pause',['../class_qt_service_controller.html#aeee2fcc9469f77c7ed8a7955c4fa3a07',1,'QtServiceController::pause()'],['../class_qt_service_base.html#a43215a7c5c047d30bcf4f697e6691f89',1,'QtServiceBase::pause()']]],
   ['payload',['payload',['../struct_u_d_p_message_struct.html#a52de02b6a926e10a0ef99c1ae965719e',1,'UDPMessageStruct']]],
   ['pigpio',['PIGPIO',['../class_p_i_g_p_i_o.html',1,'']]],

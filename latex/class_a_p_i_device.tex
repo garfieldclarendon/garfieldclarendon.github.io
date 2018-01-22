@@ -1,0 +1,61 @@
+\hypertarget{class_a_p_i_device}{}\section{A\+P\+I\+Device Class Reference}
+\label{class_a_p_i_device}\index{A\+P\+I\+Device@{A\+P\+I\+Device}}
+
+
+{\ttfamily \#include $<$A\+P\+I\+Device.\+h$>$}
+
+Inheritance diagram for A\+P\+I\+Device\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_p_i_device}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_p_i_device_a1e74a10d605557654fe5be02a9db87ab}\label{class_a_p_i_device_a1e74a10d605557654fe5be02a9db87ab}} 
+void {\bfseries handle\+Get\+Device\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+\mbox{\Hypertarget{class_a_p_i_device_a5be87488af611d8ef61501a07e4a39d9}\label{class_a_p_i_device_a5be87488af611d8ef61501a07e4a39d9}} 
+void {\bfseries handle\+Get\+Device\+Property\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+\mbox{\Hypertarget{class_a_p_i_device_a794458df71d6f24a8b8dccbbdf9235da}\label{class_a_p_i_device_a794458df71d6f24a8b8dccbbdf9235da}} 
+void {\bfseries handle\+Send\+Device\+Config} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+\mbox{\Hypertarget{class_a_p_i_device_ab3151ab616a5ae04f1aa157d24e8f511}\label{class_a_p_i_device_ab3151ab616a5ae04f1aa157d24e8f511}} 
+void {\bfseries handle\+Copy\+Device} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+\mbox{\Hypertarget{class_a_p_i_device_ac4a5822a47d665f1b72cc69692158ad6}\label{class_a_p_i_device_ac4a5822a47d665f1b72cc69692158ad6}} 
+void {\bfseries on\+Device\+Status\+Changed} (int device\+ID, int status)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_p_i_device_a1096381146a1c545b194d4bb63b32b8b}\label{class_a_p_i_device_a1096381146a1c545b194d4bb63b32b8b}} 
+void {\bfseries send\+Notification\+Message} (const Q\+String \&url, const Q\+Json\+Object \&obj)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_p_i_device_ab983034826edbff2b4246002b22081a5}\label{class_a_p_i_device_ab983034826edbff2b4246002b22081a5}} 
+{\bfseries A\+P\+I\+Device} (Q\+Object $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\{get\} /api/device\+\_\+list\+:serial\+Number,module\+ID,controller\+ID,class\+Code Get a list of devices  Get\+Device\+List  Device
+
+\{Number\} serial\+Number (optional) filter device list by a specific controller\textquotesingle{}s serial number.  \{Number\} module\+ID (optional) filter device list by a specific controller module\textquotesingle{}s ID.  \{Number\} controller\+ID (optional) filter device list by a specific controller\textquotesingle{}s ID.  \{Number\} class\+Code (optional) filter device list by a specific device classification.  Returns a list of devices. If no parameters are supplied, all devices are returned.  \{Number\} address Address of the module the device is connected to.  \{Number\} controller\+ID Controller ID of the controller the device is connected to.  \{Number\} controller\+Module\+ID Controller Module ID of the controller module the device is connected to.  \{Number\} device\+Class Device classification.  \{String\} device\+Description Device\textquotesingle{}s description.  \{Number\} device\+ID Device\textquotesingle{}s ID.  \{String\} device\+Name Device\textquotesingle{}s name  \{Number\} device\+State Device\textquotesingle{}s current state.  \{Number\} module\+Class Classification of the controller module to which the device is connected to.  \{Number\} port Port/pin the device is connected to.  \{Number\} serial\+Number Serial Number of the controller the device is connected to.  Example usage\+: \href{http://localhost:8080/api/device_list?controllerID=30}{\tt http\+://localhost\+:8080/api/device\+\_\+list?controller\+I\+D=30}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \mbox{[}\{ \char`\"{}address\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}controller\+I\+D\char`\"{}\+: \char`\"{}30\char`\"{}, \char`\"{}controller\+Module\+I\+D\char`\"{}\+: \char`\"{}8\char`\"{}, \char`\"{}device\+Class\char`\"{}\+: \char`\"{}5\char`\"{}, \char`\"{}device\+Description\char`\"{}\+: \char`\"{}\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}19\char`\"{}, \char`\"{}device\+Name\char`\"{}\+: \char`\"{}\+G\+K Mine Signal\char`\"{}, \char`\"{}device\+State\char`\"{}\+: 0, \char`\"{}module\+Class\char`\"{}\+: \char`\"{}5\char`\"{}, \char`\"{}port\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}serial\+Number\char`\"{}\+: \char`\"{}585680\char`\"{} \} \mbox{]}  \{get\} /api/device\+\_\+property\+\_\+list\+:device\+ID Get device\+Property entries for a given device  Get\+Device\+Property\+List  Device
+
+\{Number\} device\+ID device\textquotesingle{}s ID.  Returns a list of device\+Property entries for a given device..  \{Number\} device\+ID Device\textquotesingle{}s ID.  \{Number\} id device\+Property\textquotesingle{}s id.  \{Number\} key Device Property key.  \{Number\} value Device Property value.  Example usage\+: \href{http://localhost:8080/api/device_property_list?deviceID=1}{\tt http\+://localhost\+:8080/api/device\+\_\+property\+\_\+list?device\+I\+D=1}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \mbox{[}\{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}id\char`\"{}\+: \char`\"{}243\char`\"{}, \char`\"{}key\char`\"{}\+: \char`\"{}\+M\+O\+T\+O\+R\+P\+I\+N\char`\"{}, \char`\"{}value\char`\"{}\+: \char`\"{}1\char`\"{} \}, \{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}id\char`\"{}\+: \char`\"{}244\char`\"{}, \char`\"{}key\char`\"{}\+: \char`\"{}\+I\+N\+P\+U\+T\+P\+I\+N\char`\"{}, \char`\"{}value\char`\"{}\+: \char`\"{}1\char`\"{} \} \mbox{]}  \{get\} /api/send\+\_\+device\+\_\+config\+:device\+ID Reset device\textquotesingle{}s configuration  Device\+Config\+Reset  Device
+
+\{Number\} device\+ID (optional) The device\textquotesingle{}s id. If 0 or excluded, all devices will reset their configuration data.  Sends a S\+Y\+S\+\_\+\+R\+E\+S\+E\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+C\+O\+N\+F\+IG broadcast U\+DP message instructing the device(s) to re-\/download its configuration data.  Example usage\+: \href{http://localhost:8080/api/send_device_config?deviceID=1}{\tt http\+://localhost\+:8080/api/send\+\_\+device\+\_\+config?device\+I\+D=1}  \{get\} /api/copy\+\_\+device\+:device\+ID Copy a device\textquotesingle{}s data to a new device entry  Copy\+Device  Device
+
+\{Number\} device\+ID The device\textquotesingle{}s id to be coppied.  Creates a copy of an existing device. The new entry is an exact copy of the original except for the id field which is set to the new entry\textquotesingle{}s id value.  \{Number\} controller\+Module\+ID Controller Module\textquotesingle{}s ID to which the device is connected.  \{Number\} device\+Class Device\textquotesingle{}s classification.  \{String\} device\+Description Device\textquotesingle{}s description.  \{String\} device\+Name Device Device\textquotesingle{}s name.  \{Number\} id Device\textquotesingle{}s new ID.  \{Number\} port/pin Port to which the device is connected.  Example usage\+: \href{http://localhost:8080/api/copy_device?deviceID=1}{\tt http\+://localhost\+:8080/api/copy\+\_\+device?device\+I\+D=1}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \mbox{[}\{ \char`\"{}controller\+Module\+I\+D\char`\"{}\+: \char`\"{}4\char`\"{}, \char`\"{}device\+Class\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}device\+Description\char`\"{}\+: \char`\"{}\char`\"{}, \char`\"{}device\+Name\char`\"{}\+: \char`\"{}\+T\+Y30-\/1\char`\"{}, \char`\"{}id\char`\"{}\+: \char`\"{}82\char`\"{}, \char`\"{}port\char`\"{}\+: \char`\"{}0\char`\"{} \} \mbox{]}  \{get\} /api/notification/device Device Status Change  Device\+Status\+Change\+Notification  Notifications
+
+Notification message sent when a device\textquotesingle{}s state changes.  \{String\} url Notification url.  \{Number\} device\+ID Device\textquotesingle{}s ID.  \{Number\} device\+State Device\textquotesingle{}s new state  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \{ \char`\"{}url\char`\"{}\+: \char`\"{}/api/notification/device\char`\"{} \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}1\char`\"{} \char`\"{}device\+State\char`\"{}\+: \char`\"{}2\char`\"{} \} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+L\+C\+S\+Server/A\+P\+I\+Device.\+h\item 
+L\+C\+S\+Server/A\+P\+I\+Device.\+cpp\end{DoxyCompactItemize}

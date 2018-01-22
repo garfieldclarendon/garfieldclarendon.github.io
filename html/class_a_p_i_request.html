@@ -65,31 +65,83 @@ $(function() {
 <div class="title">APIRequest Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Contains information for a API web request.  
+ <a href="class_a_p_i_request.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_a_p_i_request_8h_source.html">APIRequest.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5c6b7f4e52cf0d36bd3bb2280ab59331"><td class="memItemLeft" align="right" valign="top"><a id="a5c6b7f4e52cf0d36bd3bb2280ab59331"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>APIRequest</b> (NetActionType actionType, const QUrl url)</td></tr>
+<tr class="memitem:aa1b6f8f309547967edbfc2f6636df3a4"><td class="memItemLeft" align="right" valign="top"><a id="aa1b6f8f309547967edbfc2f6636df3a4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_request.html#aa1b6f8f309547967edbfc2f6636df3a4">APIRequest</a> (void)</td></tr>
+<tr class="memdesc:aa1b6f8f309547967edbfc2f6636df3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contstructor. <br /></td></tr>
+<tr class="separator:aa1b6f8f309547967edbfc2f6636df3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c6b7f4e52cf0d36bd3bb2280ab59331"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_request.html#a5c6b7f4e52cf0d36bd3bb2280ab59331">APIRequest</a> (NetActionType actionType, const QUrl url)</td></tr>
 <tr class="separator:a5c6b7f4e52cf0d36bd3bb2280ab59331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b237561a193b67440be9787117f90d1"><td class="memItemLeft" align="right" valign="top"><a id="a0b237561a193b67440be9787117f90d1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>APIRequest</b> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;other)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_request.html#a0b237561a193b67440be9787117f90d1">APIRequest</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;other)</td></tr>
+<tr class="memdesc:a0b237561a193b67440be9787117f90d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy Contstructor. <br /></td></tr>
 <tr class="separator:a0b237561a193b67440be9787117f90d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2d4cf9cce8e40de3158b681d4402551"><td class="memItemLeft" align="right" valign="top"><a id="ae2d4cf9cce8e40de3158b681d4402551"></a>
-NetActionType&#160;</td><td class="memItemRight" valign="bottom"><b>getNetActionType</b> (void) const</td></tr>
+NetActionType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_request.html#ae2d4cf9cce8e40de3158b681d4402551">getNetActionType</a> (void) const</td></tr>
+<tr class="memdesc:ae2d4cf9cce8e40de3158b681d4402551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the HTTP action type. <br /></td></tr>
 <tr class="separator:ae2d4cf9cce8e40de3158b681d4402551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4f5dc1d54250fc927872cfcc59cc3cc"><td class="memItemLeft" align="right" valign="top"><a id="ab4f5dc1d54250fc927872cfcc59cc3cc"></a>
-QUrl&#160;</td><td class="memItemRight" valign="bottom"><b>getUrl</b> (void) const</td></tr>
+QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_request.html#ab4f5dc1d54250fc927872cfcc59cc3cc">getUrl</a> (void) const</td></tr>
+<tr class="memdesc:ab4f5dc1d54250fc927872cfcc59cc3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the requesting URL. <br /></td></tr>
 <tr class="separator:ab4f5dc1d54250fc927872cfcc59cc3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af70046cd59021cc3877f380ca46ac6e7"><td class="memItemLeft" align="right" valign="top"><a id="af70046cd59021cc3877f380ca46ac6e7"></a>
-QByteArray&#160;</td><td class="memItemRight" valign="bottom"><b>getPayload</b> (void) const</td></tr>
+QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_request.html#af70046cd59021cc3877f380ca46ac6e7">getPayload</a> (void) const</td></tr>
+<tr class="memdesc:af70046cd59021cc3877f380ca46ac6e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access function for a message payload. Usually a JSON document. <br /></td></tr>
 <tr class="separator:af70046cd59021cc3877f380ca46ac6e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d16b4ff383297fff242db0b71139c2b"><td class="memItemLeft" align="right" valign="top"><a id="a2d16b4ff383297fff242db0b71139c2b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPayload</b> (const QByteArray &amp;value)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_request.html#a2d16b4ff383297fff242db0b71139c2b">setPayload</a> (const QByteArray &amp;value)</td></tr>
+<tr class="memdesc:a2d16b4ff383297fff242db0b71139c2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the message payload. <br /></td></tr>
 <tr class="separator:a2d16b4ff383297fff242db0b71139c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e07ea518a0bb0a750ec8f2d58e9acc5"><td class="memItemLeft" align="right" valign="top"><a id="a5e07ea518a0bb0a750ec8f2d58e9acc5"></a>
-<a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;other)</td></tr>
+<a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_request.html#a5e07ea518a0bb0a750ec8f2d58e9acc5">operator=</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;other)</td></tr>
+<tr class="memdesc:a5e07ea518a0bb0a750ec8f2d58e9acc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator. <br /></td></tr>
 <tr class="separator:a5e07ea518a0bb0a750ec8f2d58e9acc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains information for a API web request. </p>
+<p><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> This class contains all information as it relates to a REST API web request. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5c6b7f4e52cf0d36bd3bb2280ab59331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c6b7f4e52cf0d36bd3bb2280ab59331">&#9670;&nbsp;</a></span>APIRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">APIRequest::APIRequest </td>
+          <td>(</td>
+          <td class="paramtype">NetActionType&#160;</td>
+          <td class="paramname"><em>actionType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QUrl&#160;</td>
+          <td class="paramname"><em>url</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Contstructor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NetActionType</td><td>HTTP action type  QUrl Full url of the request including parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>LCSServer/<a class="el" href="_a_p_i_request_8h_source.html">APIRequest.h</a></li>
 <li>LCSServer/APIRequest.cpp</li>

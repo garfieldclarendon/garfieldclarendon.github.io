@@ -2,6 +2,11 @@
 \label{class_controller_manager}\index{Controller\+Manager@{Controller\+Manager}}
 
 
+Singleton class manitoring the current state of controllers.  
+
+
+
+
 {\ttfamily \#include $<$Controller\+Manager.\+h$>$}
 
 Inheritance diagram for Controller\+Manager\+:\begin{figure}[H]
@@ -14,56 +19,66 @@ Inheritance diagram for Controller\+Manager\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_controller_manager_a5b496ff2650f4048dc91de9cdeea43c8}\label{class_controller_manager_a5b496ff2650f4048dc91de9cdeea43c8}} 
-unsigned long {\bfseries get\+Serial\+Number} (int controller\+ID)
-\end{DoxyCompactItemize}
+unsigned long \hyperlink{class_controller_manager_a5b496ff2650f4048dc91de9cdeea43c8}{get\+Serial\+Number} (int controller\+ID)
+\begin{DoxyCompactList}\small\item\em Returns the serial number for the given controller\+ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_controller_manager_a1392fb567beb3f56cfa785b0e22a3f66}\label{class_controller_manager_a1392fb567beb3f56cfa785b0e22a3f66}} 
-void {\bfseries controller\+Connected} (int index)
-\item 
-\mbox{\Hypertarget{class_controller_manager_ab8ba90b458fd9d908750780fbec96648}\label{class_controller_manager_ab8ba90b458fd9d908750780fbec96648}} 
-void {\bfseries controller\+Disconnected} (int index)
-\item 
-\mbox{\Hypertarget{class_controller_manager_a9805e7ba56ec76fe4f6157c2efa84164}\label{class_controller_manager_a9805e7ba56ec76fe4f6157c2efa84164}} 
-void {\bfseries controller\+Added} (int serial\+Number)
-\item 
-\mbox{\Hypertarget{class_controller_manager_a1c7c0a7ede1844ebddd7c3f215fe9377}\label{class_controller_manager_a1c7c0a7ede1844ebddd7c3f215fe9377}} 
-void {\bfseries controller\+Removed} (int serial\+Number)
-\item 
-\mbox{\Hypertarget{class_controller_manager_a179fc638c42252b49c845d0d0e2add56}\label{class_controller_manager_a179fc638c42252b49c845d0d0e2add56}} 
-void {\bfseries send\+Notification\+Message} (const Q\+String \&uri, const Q\+Json\+Object \&obj)
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_controller_manager_a38c42bcc777c296ff2e0e4c4099dbdf7}\label{class_controller_manager_a38c42bcc777c296ff2e0e4c4099dbdf7}} 
+void \hyperlink{class_controller_manager_a38c42bcc777c296ff2e0e4c4099dbdf7}{controller\+Added} (long serial\+Number)
+\begin{DoxyCompactList}\small\item\em Emitted when a S\+Y\+S\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+N\+L\+I\+NE U\+DP message is received. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_controller_manager_aaca6003c9cc1a0c184932fd4b2649b8a}\label{class_controller_manager_aaca6003c9cc1a0c184932fd4b2649b8a}} 
+void \hyperlink{class_controller_manager_aaca6003c9cc1a0c184932fd4b2649b8a}{controller\+Removed} (long serial\+Number)
+\begin{DoxyCompactList}\small\item\em Currently, this signal is not emitted as there is no way (currently) for the detection of a controller going offline. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_controller_manager_ad065b1ffd21f4f5e2a84b4ce15bf404a}\label{class_controller_manager_ad065b1ffd21f4f5e2a84b4ce15bf404a}} 
+void \hyperlink{class_controller_manager_ad065b1ffd21f4f5e2a84b4ce15bf404a}{controller\+Status\+Changed} (long serial\+Number, \hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+Status\+Enum} new\+Status)
+\begin{DoxyCompactList}\small\item\em Emitted when a S\+Y\+S\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+N\+L\+I\+NE and S\+Y\+S\+\_\+\+R\+E\+S\+T\+A\+R\+T\+I\+NG U\+DP messages are received. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_controller_manager_a1cc2f2da0ea22cc2a19138c0cb91ada5}\label{class_controller_manager_a1cc2f2da0ea22cc2a19138c0cb91ada5}} 
-int {\bfseries get\+Connection\+Serial\+Number} (int index) const
-\item 
-\mbox{\Hypertarget{class_controller_manager_a4e076c28025a9601dd7617672567b0a7}\label{class_controller_manager_a4e076c28025a9601dd7617672567b0a7}} 
-void {\bfseries get\+Connected\+Info} (int serial\+Number, Q\+String \&version, \hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+Status\+Enum} \&status)
+\mbox{\Hypertarget{class_controller_manager_a74516f22a00c40a20dbd08ffcd8777d6}\label{class_controller_manager_a74516f22a00c40a20dbd08ffcd8777d6}} 
+\hyperlink{class_controller_manager_a74516f22a00c40a20dbd08ffcd8777d6}{$\sim$\+Controller\+Manager} (void)
+\begin{DoxyCompactList}\small\item\em Deststructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_controller_manager_a140123d13332dba6947846924c666714}\label{class_controller_manager_a140123d13332dba6947846924c666714}} 
+long \hyperlink{class_controller_manager_a140123d13332dba6947846924c666714}{get\+Connection\+Serial\+Number} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns the controller\textquotesingle{}s serial number at the given index. \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_manager_a09aae80f5783ab2cb0da0ba39144ddf6}{get\+Connected\+Info} (long serial\+Number, Q\+String \&version, \hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+Status\+Enum} \&status)
 \item 
 \mbox{\Hypertarget{class_controller_manager_ae195bc494eb3d3afeabc4e71471497d3}\label{class_controller_manager_ae195bc494eb3d3afeabc4e71471497d3}} 
-int {\bfseries get\+Connection\+Count} (void) const
-\end{DoxyCompactItemize}
+int \hyperlink{class_controller_manager_ae195bc494eb3d3afeabc4e71471497d3}{get\+Connection\+Count} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the count of connected controllers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_controller_manager_a3f4999812436ab587f8ec2ee11128c51}\label{class_controller_manager_a3f4999812436ab587f8ec2ee11128c51}} 
-static \hyperlink{class_controller_manager}{Controller\+Manager} $\ast$ {\bfseries instance} (void)
-\end{DoxyCompactItemize}
+static \hyperlink{class_controller_manager}{Controller\+Manager} $\ast$ \hyperlink{class_controller_manager_a3f4999812436ab587f8ec2ee11128c51}{instance} (void)
+\begin{DoxyCompactList}\small\item\em Returns/creates the singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Slots}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_controller_manager_a5e9480ad4b88ff536ab60dbc9cb6619f}\label{class_controller_manager_a5e9480ad4b88ff536ab60dbc9cb6619f}} 
-void {\bfseries new\+U\+D\+P\+Message} (const \hyperlink{class_u_d_p_message}{U\+D\+P\+Message} \&message)
-\end{DoxyCompactItemize}
+void \hyperlink{class_controller_manager_a5e9480ad4b88ff536ab60dbc9cb6619f}{new\+U\+D\+P\+Message} (const \hyperlink{class_u_d_p_message}{U\+D\+P\+Message} \&message)
+\begin{DoxyCompactList}\small\item\em U\+DP Message handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\{get\} /api/notification/controller Controller Status Change  Controller\+Status\+Change\+Notification  Notifications
+Singleton class manitoring the current state of controllers. 
 
-Notification message sent when a controller\textquotesingle{}s state changes (online, offline or restarting)  \{Number\} serial\+Number Controller\textquotesingle{}s serial number.  \{Number=1,2,3\} status Controller\textquotesingle{}s new status. 1 = Offline, 2 = Online, 3 = Restarting  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \{ \char`\"{}serial\+Number\char`\"{}\+: \char`\"{}1546165\char`\"{} \char`\"{}status\char`\"{}\+: \char`\"{}2\char`\"{} \} 
+\hyperlink{class_controller_manager}{Controller\+Manager} This class monitors U\+DP messages collecting information about the current state of L\+CS controllers. When a controller\textquotesingle{}s online status changes, a controller\+Status\+Changed signal is emitted. On a S\+Y\+S\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+N\+L\+I\+NE message, the controller\+Added signal is emitted. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_manager_a09aae80f5783ab2cb0da0ba39144ddf6}\label{class_controller_manager_a09aae80f5783ab2cb0da0ba39144ddf6}} 
+\index{Controller\+Manager@{Controller\+Manager}!get\+Connected\+Info@{get\+Connected\+Info}}
+\index{get\+Connected\+Info@{get\+Connected\+Info}!Controller\+Manager@{Controller\+Manager}}
+\subsubsection{\texorpdfstring{get\+Connected\+Info()}{getConnectedInfo()}}
+{\footnotesize\ttfamily void Controller\+Manager\+::get\+Connected\+Info (\begin{DoxyParamCaption}\item[{long}]{serial\+Number,  }\item[{Q\+String \&}]{version,  }\item[{\hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+Status\+Enum} \&}]{status }\end{DoxyParamCaption})}
+
+Fills version and status with the current information for a controller. 
+\begin{DoxyParams}{Parameters}
+{\em serial\+Number} & long Serial number of the controller to lookup. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

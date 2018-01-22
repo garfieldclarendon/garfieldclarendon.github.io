@@ -1,29 +1,59 @@
 \hypertarget{class_a_p_i_request}{}\section{A\+P\+I\+Request Class Reference}
 \label{class_a_p_i_request}\index{A\+P\+I\+Request@{A\+P\+I\+Request}}
+
+
+Contains information for a A\+PI web request.  
+
+
+
+
+{\ttfamily \#include $<$A\+P\+I\+Request.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_p_i_request_a5c6b7f4e52cf0d36bd3bb2280ab59331}\label{class_a_p_i_request_a5c6b7f4e52cf0d36bd3bb2280ab59331}} 
-{\bfseries A\+P\+I\+Request} (Net\+Action\+Type action\+Type, const Q\+Url url)
+\mbox{\Hypertarget{class_a_p_i_request_aa1b6f8f309547967edbfc2f6636df3a4}\label{class_a_p_i_request_aa1b6f8f309547967edbfc2f6636df3a4}} 
+\hyperlink{class_a_p_i_request_aa1b6f8f309547967edbfc2f6636df3a4}{A\+P\+I\+Request} (void)
+\begin{DoxyCompactList}\small\item\em Contstructor. \end{DoxyCompactList}\item 
+\hyperlink{class_a_p_i_request_a5c6b7f4e52cf0d36bd3bb2280ab59331}{A\+P\+I\+Request} (Net\+Action\+Type action\+Type, const Q\+Url url)
 \item 
 \mbox{\Hypertarget{class_a_p_i_request_a0b237561a193b67440be9787117f90d1}\label{class_a_p_i_request_a0b237561a193b67440be9787117f90d1}} 
-{\bfseries A\+P\+I\+Request} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&other)
-\item 
+\hyperlink{class_a_p_i_request_a0b237561a193b67440be9787117f90d1}{A\+P\+I\+Request} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&other)
+\begin{DoxyCompactList}\small\item\em Copy Contstructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_request_ae2d4cf9cce8e40de3158b681d4402551}\label{class_a_p_i_request_ae2d4cf9cce8e40de3158b681d4402551}} 
-Net\+Action\+Type {\bfseries get\+Net\+Action\+Type} (void) const
-\item 
+Net\+Action\+Type \hyperlink{class_a_p_i_request_ae2d4cf9cce8e40de3158b681d4402551}{get\+Net\+Action\+Type} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the H\+T\+TP action type. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_request_ab4f5dc1d54250fc927872cfcc59cc3cc}\label{class_a_p_i_request_ab4f5dc1d54250fc927872cfcc59cc3cc}} 
-Q\+Url {\bfseries get\+Url} (void) const
-\item 
+Q\+Url \hyperlink{class_a_p_i_request_ab4f5dc1d54250fc927872cfcc59cc3cc}{get\+Url} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the requesting U\+RL. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_request_af70046cd59021cc3877f380ca46ac6e7}\label{class_a_p_i_request_af70046cd59021cc3877f380ca46ac6e7}} 
-Q\+Byte\+Array {\bfseries get\+Payload} (void) const
-\item 
+Q\+Byte\+Array \hyperlink{class_a_p_i_request_af70046cd59021cc3877f380ca46ac6e7}{get\+Payload} (void) const
+\begin{DoxyCompactList}\small\item\em Access function for a message payload. Usually a J\+S\+ON document. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_request_a2d16b4ff383297fff242db0b71139c2b}\label{class_a_p_i_request_a2d16b4ff383297fff242db0b71139c2b}} 
-void {\bfseries set\+Payload} (const Q\+Byte\+Array \&value)
-\item 
+void \hyperlink{class_a_p_i_request_a2d16b4ff383297fff242db0b71139c2b}{set\+Payload} (const Q\+Byte\+Array \&value)
+\begin{DoxyCompactList}\small\item\em Sets the message payload. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_a_p_i_request_a5e07ea518a0bb0a750ec8f2d58e9acc5}\label{class_a_p_i_request_a5e07ea518a0bb0a750ec8f2d58e9acc5}} 
-\hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \& {\bfseries operator=} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&other)
-\end{DoxyCompactItemize}
+\hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \& \hyperlink{class_a_p_i_request_a5e07ea518a0bb0a750ec8f2d58e9acc5}{operator=} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains information for a A\+PI web request. 
+
+\hyperlink{class_a_p_i_request}{A\+P\+I\+Request} This class contains all information as it relates to a R\+E\+ST A\+PI web request. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_p_i_request_a5c6b7f4e52cf0d36bd3bb2280ab59331}\label{class_a_p_i_request_a5c6b7f4e52cf0d36bd3bb2280ab59331}} 
+\index{A\+P\+I\+Request@{A\+P\+I\+Request}!A\+P\+I\+Request@{A\+P\+I\+Request}}
+\index{A\+P\+I\+Request@{A\+P\+I\+Request}!A\+P\+I\+Request@{A\+P\+I\+Request}}
+\subsubsection{\texorpdfstring{A\+P\+I\+Request()}{APIRequest()}}
+{\footnotesize\ttfamily A\+P\+I\+Request\+::\+A\+P\+I\+Request (\begin{DoxyParamCaption}\item[{Net\+Action\+Type}]{action\+Type,  }\item[{const Q\+Url}]{url }\end{DoxyParamCaption})}
+
+Contstructor 
+\begin{DoxyParams}{Parameters}
+{\em Net\+Action\+Type} & H\+T\+TP action type  Q\+Url Full url of the request including parameters \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

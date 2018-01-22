@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Singleton class manitoring the current state of controllers.  
+ <a href="class_controller_manager.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_controller_manager_8h_source.html">ControllerManager.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ControllerManager:</div>
@@ -83,55 +86,101 @@ Inheritance diagram for ControllerManager:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:a5b496ff2650f4048dc91de9cdeea43c8"><td class="memItemLeft" align="right" valign="top"><a id="a5b496ff2650f4048dc91de9cdeea43c8"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>getSerialNumber</b> (int controllerID)</td></tr>
+unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_manager.html#a5b496ff2650f4048dc91de9cdeea43c8">getSerialNumber</a> (int controllerID)</td></tr>
+<tr class="memdesc:a5b496ff2650f4048dc91de9cdeea43c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the serial number for the given controllerID. <br /></td></tr>
 <tr class="separator:a5b496ff2650f4048dc91de9cdeea43c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a1392fb567beb3f56cfa785b0e22a3f66"><td class="memItemLeft" align="right" valign="top"><a id="a1392fb567beb3f56cfa785b0e22a3f66"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>controllerConnected</b> (int index)</td></tr>
-<tr class="separator:a1392fb567beb3f56cfa785b0e22a3f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8ba90b458fd9d908750780fbec96648"><td class="memItemLeft" align="right" valign="top"><a id="ab8ba90b458fd9d908750780fbec96648"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>controllerDisconnected</b> (int index)</td></tr>
-<tr class="separator:ab8ba90b458fd9d908750780fbec96648"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9805e7ba56ec76fe4f6157c2efa84164"><td class="memItemLeft" align="right" valign="top"><a id="a9805e7ba56ec76fe4f6157c2efa84164"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>controllerAdded</b> (int serialNumber)</td></tr>
-<tr class="separator:a9805e7ba56ec76fe4f6157c2efa84164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c7c0a7ede1844ebddd7c3f215fe9377"><td class="memItemLeft" align="right" valign="top"><a id="a1c7c0a7ede1844ebddd7c3f215fe9377"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>controllerRemoved</b> (int serialNumber)</td></tr>
-<tr class="separator:a1c7c0a7ede1844ebddd7c3f215fe9377"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a179fc638c42252b49c845d0d0e2add56"><td class="memItemLeft" align="right" valign="top"><a id="a179fc638c42252b49c845d0d0e2add56"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendNotificationMessage</b> (const QString &amp;uri, const QJsonObject &amp;obj)</td></tr>
-<tr class="separator:a179fc638c42252b49c845d0d0e2add56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38c42bcc777c296ff2e0e4c4099dbdf7"><td class="memItemLeft" align="right" valign="top"><a id="a38c42bcc777c296ff2e0e4c4099dbdf7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_manager.html#a38c42bcc777c296ff2e0e4c4099dbdf7">controllerAdded</a> (long serialNumber)</td></tr>
+<tr class="memdesc:a38c42bcc777c296ff2e0e4c4099dbdf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when a SYS_CONTROLLER_ONLINE UDP message is received. <br /></td></tr>
+<tr class="separator:a38c42bcc777c296ff2e0e4c4099dbdf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca6003c9cc1a0c184932fd4b2649b8a"><td class="memItemLeft" align="right" valign="top"><a id="aaca6003c9cc1a0c184932fd4b2649b8a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_manager.html#aaca6003c9cc1a0c184932fd4b2649b8a">controllerRemoved</a> (long serialNumber)</td></tr>
+<tr class="memdesc:aaca6003c9cc1a0c184932fd4b2649b8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently, this signal is not emitted as there is no way (currently) for the detection of a controller going offline. <br /></td></tr>
+<tr class="separator:aaca6003c9cc1a0c184932fd4b2649b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad065b1ffd21f4f5e2a84b4ce15bf404a"><td class="memItemLeft" align="right" valign="top"><a id="ad065b1ffd21f4f5e2a84b4ce15bf404a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_manager.html#ad065b1ffd21f4f5e2a84b4ce15bf404a">controllerStatusChanged</a> (long serialNumber, <a class="el" href="_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480a">ControllerStatusEnum</a> newStatus)</td></tr>
+<tr class="memdesc:ad065b1ffd21f4f5e2a84b4ce15bf404a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when a SYS_CONTROLLER_ONLINE and SYS_RESTARTING UDP messages are received. <br /></td></tr>
+<tr class="separator:ad065b1ffd21f4f5e2a84b4ce15bf404a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1cc2f2da0ea22cc2a19138c0cb91ada5"><td class="memItemLeft" align="right" valign="top"><a id="a1cc2f2da0ea22cc2a19138c0cb91ada5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getConnectionSerialNumber</b> (int index) const</td></tr>
-<tr class="separator:a1cc2f2da0ea22cc2a19138c0cb91ada5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e076c28025a9601dd7617672567b0a7"><td class="memItemLeft" align="right" valign="top"><a id="a4e076c28025a9601dd7617672567b0a7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>getConnectedInfo</b> (int serialNumber, QString &amp;version, <a class="el" href="_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480a">ControllerStatusEnum</a> &amp;status)</td></tr>
-<tr class="separator:a4e076c28025a9601dd7617672567b0a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74516f22a00c40a20dbd08ffcd8777d6"><td class="memItemLeft" align="right" valign="top"><a id="a74516f22a00c40a20dbd08ffcd8777d6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_manager.html#a74516f22a00c40a20dbd08ffcd8777d6">~ControllerManager</a> (void)</td></tr>
+<tr class="memdesc:a74516f22a00c40a20dbd08ffcd8777d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deststructor. <br /></td></tr>
+<tr class="separator:a74516f22a00c40a20dbd08ffcd8777d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a140123d13332dba6947846924c666714"><td class="memItemLeft" align="right" valign="top"><a id="a140123d13332dba6947846924c666714"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_manager.html#a140123d13332dba6947846924c666714">getConnectionSerialNumber</a> (int index) const</td></tr>
+<tr class="memdesc:a140123d13332dba6947846924c666714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the controller's serial number at the given index. <br /></td></tr>
+<tr class="separator:a140123d13332dba6947846924c666714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09aae80f5783ab2cb0da0ba39144ddf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_manager.html#a09aae80f5783ab2cb0da0ba39144ddf6">getConnectedInfo</a> (long serialNumber, QString &amp;version, <a class="el" href="_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480a">ControllerStatusEnum</a> &amp;status)</td></tr>
+<tr class="separator:a09aae80f5783ab2cb0da0ba39144ddf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae195bc494eb3d3afeabc4e71471497d3"><td class="memItemLeft" align="right" valign="top"><a id="ae195bc494eb3d3afeabc4e71471497d3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getConnectionCount</b> (void) const</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_manager.html#ae195bc494eb3d3afeabc4e71471497d3">getConnectionCount</a> (void) const</td></tr>
+<tr class="memdesc:ae195bc494eb3d3afeabc4e71471497d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of connected controllers. <br /></td></tr>
 <tr class="separator:ae195bc494eb3d3afeabc4e71471497d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f4999812436ab587f8ec2ee11128c51"><td class="memItemLeft" align="right" valign="top"><a id="a3f4999812436ab587f8ec2ee11128c51"></a>
-static <a class="el" href="class_controller_manager.html">ControllerManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>instance</b> (void)</td></tr>
+static <a class="el" href="class_controller_manager.html">ControllerManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_manager.html#a3f4999812436ab587f8ec2ee11128c51">instance</a> (void)</td></tr>
+<tr class="memdesc:a3f4999812436ab587f8ec2ee11128c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns/creates the singleton instance. <br /></td></tr>
 <tr class="separator:a3f4999812436ab587f8ec2ee11128c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-slots"></a>
 Protected Slots</h2></td></tr>
 <tr class="memitem:a5e9480ad4b88ff536ab60dbc9cb6619f"><td class="memItemLeft" align="right" valign="top"><a id="a5e9480ad4b88ff536ab60dbc9cb6619f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>newUDPMessage</b> (const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;message)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_manager.html#a5e9480ad4b88ff536ab60dbc9cb6619f">newUDPMessage</a> (const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;message)</td></tr>
+<tr class="memdesc:a5e9480ad4b88ff536ab60dbc9cb6619f"><td class="mdescLeft">&#160;</td><td class="mdescRight">UDP Message handler. <br /></td></tr>
 <tr class="separator:a5e9480ad4b88ff536ab60dbc9cb6619f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>{get} /api/notification/controller Controller Status Change  ControllerStatusChangeNotification  Notifications</p>
-<p>Notification message sent when a controller's state changes (online, offline or restarting)  {Number} serialNumber Controller's serial number.  {Number=1,2,3} status Controller's new status. 1 = Offline, 2 = Online, 3 = Restarting  {json} Success-Response: HTTP/1.1 200 OK { "serialNumber": "1546165" "status": "2" } </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Singleton class manitoring the current state of controllers. </p>
+<p><a class="el" href="class_controller_manager.html" title="Singleton class manitoring the current state of controllers. ">ControllerManager</a> This class monitors UDP messages collecting information about the current state of LCS controllers. When a controller's online status changes, a controllerStatusChanged signal is emitted. On a SYS_CONTROLLER_ONLINE message, the controllerAdded signal is emitted. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a09aae80f5783ab2cb0da0ba39144ddf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09aae80f5783ab2cb0da0ba39144ddf6">&#9670;&nbsp;</a></span>getConnectedInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControllerManager::getConnectedInfo </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>serialNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString &amp;&#160;</td>
+          <td class="paramname"><em>version</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480a">ControllerStatusEnum</a> &amp;&#160;</td>
+          <td class="paramname"><em>status</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fills version and status with the current information for a controller. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serialNumber</td><td>long Serial number of the controller to lookup. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>LCSServer/<a class="el" href="_controller_manager_8h_source.html">ControllerManager.h</a></li>
 <li>LCSServer/ControllerManager.cpp</li>
 </ul>
