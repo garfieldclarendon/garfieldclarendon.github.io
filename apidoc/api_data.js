@@ -1,6 +1,186 @@
 define({ "api": [
   {
     "type": "get",
+    "url": "/api/notification/controller",
+    "title": "Controller Status Change",
+    "name": "ControllerStatusChangeNotification",
+    "group": "APINotifications",
+    "description": "<p>Notification message sent when a controller's state changes (online, offline or restarting)</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "url",
+            "description": "<p>Notification url.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "serialNumber",
+            "description": "<p>Controller's serial number.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "1",
+              "2",
+              "3"
+            ],
+            "optional": false,
+            "field": "status",
+            "description": "<p>Controller's new status.  1 = Offline, 2 = Online, 3 = Restarting</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n        \"url\": \"/api/notification/controller\"\n        \"serialNumber\": \"1546165\"\n        \"status\": \"2\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "LCSServer/APIController.h",
+    "groupTitle": "Notifications",
+    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification message, this connection must remain open/connected during the entire session.</p>"
+  },
+  {
+    "type": "get",
+    "url": "/api/notification/device",
+    "title": "Device Status Change",
+    "name": "DeviceStatusChangeNotification",
+    "group": "APINotifications",
+    "description": "<p>Notification message sent when a device's state changes.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "url",
+            "description": "<p>Notification url.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "deviceID",
+            "description": "<p>Device's ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "deviceState",
+            "description": "<p>Device's new state</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "locked",
+            "description": "<p>Device's locked state.  0 = unlocked, 1 = locked.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n        \"url\": \"/api/notification/device\"\n        \"deviceID\": \"1\"\n        \"deviceState\": \"2\"\n        \"locked\": \"0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "LCSServer/APIDevice.h",
+    "groupTitle": "Notifications",
+    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification message, this connection must remain open/connected during the entire session.</p>"
+  },
+  {
+    "type": "get",
+    "url": "/api/notification/route",
+    "title": "Route Status Change",
+    "name": "RouteStatusChangeNotification",
+    "group": "APINotifications",
+    "description": "<p>Notification message sent when a route's state changes.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "url",
+            "description": "<p>Notification url.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "routeID",
+            "description": "<p>Route's ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "isActive",
+            "description": "<p>Flag indicating if the route is active. 0 = not active, 1 = active.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "isLocked",
+            "description": "<p>Flag indicating if the route is currently locked.  0 = not locked, 1 = locked</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "canLock",
+            "description": "<p>Flag indicating if the lock is allowed to be locked. 0 = cannot be locked, 1 = can be locked.  If any of the turnouts contained in the route are currently in a locked state, the route cannot be locked.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n        \"url\": \"/api/notification/device\"\n        \"deviceID\": \"1\"\n        \"deviceState\": \"2\"\n        \"locked\": \"0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "LCSServer/APIRoute.h",
+    "groupTitle": "Notifications",
+    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification message, this connection must remain open/connected during the entire session.</p>"
+  },
+  {
+    "type": "get",
     "url": "/controller/config:serialNumber",
     "title": "Download Controller Configuration",
     "name": "ControllerConfiguration",
@@ -111,7 +291,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "serialNumber",
             "description": "<p>(optional) The controller's serial number.  If 0 or excluded, all controllers will delete their configuration data.</p>"
           }
@@ -142,7 +322,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "serialNumber",
             "description": "<p>(optional)  The controller's serial number.  If 0 or excluded, all controllers will delete their controllers-to-notify list.</p>"
           }
@@ -173,7 +353,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "controllerID",
             "description": "<p>(optional) The controller's ID.</p>"
           }
@@ -354,7 +534,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "controllerID",
             "description": "<p>(optional) The controller's ID.</p>"
           }
@@ -444,7 +624,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "serialNumber",
             "description": "<p>(optional) The controller's serial number.  If 0 or excluded, all controllers will restart.</p>"
           }
@@ -659,7 +839,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "deviceID",
             "description": "<p>(optional) The device's id.  If 0 or excluded, all devices will reset their configuration data.</p>"
           }
@@ -690,28 +870,28 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "serialNumber",
             "description": "<p>(optional) filter device list by a specific controller's serial number.</p>"
           },
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "moduleID",
             "description": "<p>(optional) filter device list by a specific controller module's ID.</p>"
           },
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "controllerID",
             "description": "<p>(optional) filter device list by a specific controller's ID.</p>"
           },
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "classCode",
             "description": "<p>(optional) filter device list by a specific device classification.</p>"
           }
@@ -949,7 +1129,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "fieldName",
             "description": "<p>(optional) Any combination of FieldName=value pairs can be passed to filter the list returned.  Multiple field/value pairs are joined as an &quot;AND&quot; in the generated WHERE clause.</p>"
           }
@@ -994,101 +1174,6 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "LCSServer/APIEntity.h",
     "groupTitle": "Entity"
-  },
-  {
-    "type": "get",
-    "url": "/api/notification/controller",
-    "title": "Controller Status Change",
-    "name": "ControllerStatusChangeNotification",
-    "group": "Notifications",
-    "description": "<p>Notification message sent when a controller's state changes (online, offline or restarting)</p>",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "url",
-            "description": "<p>Notification url.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "serialNumber",
-            "description": "<p>Controller's serial number.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "allowedValues": [
-              "1",
-              "2",
-              "3"
-            ],
-            "optional": false,
-            "field": "status",
-            "description": "<p>Controller's new status.  1 = Offline, 2 = Online, 3 = Restarting</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n        \"url\": \"/api/notification/controller\"\n        \"serialNumber\": \"1546165\"\n        \"status\": \"2\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "LCSServer/APIController.h",
-    "groupTitle": "Notifications"
-  },
-  {
-    "type": "get",
-    "url": "/api/notification/device",
-    "title": "Device Status Change",
-    "name": "DeviceStatusChangeNotification",
-    "group": "Notifications",
-    "description": "<p>Notification message sent when a device's state changes.</p>",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "url",
-            "description": "<p>Notification url.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "deviceID",
-            "description": "<p>Device's ID.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "deviceState",
-            "description": "<p>Device's new state</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n        \"url\": \"/api/notification/device\"\n        \"deviceID\": \"1\"\n        \"deviceState\": \"2\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "LCSServer/APIDevice.h",
-    "groupTitle": "Notifications"
   },
   {
     "type": "get",
@@ -1314,6 +1399,90 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/api/lock_device:deviceID,lock,redMode,greenMode,yellowMode",
+    "title": "Lock Signal",
+    "name": "LockSignal",
+    "group": "Signal",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "deviceID",
+            "description": "<p>The signal's Device ID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "lock",
+            "description": "<p>Flag which unlocks or locks the signal to its current aspect.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
+            "optional": true,
+            "field": "redMode",
+            "description": "<p>(optional) Red LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
+            "optional": true,
+            "field": "greenMode",
+            "description": "<p>(optional) Green LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
+            "optional": true,
+            "field": "yellowMode",
+            "description": "<p>(optional) Yellow LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Locks/unlocks the signal.  If the lock parameter is set to 1, and redMode, greenMode and/or yellowMode are supplied, the signal's aspect is first updated to values provided and then locked.  If all three modes are not supplied, the missing modes will be set to 0 = off.  If no LED modes are supplied, the signal's current pin settings are &quot;locked&quot; as is.</p>",
+    "examples": [
+      {
+        "title": "In this example, Signal 21 is locked and its aspect set to flashing yellow.",
+        "content": "http://localhost:8080/api/lock_device?deviceID=21&lock=1&yellowMode=2",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "LCSServer/APISignal.h",
+    "groupTitle": "Signal"
+  },
+  {
+    "type": "get",
     "url": "/api/signal_condition_list:aspectID",
     "title": "Aspect Condition List",
     "name": "SignalAspectConditionList",
@@ -1331,7 +1500,7 @@ define({ "api": [
         ]
       }
     },
-    "description": "<p>Returns a list conditions that must be met for the aspect to be valid (selected).  All conditions in this list are evaluated by comparing the device's current state specified by deviceID to the entry's deviceState using the conditionOperand.  If the comparison is successful the Signal Condition is considered to be true/valid.  All conditions in the list must evaluate to true/valid for the aspect to be selected.</p>",
+    "description": "<p>Returns a list conditions that must be met for the aspect to be valid (selected).  All conditions in this list are evaluated by comparing the device's current state specified by deviceID to the entry's deviceState using the conditionOperand (equals or not equals).  If the comparison is successful the Signal Condition is considered to be true/valid.  All conditions in this list must evaluate to true for the aspect to be selected.</p>",
     "success": {
       "fields": {
         "Success 200": [
@@ -1349,11 +1518,6 @@ define({ "api": [
           {
             "group": "Success 200",
             "type": "Number",
-            "allowedValues": [
-              "0",
-              "1",
-              "2"
-            ],
             "optional": false,
             "field": "deviceID",
             "description": "<p>The ID of the device to be monitored.</p>"
@@ -1402,6 +1566,125 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/controller/device/config:aspectID",
+    "title": "Download Aspect Configuration",
+    "name": "SignalAspectConfiguration",
+    "group": "Signal",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "aspectID",
+            "description": "<p>The aspect's ID.</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Download the configuration information for a signal aspect.  See <a href=\"#api-Signal-SignalAspectList\">/api/signal_aspect_list</a> and <a href=\"#api-Signal-SignalAspectConditionList\">/api/signal_condition_list</a> for more information.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "aspectID",
+            "description": "<p>Aspect's ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "conditions",
+            "description": "<p>List of conditions.  See <a href=\"#api-Signal-SignalAspectList\">/api/signal_aspect_list</a> for more information.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "conditions.conditionOperand",
+            "description": "<p>Operand used for comparison.  0 = Equals, 1 = Not Equals.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "conditions.deviceID",
+            "description": "<p>Device ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "conditions.deviceState",
+            "description": "<p>Device state.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
+            "optional": false,
+            "field": "greenMode",
+            "description": "<p>Green LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
+            "optional": false,
+            "field": "redMode",
+            "description": "<p>Red LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
+            "optional": false,
+            "field": "yellowMode",
+            "description": "<p>Yellow LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"aspectID\": \"6\",\n    \"conditions\": [{\n            \"conditionOperand\": \"0\",\n            \"deviceID\": \"17\",\n            \"deviceState\": \"3\"\n        }, {\n            \"conditionOperand\": \"0\",\n            \"deviceID\": \"18\",\n            \"deviceState\": \"3\"\n        }, {\n            \"conditionOperand\": \"0\",\n            \"deviceID\": \"11\",\n            \"deviceState\": \"1\"\n        }, {\n            \"conditionOperand\": \"0\",\n            \"deviceID\": \"5\",\n            \"deviceState\": \"3\"\n        }, {\n            \"conditionOperand\": \"0\",\n            \"deviceID\": \"6\",\n            \"deviceState\": \"3\"\n        }, {\n            \"conditionOperand\": \"0\",\n            \"deviceID\": \"8\",\n            \"deviceState\": \"1\"\n        }\n    ],\n    \"greenMode\": \"2\",\n    \"redMode\": \"1\",\n    \"yellowMode\": \"0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage.  This example returns the configuration for Signal Aspect 6:",
+        "content": "http://localhost:8080/controller/device/config?aspectID=6",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "LCSServer/APISignal.h",
+    "groupTitle": "Signal"
+  },
+  {
+    "type": "get",
     "url": "/api/signal_aspect_list:deviceID",
     "title": "Signal Aspect List",
     "name": "SignalAspectList",
@@ -1419,7 +1702,7 @@ define({ "api": [
         ]
       }
     },
-    "description": "<p>Returns a list aspects defined for a signal sorted by sortIndex.  A Signal device uses this list to determine what state the LED's of a signal head should be set to (on, off or flashing).  The signal starts at the first entry in this list and evaluates each signal condition entry assigned to this aspect (see /api/signal_condition_list).  If all conditions of an aspect entry evaluate to true, the signal is set to that aspect.  If none of the aspects evaluate to true, the signal sets the red LED on and all others off.</p>",
+    "description": "<p>Returns a list aspects defined for a signal sorted by sortIndex.  A Signal device uses this list to determine what state the LED's of a signal head should be set to (on, off or flashing).  The signal starts at the first entry in this list and evaluates each signal condition entry assigned to the aspect (see /api/signal_condition_list).  If all conditions of an aspect entry evaluate to true, processing stops and the signal is set to the aspect.  If none of the aspects evaluate to true, the signal sets the red LED on and all others off.</p>",
     "success": {
       "fields": {
         "Success 200": [
@@ -1445,6 +1728,11 @@ define({ "api": [
           {
             "group": "Success 200",
             "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
             "optional": false,
             "field": "redMode",
             "description": "<p>Red LED state.  0 = off, 1 = on, 2 = flashing.</p>"
@@ -1466,6 +1754,11 @@ define({ "api": [
           {
             "group": "Success 200",
             "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
             "optional": false,
             "field": "yellowMode",
             "description": "<p>Yellow LED state.  0 = off, 1 = on, 2 = flashing.</p>"
@@ -1484,6 +1777,114 @@ define({ "api": [
       {
         "title": "Example usage:",
         "content": "http://localhost:8080/api/signal_aspect_list?deviceID=21",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "LCSServer/APISignal.h",
+    "groupTitle": "Signal"
+  },
+  {
+    "type": "get",
+    "url": "/controller/device/config:deviceID",
+    "title": "Download Configuration",
+    "name": "SignalConfiguration",
+    "group": "Signal",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "deviceID",
+            "description": "<p>The signal's Device ID.</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Download the signal's configuration.  See /api/signal_aspect_list and /api/signal_condition_list for more information on how the signal device uses this information.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "aspects",
+            "description": "<p>List of aspects.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "aspects.aspectID",
+            "description": "<p>Aspect's ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
+            "optional": false,
+            "field": "aspects.greenMode",
+            "description": "<p>Green LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
+            "optional": false,
+            "field": "aspects.redMode",
+            "description": "<p>Red LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1",
+              "2"
+            ],
+            "optional": false,
+            "field": "aspects.yellowMode",
+            "description": "<p>Yellow LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "devices",
+            "description": "<p>List of devices to monitor.  The signal depends on the current state of these devices in order to determine the proper aspect to display.  The signal listens for UDP status update messages from these devices and saves their current state.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "devices.deviceID",
+            "description": "<p>ID of the device to monitor.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"aspects\": [{\n            \"aspectID\": \"5\",\n            \"greenMode\": \"1\",\n            \"redMode\": \"0\",\n            \"yellowMode\": \"0\"\n        }, {\n            \"aspectID\": \"6\",\n            \"greenMode\": \"2\",\n            \"redMode\": \"1\",\n            \"yellowMode\": \"0\"\n        }\n    ],\n    \"devices\": [{\n            \"deviceID\": \"17\"\n        }, {\n            \"deviceID\": \"18\"\n        }, {\n            \"deviceID\": \"12\"\n        }, {\n            \"deviceID\": \"5\"\n        }, {\n            \"deviceID\": \"6\"\n        }, {\n            \"deviceID\": \"8\"\n        }, {\n            \"deviceID\": \"11\"\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage.  This example returns the configuration for Signal Device 21:",
+        "content": "http://localhost:8080/controller/device/config?deviceID=21",
         "type": "json"
       }
     ],
@@ -1514,7 +1915,7 @@ define({ "api": [
               "1",
               "3"
             ],
-            "optional": false,
+            "optional": true,
             "field": "turnoutState",
             "description": "<p>(optional) The desired state to set the turnout to.</p>"
           }
@@ -1526,6 +1927,48 @@ define({ "api": [
       {
         "title": "Example usage:",
         "content": "http://localhost:8080/api/activate_turnout?deviceID=7&turnoutState=3",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "LCSServer/APITurnout.h",
+    "groupTitle": "Turnout"
+  },
+  {
+    "type": "get",
+    "url": "/api/lock_device:deviceID,lock",
+    "title": "Lock Turnout",
+    "name": "LockTurnout",
+    "group": "Turnout",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "deviceID",
+            "description": "<p>The turnout's Device ID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "lock",
+            "description": "<p>Flag which unlocks or locks the turnout.  0 = unlock, 1 = lock.</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Locks/unlocks the turnout.  If the lock parameter is set to 1, the turnout will ignore future TRN_ACTIVATE and TRN_ACTIVATE_ROUTE messages until another lock message is sent with the lock flag set to 0.</p>",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "http://localhost:8080/api/lock_device?deviceID=7&lock=1",
         "type": "json"
       }
     ],

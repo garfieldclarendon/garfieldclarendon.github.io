@@ -84,21 +84,24 @@ Public Slots</h2></td></tr>
 <tr class="memitem:a693a3a80d7cefeaabbc29fd8695f9e1a"><td class="memItemLeft" align="right" valign="top"><a id="a693a3a80d7cefeaabbc29fd8695f9e1a"></a>
 <a class="el" href="class_device_handler.html">DeviceHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getHandler</b> (<a class="el" href="_global_defs_8h.html#ad17679fac69973be9b3a2787a60d7722">DeviceClassEnum</a> classCode) const</td></tr>
 <tr class="separator:a693a3a80d7cefeaabbc29fd8695f9e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a037575d38c8aa473d57de2950e0daa18"><td class="memItemLeft" align="right" valign="top"><a id="a037575d38c8aa473d57de2950e0daa18"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDeviceStatus</b> (int deviceID, int status)</td></tr>
-<tr class="separator:a037575d38c8aa473d57de2950e0daa18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5587101460d059f50fb3ab4c3992794f"><td class="memItemLeft" align="right" valign="top"><a id="a5587101460d059f50fb3ab4c3992794f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setDeviceStatus</b> (bool locked, int deviceID, int status)</td></tr>
+<tr class="separator:a5587101460d059f50fb3ab4c3992794f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa231eea3b24b3418482506be4b7d02ef"><td class="memItemLeft" align="right" valign="top"><a id="aa231eea3b24b3418482506be4b7d02ef"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>newUDPMessage</b> (const <a class="el" href="class_u_d_p_message.html">UDPMessage</a> &amp;message)</td></tr>
 <tr class="separator:aa231eea3b24b3418482506be4b7d02ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:aa96a714f5d7b0a43c5b37622df5f4800"><td class="memItemLeft" align="right" valign="top"><a id="aa96a714f5d7b0a43c5b37622df5f4800"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deviceStatusChanged</b> (int deviceID, int status)</td></tr>
-<tr class="separator:aa96a714f5d7b0a43c5b37622df5f4800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2f42b5441dbfa08e94793187079e66a"><td class="memItemLeft" align="right" valign="top"><a id="ae2f42b5441dbfa08e94793187079e66a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>deviceStatusChanged</b> (int deviceID, int status, bool locked)</td></tr>
+<tr class="separator:ae2f42b5441dbfa08e94793187079e66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:abd187f728edd656556707fdad55f24f2"><td class="memItemLeft" align="right" valign="top"><a id="abd187f728edd656556707fdad55f24f2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getIsDeviceLocked</b> (int deviceID)</td></tr>
+<tr class="separator:abd187f728edd656556707fdad55f24f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af96ef91b388d9f62165268fa6e388e0c"><td class="memItemLeft" align="right" valign="top"><a id="af96ef91b388d9f62165268fa6e388e0c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>getDeviceStatus</b> (int deviceID)</td></tr>
 <tr class="separator:af96ef91b388d9f62165268fa6e388e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>

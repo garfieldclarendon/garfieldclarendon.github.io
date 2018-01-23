@@ -12,8 +12,8 @@ Inheritance diagram for Device\+Manager\+:\begin{figure}[H]
 \mbox{\Hypertarget{class_device_manager_a693a3a80d7cefeaabbc29fd8695f9e1a}\label{class_device_manager_a693a3a80d7cefeaabbc29fd8695f9e1a}} 
 \hyperlink{class_device_handler}{Device\+Handler} $\ast$ {\bfseries get\+Handler} (\hyperlink{_global_defs_8h_ad17679fac69973be9b3a2787a60d7722}{Device\+Class\+Enum} class\+Code) const
 \item 
-\mbox{\Hypertarget{class_device_manager_a037575d38c8aa473d57de2950e0daa18}\label{class_device_manager_a037575d38c8aa473d57de2950e0daa18}} 
-void {\bfseries set\+Device\+Status} (int device\+ID, int status)
+\mbox{\Hypertarget{class_device_manager_a5587101460d059f50fb3ab4c3992794f}\label{class_device_manager_a5587101460d059f50fb3ab4c3992794f}} 
+void {\bfseries set\+Device\+Status} (bool locked, int device\+ID, int status)
 \item 
 \mbox{\Hypertarget{class_device_manager_aa231eea3b24b3418482506be4b7d02ef}\label{class_device_manager_aa231eea3b24b3418482506be4b7d02ef}} 
 void {\bfseries new\+U\+D\+P\+Message} (const \hyperlink{class_u_d_p_message}{U\+D\+P\+Message} \&message)
@@ -21,11 +21,14 @@ void {\bfseries new\+U\+D\+P\+Message} (const \hyperlink{class_u_d_p_message}{U\
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_device_manager_aa96a714f5d7b0a43c5b37622df5f4800}\label{class_device_manager_aa96a714f5d7b0a43c5b37622df5f4800}} 
-void {\bfseries device\+Status\+Changed} (int device\+ID, int status)
+\mbox{\Hypertarget{class_device_manager_ae2f42b5441dbfa08e94793187079e66a}\label{class_device_manager_ae2f42b5441dbfa08e94793187079e66a}} 
+void {\bfseries device\+Status\+Changed} (int device\+ID, int status, bool locked)
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_device_manager_abd187f728edd656556707fdad55f24f2}\label{class_device_manager_abd187f728edd656556707fdad55f24f2}} 
+bool {\bfseries get\+Is\+Device\+Locked} (int device\+ID)
 \item 
 \mbox{\Hypertarget{class_device_manager_af96ef91b388d9f62165268fa6e388e0c}\label{class_device_manager_af96ef91b388d9f62165268fa6e388e0c}} 
 int {\bfseries get\+Device\+Status} (int device\+ID)
