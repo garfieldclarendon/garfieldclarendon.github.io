@@ -48,7 +48,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
     "groupTitle": "Notifications",
-    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification message, this connection must remain open/connected during the entire session.</p>"
+    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification messages, this connection must remain open/connected during the entire session.</p>"
   },
   {
     "type": "get",
@@ -105,7 +105,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "LCSServer/APIDevice.h",
     "groupTitle": "Notifications",
-    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification message, this connection must remain open/connected during the entire session.</p>"
+    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification messages, this connection must remain open/connected during the entire session.</p>"
   },
   {
     "type": "get",
@@ -177,7 +177,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "LCSServer/APIRoute.h",
     "groupTitle": "Notifications",
-    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification message, this connection must remain open/connected during the entire session.</p>"
+    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification messages, this connection must remain open/connected during the entire session.</p>"
   },
   {
     "type": "get",
@@ -1803,7 +1803,7 @@ define({ "api": [
         ]
       }
     },
-    "description": "<p>Download the signal's configuration.  See /api/signal_aspect_list and /api/signal_condition_list for more information on how the signal device uses this information.</p>",
+    "description": "<p>Download the signal's configuration.  See <a href=\"#api-Signal-SignalAspectList\">/api/signal_aspect_list</a> and <a href=\"#api-Signal-SignalAspectConditionList\">/api/signal_condition_list</a> for more information on how the signal device uses this information.</p>",
     "success": {
       "fields": {
         "Success 200": [
