@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css">
+            body { margin: 0; font-size: 2em; background-color: white; }
+            h1 { text-align: center; color: red; }
+            h2 { text-align: center; color: blue; }
+            h1 + h1 { color: green; }
+			table { border-collapse: collapse; width: 100%; }
+			table, th, td { border: 1px solid black; }
+			th, td { padding: 15px; }
+			.activetrue { background-color: green; }
+        </style>
+        <script type="text/javascript">
+		function activateRoute(routeID)
+		{
+			var uri;
+			uri = "http://" + window.location.hostname + ":" + window.location.port + "/api/activate_route?routeID=";
+			uri += routeID;
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", uri, true);
+			xhttp.send();
+		}
+		function loadRouteTable() 
+		{
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) 
+				{
+					var json = JSON.parse(this.responseText);
+					var tableText = "<table>";
+					for(var i = 0; i < json.length; i++)
+					{
+						var classText = "active" + json[i].isActive;
+						var row = "<tr class=\"" + classText + "\" id=\"route" + json[i].routeID + "\">";
+						row += "<td>" + json[i].routeID + "</td><td>" + json[i].routeName + "</td><td>" + json[i].routeDescription + "</td><td><button onclick=\"activateRoute(" + json[i].routeID +")\">Activate</button></td></tr>";
+						tableText += row;
+					}
+					tableText += "</table>";
+					document.getElementById("routeDiv").innerHTML = tableText;
+				}
+			};
+			var uri;
+			uri = "http://" + window.location.hostname + ":" + window.location.port + "/api/route_list";
+			xhttp.open("GET", uri, true);
+			xhttp.send();
+            if ("WebSocket" in window)
+            {
+               // Let us open a web socket
+			   var uri = "ws://" + window.location.hostname + ":8081/api/notifications";
+               var ws = new WebSocket(uri);
+				
+               ws.onmessage = function (evt) 
+               { 
+					var json = JSON.parse(evt.data);
+					if(json.url == "/api/notification/route")
+					{
+						var routeID = "route" + json.routeID;
+						document.getElementById(routeID).className = "active"+json.isActive;
+					}
+               };
+            }
+			else
+			{
+				alert("WebSockets not supported!");
+			}
+		}
+        </script>
+    </head>
+    <body onload="loadRouteTable()">
+        <h1>Gaskill Mine</h1>
+        <h2>Routes</h2>
+		<div id="routeDiv">
+		</div>
+    </body>
+</html>
