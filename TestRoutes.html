@@ -16,7 +16,7 @@
 		function activateRoute(routeID)
 		{
 			var uri;
-			uri = "http://" + window.location.hostname + ":" + window.location.port + "/api/activate_route?routeID=";
+			uri = "http://APITest.entrydns.org:8080/api/activate_route?routeID=";
 			uri += routeID;
 			var xhttp = new XMLHttpRequest();
 			xhttp.open("GET", uri, true);
@@ -42,13 +42,13 @@
 				}
 			};
 			var uri;
-			uri = "http://" + window.location.hostname + ":" + window.location.port + "/api/route_list";
+			uri = "http://APITest.entrydns.org:8080/api/route_list";
 			xhttp.open("GET", uri, true);
 			xhttp.send();
             if ("WebSocket" in window)
             {
                // Let us open a web socket
-			   var uri = "ws://" + window.location.hostname + ":8081/api/notifications";
+                var uri = "ws://APITest.entrydns.org:8081/api/notifications";
                var ws = new WebSocket(uri);
 				
                ws.onmessage = function (evt) 
