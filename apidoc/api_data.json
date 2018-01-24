@@ -40,7 +40,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n        \"url\": \"/api/notification/controller\"\n        \"serialNumber\": \"1546165\"\n        \"status\": \"2\"\n}",
+          "content": "{\n        \"url\": \"/api/notification/controller\",\n        \"serialNumber\": \"1546165\",\n        \"status\": \"2\"\n}",
           "type": "json"
         }
       ]
@@ -97,7 +97,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n        \"url\": \"/api/notification/device\"\n        \"deviceID\": \"1\"\n        \"deviceState\": \"2\"\n        \"locked\": \"0\"\n}",
+          "content": "{\n        \"url\": \"/api/notification/device\",\n        \"deviceID\": \"1\",\n        \"deviceState\": \"2\",\n        \"locked\": \"0\"\n}",
           "type": "json"
         }
       ]
@@ -169,7 +169,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n        \"url\": \"/api/notification/device\"\n        \"deviceID\": \"1\"\n        \"deviceState\": \"2\"\n        \"locked\": \"0\"\n}",
+          "content": "{\n        \"url\": \"/api/notification/route\",\n        \"routeID\": \"16\",\n        \"isActive\": \"1\",\n        \"isLocked\": \"0\",\n        \"canLock\": \"0\"\n}",
           "type": "json"
         }
       ]
@@ -277,7 +277,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller"
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/controller/config:serialNumber"
+      }
+    ]
   },
   {
     "type": "get",
@@ -293,7 +298,7 @@
             "type": "Number",
             "optional": true,
             "field": "serialNumber",
-            "description": "<p>(optional) The controller's serial number.  If 0 or excluded, all controllers will delete their configuration data.</p>"
+            "description": "<p>The controller's serial number.  If 0 or excluded, all controllers will delete their configuration data.</p>"
           }
         ]
       }
@@ -308,7 +313,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller"
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/send_controller_reset_config:serialNumber"
+      }
+    ]
   },
   {
     "type": "get",
@@ -324,7 +334,7 @@
             "type": "Number",
             "optional": true,
             "field": "serialNumber",
-            "description": "<p>(optional)  The controller's serial number.  If 0 or excluded, all controllers will delete their controllers-to-notify list.</p>"
+            "description": "<p>The controller's serial number.  If 0 or excluded, all controllers will delete their controllers-to-notify list.</p>"
           }
         ]
       }
@@ -339,7 +349,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller"
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/send_controller_reset_notification_list:serialNumber"
+      }
+    ]
   },
   {
     "type": "get",
@@ -355,7 +370,7 @@
             "type": "Number",
             "optional": true,
             "field": "controllerID",
-            "description": "<p>(optional) The controller's ID.</p>"
+            "description": "<p>The controller's ID.</p>"
           }
         ]
       }
@@ -438,7 +453,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller"
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/controller_list:controllerID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -520,7 +540,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller"
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/controller/module/config:serialNumber,address"
+      }
+    ]
   },
   {
     "type": "get",
@@ -536,7 +561,7 @@
             "type": "Number",
             "optional": true,
             "field": "controllerID",
-            "description": "<p>(optional) The controller's ID.</p>"
+            "description": "<p>The controller's ID.</p>"
           }
         ]
       }
@@ -610,7 +635,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller"
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/controller_module_list:controllerID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -626,7 +656,7 @@
             "type": "Number",
             "optional": true,
             "field": "serialNumber",
-            "description": "<p>(optional) The controller's serial number.  If 0 or excluded, all controllers will restart.</p>"
+            "description": "<p>The controller's serial number.  If 0 or excluded, all controllers will restart.</p>"
           }
         ]
       }
@@ -641,7 +671,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller"
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/send_controller_reset:serialNumber"
+      }
+    ]
   },
   {
     "type": "get",
@@ -699,7 +734,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller"
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/controller/notification_list:serialNumber"
+      }
+    ]
   },
   {
     "type": "get",
@@ -739,7 +779,12 @@
     },
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller"
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/controller/device/config:deviceID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -825,7 +870,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIDevice.h",
-    "groupTitle": "Device"
+    "groupTitle": "Device",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/copy_device:deviceID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -841,7 +891,7 @@
             "type": "Number",
             "optional": true,
             "field": "deviceID",
-            "description": "<p>(optional) The device's id.  If 0 or excluded, all devices will reset their configuration data.</p>"
+            "description": "<p>The device's id.  If 0 or excluded, all devices will reset their configuration data.</p>"
           }
         ]
       }
@@ -856,7 +906,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIDevice.h",
-    "groupTitle": "Device"
+    "groupTitle": "Device",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/send_device_config:deviceID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -872,28 +927,28 @@
             "type": "Number",
             "optional": true,
             "field": "serialNumber",
-            "description": "<p>(optional) filter device list by a specific controller's serial number.</p>"
+            "description": "<p>filter device list by a specific controller's serial number.</p>"
           },
           {
             "group": "Parameter",
             "type": "Number",
             "optional": true,
             "field": "moduleID",
-            "description": "<p>(optional) filter device list by a specific controller module's ID.</p>"
+            "description": "<p>filter device list by a specific controller module's ID.</p>"
           },
           {
             "group": "Parameter",
             "type": "Number",
             "optional": true,
             "field": "controllerID",
-            "description": "<p>(optional) filter device list by a specific controller's ID.</p>"
+            "description": "<p>filter device list by a specific controller's ID.</p>"
           },
           {
             "group": "Parameter",
             "type": "Number",
             "optional": true,
             "field": "classCode",
-            "description": "<p>(optional) filter device list by a specific device classification.</p>"
+            "description": "<p>filter device list by a specific device classification.</p>"
           }
         ]
       }
@@ -907,21 +962,21 @@
             "type": "Number",
             "optional": false,
             "field": "address",
-            "description": "<p>Address of the module the device is connected to.</p>"
+            "description": "<p>Address of the module to which the device is connected.</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "controllerID",
-            "description": "<p>Controller ID of the controller the device is connected to.</p>"
+            "description": "<p>Controller ID of the controller to which the device is connected.</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "controllerModuleID",
-            "description": "<p>Controller Module ID of the controller module the device is connected to.</p>"
+            "description": "<p>Controller Module ID of the controller to which the module the device is connected.</p>"
           },
           {
             "group": "Success 200",
@@ -963,21 +1018,21 @@
             "type": "Number",
             "optional": false,
             "field": "moduleClass",
-            "description": "<p>Classification of the controller module to which the device is connected to.</p>"
+            "description": "<p>Classification of the controller module to which the device is connected.</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "port",
-            "description": "<p>Port/pin the device is connected to.</p>"
+            "description": "<p>Port/pin the device to which the connected.</p>"
           },
           {
             "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "serialNumber",
-            "description": "<p>Serial Number of the controller the device is connected to.</p>"
+            "description": "<p>Serial Number of the controller to which the device is connected.</p>"
           }
         ]
       },
@@ -998,7 +1053,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIDevice.h",
-    "groupTitle": "Device"
+    "groupTitle": "Device",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/device_list:serialNumber,moduleID,controllerID,classCode"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1070,7 +1130,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIDevice.h",
-    "groupTitle": "Device"
+    "groupTitle": "Device",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/device_property_list:deviceID"
+      }
+    ]
   },
   {
     "type": "post",
@@ -1097,7 +1162,12 @@
     },
     "version": "0.0.0",
     "filename": "LCSServer/APIEntity.h",
-    "groupTitle": "Entity"
+    "groupTitle": "Entity",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/entity/[EntityName]"
+      }
+    ]
   },
   {
     "type": "delete",
@@ -1109,13 +1179,18 @@
     "examples": [
       {
         "title": "This example deletes a \"route\" with an ID of 7.:",
-        "content": "http://localhost:8080/api/entity/route\n\n    body:\n    {\n      \"id\": 7,\n    }",
+        "content": "http://localhost:8080/api/entity/route\n\n    body:\n    {\n      \"id\": 7\n    }",
         "type": "json"
       }
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIEntity.h",
-    "groupTitle": "Entity"
+    "groupTitle": "Entity",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/entity/[EntityName]"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1131,7 +1206,7 @@
             "type": "String",
             "optional": true,
             "field": "fieldName",
-            "description": "<p>(optional) Any combination of FieldName=value pairs can be passed to filter the list returned.  Multiple field/value pairs are joined as an &quot;AND&quot; in the generated WHERE clause.</p>"
+            "description": "<p>Any combination of FieldName=value pairs can be passed to filter the list returned.  Multiple field/value pairs are joined as an &quot;AND&quot; in the generated WHERE clause.</p>"
           }
         ]
       }
@@ -1155,7 +1230,12 @@
     },
     "version": "0.0.0",
     "filename": "LCSServer/APIEntity.h",
-    "groupTitle": "Entity"
+    "groupTitle": "Entity",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/entity/[EntityName]:where"
+      }
+    ]
   },
   {
     "type": "put",
@@ -1167,13 +1247,18 @@
     "examples": [
       {
         "title": "This example updates a \"route\" with an ID of 7.  Note:  You only need to supply the fields that are modified, however like this example, you may include all fields. :",
-        "content": "http://localhost:8080/api/entity/route\n\n    body:\n    {\n      \"id\": 7,\n      \"routeName\": \"CA 1\"\n      \"routeDescription\": \"New Description\"\n    }",
+        "content": "http://localhost:8080/api/entity/route\n\n    body:\n    {\n      \"id\": 7,\n      \"routeName\": \"CA 1\",\n      \"routeDescription\": \"New Description\"\n    }",
         "type": "json"
       }
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIEntity.h",
-    "groupTitle": "Entity"
+    "groupTitle": "Entity",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/entity/[EntityName]"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1204,7 +1289,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIRoute.h",
-    "groupTitle": "Route"
+    "groupTitle": "Route",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/activate_route:routeID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1246,7 +1336,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIRoute.h",
-    "groupTitle": "Route"
+    "groupTitle": "Route",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/lock_route:routeID,lock"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1322,7 +1417,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIRoute.h",
-    "groupTitle": "Route"
+    "groupTitle": "Route",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/route_entry_list:routeID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1395,7 +1495,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APIRoute.h",
-    "groupTitle": "Route"
+    "groupTitle": "Route",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/route_list:"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1440,7 +1545,7 @@
             ],
             "optional": true,
             "field": "redMode",
-            "description": "<p>(optional) Red LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+            "description": "<p>Red LED state.  0 = off, 1 = on, 2 = flashing.</p>"
           },
           {
             "group": "Success 200",
@@ -1452,7 +1557,7 @@
             ],
             "optional": true,
             "field": "greenMode",
-            "description": "<p>(optional) Green LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+            "description": "<p>Green LED state.  0 = off, 1 = on, 2 = flashing.</p>"
           },
           {
             "group": "Success 200",
@@ -1464,7 +1569,7 @@
             ],
             "optional": true,
             "field": "yellowMode",
-            "description": "<p>(optional) Yellow LED state.  0 = off, 1 = on, 2 = flashing.</p>"
+            "description": "<p>Yellow LED state.  0 = off, 1 = on, 2 = flashing.</p>"
           }
         ]
       }
@@ -1479,7 +1584,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APISignal.h",
-    "groupTitle": "Signal"
+    "groupTitle": "Signal",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/lock_device:deviceID,lock,redMode,greenMode,yellowMode"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1562,7 +1672,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APISignal.h",
-    "groupTitle": "Signal"
+    "groupTitle": "Signal",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/signal_condition_list:aspectID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1681,7 +1796,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APISignal.h",
-    "groupTitle": "Signal"
+    "groupTitle": "Signal",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/controller/device/config:aspectID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1782,7 +1902,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APISignal.h",
-    "groupTitle": "Signal"
+    "groupTitle": "Signal",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/signal_aspect_list:deviceID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1890,7 +2015,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APISignal.h",
-    "groupTitle": "Signal"
+    "groupTitle": "Signal",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/controller/device/config:deviceID"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1917,7 +2047,7 @@
             ],
             "optional": true,
             "field": "turnoutState",
-            "description": "<p>(optional) The desired state to set the turnout to.</p>"
+            "description": "<p>The desired state to set the turnout to.</p>"
           }
         ]
       }
@@ -1932,7 +2062,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APITurnout.h",
-    "groupTitle": "Turnout"
+    "groupTitle": "Turnout",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/activate_turnout:deviceID,turnoutState"
+      }
+    ]
   },
   {
     "type": "get",
@@ -1974,7 +2109,12 @@
     ],
     "version": "0.0.0",
     "filename": "LCSServer/APITurnout.h",
-    "groupTitle": "Turnout"
+    "groupTitle": "Turnout",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/lock_device:deviceID,lock"
+      }
+    ]
   },
   {
     "type": "get",
@@ -2014,6 +2154,11 @@
     },
     "version": "0.0.0",
     "filename": "LCSServer/APITurnout.h",
-    "groupTitle": "Turnout"
+    "groupTitle": "Turnout",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/controller/device/config:deviceID"
+      }
+    ]
   }
 ]

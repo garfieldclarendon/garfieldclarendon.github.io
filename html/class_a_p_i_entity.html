@@ -99,11 +99,11 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>API handler class for LCS database entities. </p>
 <p>{get} /api/entity/[EntityName]:where Fetch  FetchEntity  Entity</p>
-<p>{String} [fieldName] (optional) Any combination of FieldName=value pairs can be passed to filter the list returned. Multiple field/value pairs are joined as an "AND" in the generated WHERE clause.  Fetches records from the [EntityName] table with the optional filters applied.  This example fetches all controllerModules with an address of 2: <a href="http://localhost:8080/api/entity/controllerModule?address=2">http://localhost:8080/api/entity/controllerModule?address=2</a>  {json} Success-Response: HTTP/1.1 200 OK [{ "address": "2", "controllerID": "24", "disable": "0", "id": "6", "moduleClass": "1", "moduleName": "TY30-4" }, { "address": "2", "controllerID": "31", "disable": "0", "id": "18", "moduleClass": "9", "moduleName": "CA Panel1 Output 2" }, { "address": "2", "controllerID": "34", "disable": "0", "id": "23", "moduleClass": "9", "moduleName": "CA Aux Panel Output 2" } ]  {put} /api/entity/[EntityName] Update an Entity  UpdateEntity  Entity</p>
+<p>{String} [fieldName] Any combination of FieldName=value pairs can be passed to filter the list returned. Multiple field/value pairs are joined as an "AND" in the generated WHERE clause.  Fetches records from the [EntityName] table with the optional filters applied.  This example fetches all controllerModules with an address of 2: <a href="http://localhost:8080/api/entity/controllerModule?address=2">http://localhost:8080/api/entity/controllerModule?address=2</a>  {json} Success-Response: HTTP/1.1 200 OK [{ "address": "2", "controllerID": "24", "disable": "0", "id": "6", "moduleClass": "1", "moduleName": "TY30-4" }, { "address": "2", "controllerID": "31", "disable": "0", "id": "18", "moduleClass": "9", "moduleName": "CA Panel1 Output 2" }, { "address": "2", "controllerID": "34", "disable": "0", "id": "23", "moduleClass": "9", "moduleName": "CA Aux Panel Output 2" } ]  {put} /api/entity/[EntityName] Update an Entity  UpdateEntity  Entity</p>
 <p>Updates a specific record in the [EntityName] table. The entity is sent as a JSON document.  This example updates a "route" with an ID of 7. Note: You only need to supply the fields that are modified, however like this example, you may include all fields. : <a href="http://localhost:8080/api/entity/route">http://localhost:8080/api/entity/route</a> </p><pre class="fragment">body:
 {
   "id": 7,
-  "routeName": "CA 1"
+  "routeName": "CA 1",
   "routeDescription": "New Description"
 }</pre><p>{post} /api/entity/[EntityName] Add a new Entity  AddEntity  Entity</p>
 <p>Adds a new record into the [EntityName] table. The entity is sent as a JSON document.  This example adds a new "route". Note: Exclude the ID field as this field will be auto-generated. The newly generated id is part of the returned JSON payload. : <a href="http://localhost:8080/api/entity/route">http://localhost:8080/api/entity/route</a> </p><pre class="fragment">body:
@@ -114,7 +114,7 @@ Public Member Functions</h2></td></tr>
 </pre><p>{json} Success-Response: HTTP/1.1 200 OK [{ "id": "15", "routeDescription": "New Route", "routeName": "New Route Description" } ]  {delete} /api/entity/[EntityName] Delete an Entity  DeleteEntity  Entity</p>
 <p>Deletes a specific record in the [EntityName] table. The entity is sent as a JSON document.  This example deletes a "route" with an ID of 7.: <a href="http://localhost:8080/api/entity/route">http://localhost:8080/api/entity/route</a> </p><pre class="fragment">body:
 {
-  "id": 7,
+  "id": 7
 }</pre><p> <a class="el" href="class_a_p_i_entity.html" title="API handler class for LCS database entities. ">APIEntity</a> This class handles basic database fetch and CRUD operations (Create, Update and Delete). See the API documentation for more information. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8bbe43bbc389472d7a7fd9e8a2283c82"></a>
