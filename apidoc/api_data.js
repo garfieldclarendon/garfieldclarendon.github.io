@@ -48,7 +48,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "LCSServer/APIController.h",
     "groupTitle": "Notifications",
-    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification messages, this connection must remain open/connected during the entire session. Here's an <a href=\"https://garfieldclarendon.github.io/TestRoutes.html\">example</a>.</p>"
+    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification messages, this connection must remain open/connected during the entire session. Here's an <a href=\"http://APITest.entrydns.org:8080/web/TestRoutes.html\">example</a>.</p>"
   },
   {
     "type": "get",
@@ -105,7 +105,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "LCSServer/APIDevice.h",
     "groupTitle": "Notifications",
-    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification messages, this connection must remain open/connected during the entire session. Here's an <a href=\"https://garfieldclarendon.github.io/TestRoutes.html\">example</a>.</p>"
+    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification messages, this connection must remain open/connected during the entire session. Here's an <a href=\"http://APITest.entrydns.org:8080/web/TestRoutes.html\">example</a>.</p>"
   },
   {
     "type": "get",
@@ -177,7 +177,7 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "LCSServer/APIRoute.h",
     "groupTitle": "Notifications",
-    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification messages, this connection must remain open/connected during the entire session. Here's an <a href=\"https://garfieldclarendon.github.io/TestRoutes.html\">example</a>.</p>"
+    "groupDescription": "<p>API notifications are sent as a JSON text message through a separate Web Socket connection initiated by the client.  In order for the client to receive notification messages, this connection must remain open/connected during the entire session. Here's an <a href=\"http://APITest.entrydns.org:8080/web/TestRoutes.html\">example</a>.</p>"
   },
   {
     "type": "get",
