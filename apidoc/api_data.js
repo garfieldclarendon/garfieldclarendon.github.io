@@ -1370,7 +1370,7 @@ define({ "api": [
         ]
       }
     },
-    "description": "<p>Activates the specified route.</p>",
+    "description": "<p>Activates the specified route.  A route aligns one or more turnout devices to a specific direction (normal or thrown). This allows a single command/button to set the alignment for a train to a specific track without having to set each turnout individulally.</p>",
     "examples": [
       {
         "title": "Example usage:",

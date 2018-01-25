@@ -2,6 +2,11 @@
 \label{class_a_p_i_turnout}\index{A\+P\+I\+Turnout@{A\+P\+I\+Turnout}}
 
 
+A\+PI handler class for a L\+CS Turnout.  
+
+
+
+
 {\ttfamily \#include $<$A\+P\+I\+Turnout.\+h$>$}
 
 Inheritance diagram for A\+P\+I\+Turnout\+:\begin{figure}[H]
@@ -13,25 +18,54 @@ Inheritance diagram for A\+P\+I\+Turnout\+:\begin{figure}[H]
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_p_i_turnout_a56cef33f12b9d8c13aa8cdce7e24bf0c}\label{class_a_p_i_turnout_a56cef33f12b9d8c13aa8cdce7e24bf0c}} 
-void {\bfseries handle\+Activate\+Turnout\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
-\end{DoxyCompactItemize}
+void \hyperlink{class_a_p_i_turnout_a56cef33f12b9d8c13aa8cdce7e24bf0c}{handle\+Activate\+Turnout\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\begin{DoxyCompactList}\small\item\em Activates a turnout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_p_i_turnout_a6c730f3cc2cee54be17e110770b9070b}\label{class_a_p_i_turnout_a6c730f3cc2cee54be17e110770b9070b}} 
-{\bfseries A\+P\+I\+Turnout} (Q\+Object $\ast$parent=nullptr)
+\hyperlink{class_a_p_i_turnout_a6c730f3cc2cee54be17e110770b9070b}{A\+P\+I\+Turnout} (Q\+Object $\ast$parent=nullptr)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+A\+PI handler class for a L\+CS Turnout. 
+
 \{get\} /api/lock\+\_\+device\+:device\+ID,lock Lock Turnout  Lock\+Turnout  Turnout
 
 \{Number\} device\+ID The turnout\textquotesingle{}s Device ID.  \{Number=0,1\} lock Flag which unlocks or locks the turnout. 0 = unlock, 1 = lock.  Locks/unlocks the turnout. If the lock parameter is set to 1, the turnout will ignore future T\+R\+N\+\_\+\+A\+C\+T\+I\+V\+A\+TE and T\+R\+N\+\_\+\+A\+C\+T\+I\+V\+A\+T\+E\+\_\+\+R\+O\+U\+TE messages until another lock message is sent with the lock flag set to 0.  Example usage\+: \href{http://localhost:8080/api/lock_device?deviceID=7&lock=1}{\tt http\+://localhost\+:8080/api/lock\+\_\+device?device\+I\+D=7\&lock=1}  \{get\} /api/activate\+\_\+turnout\+:device\+ID,turnout\+State Activate Turnout  Activate\+Turnout  Turnout
 
 \{Number\} device\+ID The turnout\textquotesingle{}s Device ID.  \{Number=1,3\} \mbox{[}turnout\+State\mbox{]} The desired state to set the turnout to.  Sets the turnout to the desired state (direction) 1 = Normal 2 = Diverging. If no state is specified, the turnout is toggled between normal and thrown.  Example usage\+: \href{http://localhost:8080/api/activate_turnout?deviceID=7&turnoutState=3}{\tt http\+://localhost\+:8080/api/activate\+\_\+turnout?device\+I\+D=7\&turnout\+State=3}  \{get\} /controller/device/config\+:device\+ID Download Configuration  Turnout\+Configuration  Turnout
 
-\{Number\} device\+ID The turnout\textquotesingle{}s Device ID.  Download the turnout\textquotesingle{}s configuration. I\+N\+P\+U\+T\+P\+IN and M\+O\+T\+O\+R\+P\+IN entries control how the device handles the pin. If set to 1, the pin order is reversed. This is useful if the wires are connected backwards to the motor and/or the input pins. Usually, both of these entries are set together, meaning, if M\+O\+T\+O\+R\+P\+IN is set to 1 set I\+N\+P\+U\+T\+P\+IN to 1 as well. The routes list is used by the device to determine what direction the turnout should be set to in response to a T\+R\+N\+\_\+\+A\+C\+T\+I\+V\+A\+T\+E\+\_\+\+R\+O\+U\+TE message.  Example usage. This example returns the configuration for a Turnout Device\+: \href{http://localhost:8080/controller/device/config?deviceID=1}{\tt http\+://localhost\+:8080/controller/device/config?device\+I\+D=1}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \{ \char`\"{}\+I\+N\+P\+U\+T\+P\+I\+N\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}\+M\+O\+T\+O\+R\+P\+I\+N\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}device\+Class\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}routes\char`\"{}\+: \mbox{[}\{ \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}turnout\+State\char`\"{}\+: \char`\"{}1\char`\"{} \}, \{ \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}2\char`\"{}, \char`\"{}turnout\+State\char`\"{}\+: \char`\"{}1\char`\"{} \}, \{ \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}3\char`\"{}, \char`\"{}turnout\+State\char`\"{}\+: \char`\"{}3\char`\"{} \}, \{ \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}4\char`\"{}, \char`\"{}turnout\+State\char`\"{}\+: \char`\"{}3\char`\"{} \} \mbox{]} \} 
+\{Number\} device\+ID The turnout\textquotesingle{}s Device ID.  Download the turnout\textquotesingle{}s configuration. I\+N\+P\+U\+T\+P\+IN and M\+O\+T\+O\+R\+P\+IN entries control how the device handles the pin. If set to 1, the pin order is reversed. This is useful if the wires are connected backwards to the motor and/or the input pins. Usually, both of these entries are set together, meaning, if M\+O\+T\+O\+R\+P\+IN is set to 1 set I\+N\+P\+U\+T\+P\+IN to 1 as well. The routes list is used by the device to determine what direction the turnout should be set to in response to a T\+R\+N\+\_\+\+A\+C\+T\+I\+V\+A\+T\+E\+\_\+\+R\+O\+U\+TE message.  Example usage. This example returns the configuration for a Turnout Device\+: \href{http://localhost:8080/controller/device/config?deviceID=1}{\tt http\+://localhost\+:8080/controller/device/config?device\+I\+D=1}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \{ \char`\"{}\+I\+N\+P\+U\+T\+P\+I\+N\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}\+M\+O\+T\+O\+R\+P\+I\+N\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}device\+Class\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}routes\char`\"{}\+: \mbox{[}\{ \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}turnout\+State\char`\"{}\+: \char`\"{}1\char`\"{} \}, \{ \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}2\char`\"{}, \char`\"{}turnout\+State\char`\"{}\+: \char`\"{}1\char`\"{} \}, \{ \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}3\char`\"{}, \char`\"{}turnout\+State\char`\"{}\+: \char`\"{}3\char`\"{} \}, \{ \char`\"{}route\+I\+D\char`\"{}\+: \char`\"{}4\char`\"{}, \char`\"{}turnout\+State\char`\"{}\+: \char`\"{}3\char`\"{} \} \mbox{]} \}\hyperlink{class_a_p_i_turnout}{A\+P\+I\+Turnout} This class handles all A\+PI requests for a turnout device. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_p_i_turnout_a6c730f3cc2cee54be17e110770b9070b}\label{class_a_p_i_turnout_a6c730f3cc2cee54be17e110770b9070b}} 
+\index{A\+P\+I\+Turnout@{A\+P\+I\+Turnout}!A\+P\+I\+Turnout@{A\+P\+I\+Turnout}}
+\index{A\+P\+I\+Turnout@{A\+P\+I\+Turnout}!A\+P\+I\+Turnout@{A\+P\+I\+Turnout}}
+\subsubsection{\texorpdfstring{A\+P\+I\+Turnout()}{APITurnout()}}
+{\footnotesize\ttfamily A\+P\+I\+Turnout\+::\+A\+P\+I\+Turnout (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Contstructor Creates a turnout A\+PI handler. The constructor registers a \hyperlink{class_url_handler}{Url Handler} objects. See the A\+PI documentation for information on the U\+RL\textquotesingle{}s handled by this class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_p_i_turnout_a56cef33f12b9d8c13aa8cdce7e24bf0c}\label{class_a_p_i_turnout_a56cef33f12b9d8c13aa8cdce7e24bf0c}} 
+\index{A\+P\+I\+Turnout@{A\+P\+I\+Turnout}!handle\+Activate\+Turnout\+Url@{handle\+Activate\+Turnout\+Url}}
+\index{handle\+Activate\+Turnout\+Url@{handle\+Activate\+Turnout\+Url}!A\+P\+I\+Turnout@{A\+P\+I\+Turnout}}
+\subsubsection{\texorpdfstring{handle\+Activate\+Turnout\+Url}{handleActivateTurnoutUrl}}
+{\footnotesize\ttfamily void A\+P\+I\+Turnout\+::handle\+Activate\+Turnout\+Url (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Activates a turnout. 
+
+A\+PI \char`\"{}/api/activate\+\_\+turnout\char`\"{} Throws a turnout to either its normal or diverging (thrown) direction depending on the supplied Turnout State parameter. If this parameter is missing or set to 0, the turnout is toggled between thrown and diverging. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the turnout\textquotesingle{}s ID and the new Turnout\+State. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} unused. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

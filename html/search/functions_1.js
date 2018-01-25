@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['canroutelock',['canRouteLock',['../class_a_p_i_route.html#ab02063d3a9335d9e3e3ad9160dbb626b',1,'APIRoute']]],
   ['controlleradded',['controllerAdded',['../class_controller_manager.html#a38c42bcc777c296ff2e0e4c4099dbdf7',1,'ControllerManager']]],
   ['controllerremoved',['controllerRemoved',['../class_controller_manager.html#aaca6003c9cc1a0c184932fd4b2649b8a',1,'ControllerManager']]],
   ['controllerstatuschanged',['controllerStatusChanged',['../class_controller_manager.html#ad065b1ffd21f4f5e2a84b4ce15bf404a',1,'ControllerManager']]],

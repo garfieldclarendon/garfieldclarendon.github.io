@@ -13,6 +13,7 @@ var searchData=
   ['devicesemaphore',['DeviceSemaphore',['../_global_defs_8h.html#ad17679fac69973be9b3a2787a60d7722a66c41faf368824b539ad5abe582bd5a7',1,'GlobalDefs.h']]],
   ['devicesignal',['DeviceSignal',['../_global_defs_8h.html#ad17679fac69973be9b3a2787a60d7722a7e07573bea51a7eacfb2ab240e060839',1,'GlobalDefs.h']]],
   ['devicestatus',['DeviceStatus',['../class_device_status.html',1,'']]],
+  ['devicestatuschanged',['deviceStatusChanged',['../class_a_p_i_route.html#a2ddf0d77318dcb66acc7d754c81151b3',1,'APIRoute']]],
   ['deviceturnout',['DeviceTurnout',['../_global_defs_8h.html#ad17679fac69973be9b3a2787a60d7722a89ff58ae70341de6db9dca8d756644ed',1,'GlobalDefs.h']]],
   ['deviceunknown',['DeviceUnknown',['../_global_defs_8h.html#ad17679fac69973be9b3a2787a60d7722a1910d0bd832b02bb63a8d6a80be8cdb6',1,'GlobalDefs.h']]]
 ];

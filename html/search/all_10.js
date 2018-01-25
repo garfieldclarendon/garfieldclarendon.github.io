@@ -2,7 +2,7 @@ var searchData=
 [
   ['saveentity',['saveEntity',['../class_a_p_i_entity.html#a5f2de518701f362000bb6eb341fbf95b',1,'APIEntity']]],
   ['sendcommand',['sendCommand',['../class_qt_service_controller.html#a1428c7d51403416bc7663ae37c446cfc',1,'QtServiceController']]],
-  ['sendnotificationmessage',['sendNotificationMessage',['../class_a_p_i_controller.html#aa31deccd23ec06a6dc92b449b0bc86f8',1,'APIController']]],
+  ['sendnotificationmessage',['sendNotificationMessage',['../class_a_p_i_controller.html#aa31deccd23ec06a6dc92b449b0bc86f8',1,'APIController::sendNotificationMessage()'],['../class_a_p_i_device.html#a1096381146a1c545b194d4bb63b32b8b',1,'APIDevice::sendNotificationMessage()'],['../class_a_p_i_route.html#ad9db78abae10c20cbbec86378ba94db3',1,'APIRoute::sendNotificationMessage()']]],
   ['serialportthread',['SerialPortThread',['../class_serial_port_thread.html',1,'SerialPortThread'],['../class_serial_port_thread.html#a5dc5088f166705325cc4a4215410b48b',1,'SerialPortThread::SerialPortThread()']]],
   ['servicedescription',['serviceDescription',['../class_qt_service_controller.html#a503c0fadf098b4c5bbccbb2a57f911e2',1,'QtServiceController::serviceDescription()'],['../class_qt_service_base.html#a6cf3ef7bc5d85acb31e99a85fde47397',1,'QtServiceBase::serviceDescription()']]],
   ['servicefilepath',['serviceFilePath',['../class_qt_service_controller.html#a5ab709fdeb3ab526c92ccbbe1b2706c6',1,'QtServiceController']]],

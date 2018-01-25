@@ -67,6 +67,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>API handler class for a LCS Signal.  
+ <a href="class_a_p_i_signal.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_a_p_i_signal_8h_source.html">APISignal.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for APISignal:</div>
@@ -79,27 +82,140 @@ Inheritance diagram for APISignal:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:aa39d78d40fce74c4adff19db446a34c8"><td class="memItemLeft" align="right" valign="top"><a id="aa39d78d40fce74c4adff19db446a34c8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>handleGetSignalAspectList</b> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
+<tr class="memitem:aa39d78d40fce74c4adff19db446a34c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_signal.html#aa39d78d40fce74c4adff19db446a34c8">handleGetSignalAspectList</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
 <tr class="separator:aa39d78d40fce74c4adff19db446a34c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d698251dabf70472533fa99e4f53e48"><td class="memItemLeft" align="right" valign="top"><a id="a0d698251dabf70472533fa99e4f53e48"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>handleGetSignalConditionList</b> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
+<tr class="memitem:a0d698251dabf70472533fa99e4f53e48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_signal.html#a0d698251dabf70472533fa99e4f53e48">handleGetSignalConditionList</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
 <tr class="separator:a0d698251dabf70472533fa99e4f53e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab712db36d6e6281b9b317d60295ca3f6"><td class="memItemLeft" align="right" valign="top"><a id="ab712db36d6e6281b9b317d60295ca3f6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>APISignal</b> (QObject *parent=nullptr)</td></tr>
+<tr class="memitem:ab712db36d6e6281b9b317d60295ca3f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_signal.html#ab712db36d6e6281b9b317d60295ca3f6">APISignal</a> (QObject *parent=nullptr)</td></tr>
 <tr class="separator:ab712db36d6e6281b9b317d60295ca3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>{get} /api/lock_device:deviceID,lock,redMode,greenMode,yellowMode Lock Signal  LockSignal  Signal</p>
+<div class="textblock"><p>API handler class for a LCS Signal. </p>
+<p>{get} /api/lock_device:deviceID,lock,redMode,greenMode,yellowMode Lock Signal  LockSignal  Signal</p>
 <p>{Number} deviceID The signal's Device ID.  {Number=0,1} lock Flag which unlocks or locks the signal to its current aspect.  {Number=0,1,2} [redMode] Red LED state. 0 = off, 1 = on, 2 = flashing.  {Number=0,1,2} [greenMode] Green LED state. 0 = off, 1 = on, 2 = flashing.  {Number=0,1,2} [yellowMode] Yellow LED state. 0 = off, 1 = on, 2 = flashing.  Locks/unlocks the signal. If the lock parameter is set to 1, and redMode, greenMode and/or yellowMode are supplied, the signal's aspect is first updated to values provided and then locked. If all three modes are not supplied, the missing modes will be set to 0 = off. If no LED modes are supplied, the signal's current pin settings are "locked" as is.  In this example, Signal 21 is locked and its aspect set to flashing yellow. <a href="http://localhost:8080/api/lock_device?deviceID=21&lock=1&yellowMode=2">http://localhost:8080/api/lock_device?deviceID=21&amp;lock=1&amp;yellowMode=2</a>  {get} /api/signal_aspect_list:deviceID Signal Aspect List  SignalAspectList  Signal</p>
 <p>{Number} deviceID The signal's Device ID.  Returns a list aspects defined for a signal sorted by sortIndex. A Signal device uses this list to determine what state the LED's of a signal head should be set to (on, off or flashing). The signal starts at the first entry in this list and evaluates each signal condition entry assigned to the aspect (see /api/signal_condition_list). If all conditions of an aspect entry evaluate to true, processing stops and the signal is set to the aspect. If none of the aspects evaluate to true, the signal sets the red LED on and all others off.  {Number} deviceID Signal's device ID.  {Number=0,1,2} greenMode Green LED state. 0 = off, 1 = on, 2 = flashing.  {Number=0,1,2} redMode Red LED state. 0 = off, 1 = on, 2 = flashing.  {Number} signalAspectID signalAspect's ID.  {Number} sortIndex sort order.  {Number=0,1,2} yellowMode Yellow LED state. 0 = off, 1 = on, 2 = flashing.  Example usage: <a href="http://localhost:8080/api/signal_aspect_list?deviceID=21">http://localhost:8080/api/signal_aspect_list?deviceID=21</a>  {json} Success-Response: HTTP/1.1 200 OK [{ "deviceID": "21", "greenMode": "1", "redMode": "0", "signalAspectID": "5", "sortIndex": "0", "yellowMode": "0" }, { "deviceID": "21", "greenMode": "2", "redMode": "1", "signalAspectID": "6", "sortIndex": "1", "yellowMode": "0" } ]  {get} /api/signal_condition_list:aspectID Aspect Condition List  SignalAspectConditionList  Signal</p>
 <p>{Number} aspectID The aspect's ID.  Returns a list conditions that must be met for the aspect to be valid (selected). All conditions in this list are evaluated by comparing the device's current state specified by deviceID to the entry's deviceState using the conditionOperand (equals or not equals). If the comparison is successful the Signal Condition is considered to be true/valid. All conditions in this list must evaluate to true for the aspect to be selected.  {Number=0,1} conditionOperand Operand used for comparison. 0 = Equals, 1 = Not Equals.  {Number} deviceID The ID of the device to be monitored.  {Number} deviceState The state the monitored device is compared to. When evaluated, this value is compared to the device's current state.  {Number} signalAspectID signalAspect's ID.  {Number} signalConditionID signalCondition's ID.  Example usage: <a href="http://localhost:8080/api/signal_condition_list?aspectID=6">http://localhost:8080/api/signal_condition_list?aspectID=6</a>  {json} Success-Response: HTTP/1.1 200 OK [{ "conditionOperand": "0", "deviceID": "17", "deviceState": "3", "signalAspectID": "6", "signalConditionID": "19" }, { "conditionOperand": "0", "deviceID": "18", "deviceState": "3", "signalAspectID": "6", "signalConditionID": "20" }, { "conditionOperand": "0", "deviceID": "11", "deviceState": "1", "signalAspectID": "6", "signalConditionID": "21" }, { "conditionOperand": "0", "deviceID": "5", "deviceState": "3", "signalAspectID": "6", "signalConditionID": "22" }, { "conditionOperand": "0", "deviceID": "6", "deviceState": "3", "signalAspectID": "6", "signalConditionID": "23" }, { "conditionOperand": "0", "deviceID": "8", "deviceState": "1", "signalAspectID": "6", "signalConditionID": "24" } ]  {get} /controller/device/config:deviceID Download Configuration  SignalConfiguration  Signal</p>
 <p>{Number} deviceID The signal's Device ID.  Download the signal's configuration. See <a href="#api-Signal-SignalAspectList">/api/signal_aspect_list</a> and <a href="#api-Signal-SignalAspectConditionList">/api/signal_condition_list</a> for more information on how the signal device uses this information.  {Object[]} aspects List of aspects.  {Number} aspects.aspectID Aspect's ID.  {Number=0,1,2} aspects.greenMode Green LED state. 0 = off, 1 = on, 2 = flashing.  {Number=0,1,2} aspects.redMode Red LED state. 0 = off, 1 = on, 2 = flashing.  {Number=0,1,2} aspects.yellowMode Yellow LED state. 0 = off, 1 = on, 2 = flashing.  {Object[]} devices List of devices to monitor. The signal depends on the current state of these devices in order to determine the proper aspect to display. The signal listens for UDP status update messages from these devices and saves their current state.  {Number} devices.deviceID ID of the device to monitor.  Example usage. This example returns the configuration for Signal Device 21: <a href="http://localhost:8080/controller/device/config?deviceID=21">http://localhost:8080/controller/device/config?deviceID=21</a>  {json} Success-Response: HTTP/1.1 200 OK { "aspects": [{ "aspectID": "5", "greenMode": "1", "redMode": "0", "yellowMode": "0" }, { "aspectID": "6", "greenMode": "2", "redMode": "1", "yellowMode": "0" } ], "devices": [{ "deviceID": "17" }, { "deviceID": "18" }, { "deviceID": "12" }, { "deviceID": "5" }, { "deviceID": "6" }, { "deviceID": "8" }, { "deviceID": "11" } ] }  {get} /controller/device/config:aspectID Download Aspect Configuration  SignalAspectConfiguration  Signal</p>
-<p>{Number} aspectID The aspect's ID.  Download the configuration information for a signal aspect. See <a href="#api-Signal-SignalAspectList">/api/signal_aspect_list</a> and <a href="#api-Signal-SignalAspectConditionList">/api/signal_condition_list</a> for more information.  {Number} aspectID Aspect's ID.  {Object[]} conditions List of conditions. See <a href="#api-Signal-SignalAspectList">/api/signal_aspect_list</a> for more information.  {Number=0,1} conditions.conditionOperand Operand used for comparison. 0 = Equals, 1 = Not Equals.  {Number} conditions.deviceID Device ID.  {Number} conditions.deviceState Device state.  {Number=0,1,2} greenMode Green LED state. 0 = off, 1 = on, 2 = flashing.  {Number=0,1,2} redMode Red LED state. 0 = off, 1 = on, 2 = flashing.  {Number=0,1,2} yellowMode Yellow LED state. 0 = off, 1 = on, 2 = flashing.  Example usage. This example returns the configuration for Signal Aspect 6: <a href="http://localhost:8080/controller/device/config?aspectID=6">http://localhost:8080/controller/device/config?aspectID=6</a>  {json} Success-Response: HTTP/1.1 200 OK { "aspectID": "6", "conditions": [{ "conditionOperand": "0", "deviceID": "17", "deviceState": "3" }, { "conditionOperand": "0", "deviceID": "18", "deviceState": "3" }, { "conditionOperand": "0", "deviceID": "11", "deviceState": "1" }, { "conditionOperand": "0", "deviceID": "5", "deviceState": "3" }, { "conditionOperand": "0", "deviceID": "6", "deviceState": "3" }, { "conditionOperand": "0", "deviceID": "8", "deviceState": "1" } ], "greenMode": "2", "redMode": "1", "yellowMode": "0" } </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<p>{Number} aspectID The aspect's ID.  Download the configuration information for a signal aspect. See <a href="#api-Signal-SignalAspectList">/api/signal_aspect_list</a> and <a href="#api-Signal-SignalAspectConditionList">/api/signal_condition_list</a> for more information.  {Number} aspectID Aspect's ID.  {Object[]} conditions List of conditions. See <a href="#api-Signal-SignalAspectList">/api/signal_aspect_list</a> for more information.  {Number=0,1} conditions.conditionOperand Operand used for comparison. 0 = Equals, 1 = Not Equals.  {Number} conditions.deviceID Device ID.  {Number} conditions.deviceState Device state.  {Number=0,1,2} greenMode Green LED state. 0 = off, 1 = on, 2 = flashing.  {Number=0,1,2} redMode Red LED state. 0 = off, 1 = on, 2 = flashing.  {Number=0,1,2} yellowMode Yellow LED state. 0 = off, 1 = on, 2 = flashing.  Example usage. This example returns the configuration for Signal Aspect 6: <a href="http://localhost:8080/controller/device/config?aspectID=6">http://localhost:8080/controller/device/config?aspectID=6</a>  {json} Success-Response: HTTP/1.1 200 OK { "aspectID": "6", "conditions": [{ "conditionOperand": "0", "deviceID": "17", "deviceState": "3" }, { "conditionOperand": "0", "deviceID": "18", "deviceState": "3" }, { "conditionOperand": "0", "deviceID": "11", "deviceState": "1" }, { "conditionOperand": "0", "deviceID": "5", "deviceState": "3" }, { "conditionOperand": "0", "deviceID": "6", "deviceState": "3" }, { "conditionOperand": "0", "deviceID": "8", "deviceState": "1" } ], "greenMode": "2", "redMode": "1", "yellowMode": "0" }<a class="el" href="class_a_p_i_signal.html" title="API handler class for a LCS Signal. ">APISignal</a> This class handles all API requests for a signal device. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab712db36d6e6281b9b317d60295ca3f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab712db36d6e6281b9b317d60295ca3f6">&#9670;&nbsp;</a></span>APISignal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">APISignal::APISignal </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Contstructor Creates a signal API handler. The constructor registers a <a class="el" href="class_url_handler.html">Url Handler</a> objects. See the API documentation for information on the URL's handled by this class. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa39d78d40fce74c4adff19db446a34c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa39d78d40fce74c4adff19db446a34c8">&#9670;&nbsp;</a></span>handleGetSignalAspectList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APISignal::handleGetSignalAspectList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_a_p_i_response.html">APIResponse</a> *&#160;</td>
+          <td class="paramname"><em>response</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>API "/api/signal_aspect_list" Downloads a list of all apsects for a given signal. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the signal's ID. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> with the payload set to the list of signal aspects in JSON format. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0d698251dabf70472533fa99e4f53e48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d698251dabf70472533fa99e4f53e48">&#9670;&nbsp;</a></span>handleGetSignalConditionList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APISignal::handleGetSignalConditionList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_a_p_i_response.html">APIResponse</a> *&#160;</td>
+          <td class="paramname"><em>response</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>API "/api/signal_condition_list" Downloads a list of all conditions for a given signal aspect. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for a API web request. ">APIRequest</a> containing the url of the request including the signal aspect's ID. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for a API web response. ">APIResponse</a> with the payload set to the list of signal aspect conditions in JSON format. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>LCSServer/<a class="el" href="_a_p_i_signal_8h_source.html">APISignal.h</a></li>
 <li>LCSServer/APISignal.cpp</li>
 </ul>

@@ -2,6 +2,11 @@
 \label{class_a_p_i_signal}\index{A\+P\+I\+Signal@{A\+P\+I\+Signal}}
 
 
+A\+PI handler class for a L\+CS Signal.  
+
+
+
+
 {\ttfamily \#include $<$A\+P\+I\+Signal.\+h$>$}
 
 Inheritance diagram for A\+P\+I\+Signal\+:\begin{figure}[H]
@@ -13,21 +18,20 @@ Inheritance diagram for A\+P\+I\+Signal\+:\begin{figure}[H]
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_p_i_signal_aa39d78d40fce74c4adff19db446a34c8}\label{class_a_p_i_signal_aa39d78d40fce74c4adff19db446a34c8}} 
-void {\bfseries handle\+Get\+Signal\+Aspect\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+void \hyperlink{class_a_p_i_signal_aa39d78d40fce74c4adff19db446a34c8}{handle\+Get\+Signal\+Aspect\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
 \item 
-\mbox{\Hypertarget{class_a_p_i_signal_a0d698251dabf70472533fa99e4f53e48}\label{class_a_p_i_signal_a0d698251dabf70472533fa99e4f53e48}} 
-void {\bfseries handle\+Get\+Signal\+Condition\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+void \hyperlink{class_a_p_i_signal_a0d698251dabf70472533fa99e4f53e48}{handle\+Get\+Signal\+Condition\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_a_p_i_signal_ab712db36d6e6281b9b317d60295ca3f6}\label{class_a_p_i_signal_ab712db36d6e6281b9b317d60295ca3f6}} 
-{\bfseries A\+P\+I\+Signal} (Q\+Object $\ast$parent=nullptr)
+\hyperlink{class_a_p_i_signal_ab712db36d6e6281b9b317d60295ca3f6}{A\+P\+I\+Signal} (Q\+Object $\ast$parent=nullptr)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+A\+PI handler class for a L\+CS Signal. 
+
 \{get\} /api/lock\+\_\+device\+:device\+ID,lock,red\+Mode,green\+Mode,yellow\+Mode Lock Signal  Lock\+Signal  Signal
 
 \{Number\} device\+ID The signal\textquotesingle{}s Device ID.  \{Number=0,1\} lock Flag which unlocks or locks the signal to its current aspect.  \{Number=0,1,2\} \mbox{[}red\+Mode\mbox{]} Red L\+ED state. 0 = off, 1 = on, 2 = flashing.  \{Number=0,1,2\} \mbox{[}green\+Mode\mbox{]} Green L\+ED state. 0 = off, 1 = on, 2 = flashing.  \{Number=0,1,2\} \mbox{[}yellow\+Mode\mbox{]} Yellow L\+ED state. 0 = off, 1 = on, 2 = flashing.  Locks/unlocks the signal. If the lock parameter is set to 1, and red\+Mode, green\+Mode and/or yellow\+Mode are supplied, the signal\textquotesingle{}s aspect is first updated to values provided and then locked. If all three modes are not supplied, the missing modes will be set to 0 = off. If no L\+ED modes are supplied, the signal\textquotesingle{}s current pin settings are \char`\"{}locked\char`\"{} as is.  In this example, Signal 21 is locked and its aspect set to flashing yellow. \href{http://localhost:8080/api/lock_device?deviceID=21&lock=1&yellowMode=2}{\tt http\+://localhost\+:8080/api/lock\+\_\+device?device\+I\+D=21\&lock=1\&yellow\+Mode=2}  \{get\} /api/signal\+\_\+aspect\+\_\+list\+:device\+ID Signal Aspect List  Signal\+Aspect\+List  Signal
@@ -38,7 +42,45 @@ void {\bfseries handle\+Get\+Signal\+Condition\+List} (const \hyperlink{class_a_
 
 \{Number\} device\+ID The signal\textquotesingle{}s Device ID.  Download the signal\textquotesingle{}s configuration. See \href{#api-Signal-SignalAspectList}{\tt /api/signal\+\_\+aspect\+\_\+list} and \href{#api-Signal-SignalAspectConditionList}{\tt /api/signal\+\_\+condition\+\_\+list} for more information on how the signal device uses this information.  \{Object\mbox{[}\mbox{]}\} aspects List of aspects.  \{Number\} aspects.\+aspect\+ID Aspect\textquotesingle{}s ID.  \{Number=0,1,2\} aspects.\+green\+Mode Green L\+ED state. 0 = off, 1 = on, 2 = flashing.  \{Number=0,1,2\} aspects.\+red\+Mode Red L\+ED state. 0 = off, 1 = on, 2 = flashing.  \{Number=0,1,2\} aspects.\+yellow\+Mode Yellow L\+ED state. 0 = off, 1 = on, 2 = flashing.  \{Object\mbox{[}\mbox{]}\} devices List of devices to monitor. The signal depends on the current state of these devices in order to determine the proper aspect to display. The signal listens for U\+DP status update messages from these devices and saves their current state.  \{Number\} devices.\+device\+ID ID of the device to monitor.  Example usage. This example returns the configuration for Signal Device 21\+: \href{http://localhost:8080/controller/device/config?deviceID=21}{\tt http\+://localhost\+:8080/controller/device/config?device\+I\+D=21}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \{ \char`\"{}aspects\char`\"{}\+: \mbox{[}\{ \char`\"{}aspect\+I\+D\char`\"{}\+: \char`\"{}5\char`\"{}, \char`\"{}green\+Mode\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}red\+Mode\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}yellow\+Mode\char`\"{}\+: \char`\"{}0\char`\"{} \}, \{ \char`\"{}aspect\+I\+D\char`\"{}\+: \char`\"{}6\char`\"{}, \char`\"{}green\+Mode\char`\"{}\+: \char`\"{}2\char`\"{}, \char`\"{}red\+Mode\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}yellow\+Mode\char`\"{}\+: \char`\"{}0\char`\"{} \} \mbox{]}, \char`\"{}devices\char`\"{}\+: \mbox{[}\{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}17\char`\"{} \}, \{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}18\char`\"{} \}, \{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}12\char`\"{} \}, \{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}5\char`\"{} \}, \{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}6\char`\"{} \}, \{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}8\char`\"{} \}, \{ \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}11\char`\"{} \} \mbox{]} \}  \{get\} /controller/device/config\+:aspect\+ID Download Aspect Configuration  Signal\+Aspect\+Configuration  Signal
 
-\{Number\} aspect\+ID The aspect\textquotesingle{}s ID.  Download the configuration information for a signal aspect. See \href{#api-Signal-SignalAspectList}{\tt /api/signal\+\_\+aspect\+\_\+list} and \href{#api-Signal-SignalAspectConditionList}{\tt /api/signal\+\_\+condition\+\_\+list} for more information.  \{Number\} aspect\+ID Aspect\textquotesingle{}s ID.  \{Object\mbox{[}\mbox{]}\} conditions List of conditions. See \href{#api-Signal-SignalAspectList}{\tt /api/signal\+\_\+aspect\+\_\+list} for more information.  \{Number=0,1\} conditions.\+condition\+Operand Operand used for comparison. 0 = Equals, 1 = Not Equals.  \{Number\} conditions.\+device\+ID Device ID.  \{Number\} conditions.\+device\+State Device state.  \{Number=0,1,2\} green\+Mode Green L\+ED state. 0 = off, 1 = on, 2 = flashing.  \{Number=0,1,2\} red\+Mode Red L\+ED state. 0 = off, 1 = on, 2 = flashing.  \{Number=0,1,2\} yellow\+Mode Yellow L\+ED state. 0 = off, 1 = on, 2 = flashing.  Example usage. This example returns the configuration for Signal Aspect 6\+: \href{http://localhost:8080/controller/device/config?aspectID=6}{\tt http\+://localhost\+:8080/controller/device/config?aspect\+I\+D=6}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \{ \char`\"{}aspect\+I\+D\char`\"{}\+: \char`\"{}6\char`\"{}, \char`\"{}conditions\char`\"{}\+: \mbox{[}\{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}17\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}3\char`\"{} \}, \{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}18\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}3\char`\"{} \}, \{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}11\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}1\char`\"{} \}, \{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}5\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}3\char`\"{} \}, \{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}6\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}3\char`\"{} \}, \{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}8\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}1\char`\"{} \} \mbox{]}, \char`\"{}green\+Mode\char`\"{}\+: \char`\"{}2\char`\"{}, \char`\"{}red\+Mode\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}yellow\+Mode\char`\"{}\+: \char`\"{}0\char`\"{} \} 
+\{Number\} aspect\+ID The aspect\textquotesingle{}s ID.  Download the configuration information for a signal aspect. See \href{#api-Signal-SignalAspectList}{\tt /api/signal\+\_\+aspect\+\_\+list} and \href{#api-Signal-SignalAspectConditionList}{\tt /api/signal\+\_\+condition\+\_\+list} for more information.  \{Number\} aspect\+ID Aspect\textquotesingle{}s ID.  \{Object\mbox{[}\mbox{]}\} conditions List of conditions. See \href{#api-Signal-SignalAspectList}{\tt /api/signal\+\_\+aspect\+\_\+list} for more information.  \{Number=0,1\} conditions.\+condition\+Operand Operand used for comparison. 0 = Equals, 1 = Not Equals.  \{Number\} conditions.\+device\+ID Device ID.  \{Number\} conditions.\+device\+State Device state.  \{Number=0,1,2\} green\+Mode Green L\+ED state. 0 = off, 1 = on, 2 = flashing.  \{Number=0,1,2\} red\+Mode Red L\+ED state. 0 = off, 1 = on, 2 = flashing.  \{Number=0,1,2\} yellow\+Mode Yellow L\+ED state. 0 = off, 1 = on, 2 = flashing.  Example usage. This example returns the configuration for Signal Aspect 6\+: \href{http://localhost:8080/controller/device/config?aspectID=6}{\tt http\+://localhost\+:8080/controller/device/config?aspect\+I\+D=6}  \{json\} Success-\/\+Response\+: H\+T\+T\+P/1.\+1 200 OK \{ \char`\"{}aspect\+I\+D\char`\"{}\+: \char`\"{}6\char`\"{}, \char`\"{}conditions\char`\"{}\+: \mbox{[}\{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}17\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}3\char`\"{} \}, \{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}18\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}3\char`\"{} \}, \{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}11\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}1\char`\"{} \}, \{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}5\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}3\char`\"{} \}, \{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}6\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}3\char`\"{} \}, \{ \char`\"{}condition\+Operand\char`\"{}\+: \char`\"{}0\char`\"{}, \char`\"{}device\+I\+D\char`\"{}\+: \char`\"{}8\char`\"{}, \char`\"{}device\+State\char`\"{}\+: \char`\"{}1\char`\"{} \} \mbox{]}, \char`\"{}green\+Mode\char`\"{}\+: \char`\"{}2\char`\"{}, \char`\"{}red\+Mode\char`\"{}\+: \char`\"{}1\char`\"{}, \char`\"{}yellow\+Mode\char`\"{}\+: \char`\"{}0\char`\"{} \}\hyperlink{class_a_p_i_signal}{A\+P\+I\+Signal} This class handles all A\+PI requests for a signal device. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_p_i_signal_ab712db36d6e6281b9b317d60295ca3f6}\label{class_a_p_i_signal_ab712db36d6e6281b9b317d60295ca3f6}} 
+\index{A\+P\+I\+Signal@{A\+P\+I\+Signal}!A\+P\+I\+Signal@{A\+P\+I\+Signal}}
+\index{A\+P\+I\+Signal@{A\+P\+I\+Signal}!A\+P\+I\+Signal@{A\+P\+I\+Signal}}
+\subsubsection{\texorpdfstring{A\+P\+I\+Signal()}{APISignal()}}
+{\footnotesize\ttfamily A\+P\+I\+Signal\+::\+A\+P\+I\+Signal (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Contstructor Creates a signal A\+PI handler. The constructor registers a \hyperlink{class_url_handler}{Url Handler} objects. See the A\+PI documentation for information on the U\+RL\textquotesingle{}s handled by this class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_p_i_signal_aa39d78d40fce74c4adff19db446a34c8}\label{class_a_p_i_signal_aa39d78d40fce74c4adff19db446a34c8}} 
+\index{A\+P\+I\+Signal@{A\+P\+I\+Signal}!handle\+Get\+Signal\+Aspect\+List@{handle\+Get\+Signal\+Aspect\+List}}
+\index{handle\+Get\+Signal\+Aspect\+List@{handle\+Get\+Signal\+Aspect\+List}!A\+P\+I\+Signal@{A\+P\+I\+Signal}}
+\subsubsection{\texorpdfstring{handle\+Get\+Signal\+Aspect\+List}{handleGetSignalAspectList}}
+{\footnotesize\ttfamily void A\+P\+I\+Signal\+::handle\+Get\+Signal\+Aspect\+List (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/api/signal\+\_\+aspect\+\_\+list\char`\"{} Downloads a list of all apsects for a given signal. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the signal\textquotesingle{}s ID. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the list of signal aspects in J\+S\+ON format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_signal_a0d698251dabf70472533fa99e4f53e48}\label{class_a_p_i_signal_a0d698251dabf70472533fa99e4f53e48}} 
+\index{A\+P\+I\+Signal@{A\+P\+I\+Signal}!handle\+Get\+Signal\+Condition\+List@{handle\+Get\+Signal\+Condition\+List}}
+\index{handle\+Get\+Signal\+Condition\+List@{handle\+Get\+Signal\+Condition\+List}!A\+P\+I\+Signal@{A\+P\+I\+Signal}}
+\subsubsection{\texorpdfstring{handle\+Get\+Signal\+Condition\+List}{handleGetSignalConditionList}}
+{\footnotesize\ttfamily void A\+P\+I\+Signal\+::handle\+Get\+Signal\+Condition\+List (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/api/signal\+\_\+condition\+\_\+list\char`\"{} Downloads a list of all conditions for a given signal aspect. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the signal aspect\textquotesingle{}s ID. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the list of signal aspect conditions in J\+S\+ON format. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

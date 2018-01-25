@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['canroutelock',['canRouteLock',['../class_a_p_i_route.html#ab02063d3a9335d9e3e3ad9160dbb626b',1,'APIRoute']]],
   ['conditionenum',['ConditionEnum',['../_global_defs_8h.html#a705748a895b2f4722278227f23819afe',1,'GlobalDefs.h']]],
   ['conditionequals',['ConditionEquals',['../_global_defs_8h.html#a705748a895b2f4722278227f23819afead9d73aa08cbcd6171135769662c94cb6',1,'GlobalDefs.h']]],
   ['conditionnotequals',['ConditionNotEquals',['../_global_defs_8h.html#a705748a895b2f4722278227f23819afea5cfe9b940d35bede2caeb94d233000c5',1,'GlobalDefs.h']]],
