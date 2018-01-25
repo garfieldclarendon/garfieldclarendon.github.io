@@ -286,42 +286,6 @@
   },
   {
     "type": "get",
-    "url": "/api/send_controller_reset_config:serialNumber",
-    "title": "Reset Controller's configuration",
-    "name": "ControllerConfigurationReset",
-    "group": "Controller",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": true,
-            "field": "serialNumber",
-            "description": "<p>The controller's serial number.  If 0 or excluded, all controllers will delete their configuration data.</p>"
-          }
-        ]
-      }
-    },
-    "description": "<p>Sends a SYS_RESET_CONFIG broadcast UDP message instructing the controller(s) to delete all configuration data.  Once the data is deleted, the controller will restart.  Upon restarting, the controller re-downloads all configuration data.</p>",
-    "examples": [
-      {
-        "title": "Example usage:",
-        "content": "http://localhost:8080/api/send_controller_reset_config?serialNumber=1546165",
-        "type": "json"
-      }
-    ],
-    "version": "0.0.0",
-    "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller",
-    "sampleRequest": [
-      {
-        "url": "http://APITest.entrydns.org:8080/api/send_controller_reset_config:serialNumber"
-      }
-    ]
-  },
-  {
-    "type": "get",
     "url": "/api/send_controller_reset_notification_list:serialNumber",
     "title": "Reset Controller's controllers-to-notify list",
     "name": "ControllerConfigurationReset",
@@ -353,6 +317,42 @@
     "sampleRequest": [
       {
         "url": "http://APITest.entrydns.org:8080/api/send_controller_reset_notification_list:serialNumber"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/api/send_controller_reset_config:serialNumber",
+    "title": "Reset Controller's configuration",
+    "name": "ControllerConfigurationReset",
+    "group": "Controller",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "serialNumber",
+            "description": "<p>The controller's serial number.  If 0 or excluded, all controllers will delete their configuration data.</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Sends a SYS_RESET_CONFIG broadcast UDP message instructing the controller(s) to delete all configuration data.  Once the data is deleted, the controller will restart.  Upon restarting, the controller re-downloads all configuration data.</p>",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "http://localhost:8080/api/send_controller_reset_config?serialNumber=1546165",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "LCSServer/APIController.h",
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/send_controller_reset_config:serialNumber"
       }
     ]
   },
@@ -874,6 +874,97 @@
     "sampleRequest": [
       {
         "url": "http://APITest.entrydns.org:8080/api/copy_device:deviceID"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/api/create_device:deviceClass",
+    "title": "Create a device entry",
+    "name": "CreateDevice",
+    "group": "Device",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "deviceClass",
+            "description": "<p>The classification of the device's to be created.</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Creates a new, blank device entry.  In addition to the device table entry, any required deviceProperty entries are also created.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "controllerModuleID",
+            "description": "<p>Controller Module's ID to which the device is connected.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "deviceClass",
+            "description": "<p>Device's classification populated with the supplied deviceClass.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "deviceDescription",
+            "description": "<p>Device's description.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "deviceName",
+            "description": "<p>Device Device's name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Device's new ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "port/pin",
+            "description": "<p>Port to which the device is connected.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n[{\n        \"controllerModuleID\": \"0\",\n        \"deviceClass\": \"1\",\n        \"deviceDescription\": \"\",\n        \"deviceName\": \"\",\n        \"id\": \"83\",\n        \"port\": \"0\"\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "This example creates a new Turnout device entry.  In addition to the device table entry, two entries are also added to the",
+        "content": "deviceProperty table; MOTORPIN and INPUTPIN with values set to 0:\nhttp://localhost:8080/api/create_device?deviceClass=1",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "LCSServer/APIDevice.h",
+    "groupTitle": "Device",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/create_device:deviceClass"
       }
     ]
   },
