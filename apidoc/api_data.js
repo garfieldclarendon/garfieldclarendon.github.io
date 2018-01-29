@@ -286,42 +286,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/api/send_controller_reset_notification_list:serialNumber",
-    "title": "Reset Controller's controllers-to-notify list",
-    "name": "ControllerConfigurationReset",
-    "group": "Controller",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": true,
-            "field": "serialNumber",
-            "description": "<p>The controller's serial number.  If 0 or excluded, all controllers will delete their controllers-to-notify list.</p>"
-          }
-        ]
-      }
-    },
-    "description": "<p>Sends a SYS_RESET_NOTIFICATION_LIST broadcast UDP message instructing the controller(s) to delete controllers-to-notify list.  The controller responds by sending a /controller/notification_list to the application server.</p>",
-    "examples": [
-      {
-        "title": "Example usage:",
-        "content": "http://localhost:8080/api/send_controller_reset_notification_list?serialNumber=1546165",
-        "type": "json"
-      }
-    ],
-    "version": "0.0.0",
-    "filename": "LCSServer/APIController.h",
-    "groupTitle": "Controller",
-    "sampleRequest": [
-      {
-        "url": "http://APITest.entrydns.org:8080/api/send_controller_reset_notification_list:serialNumber"
-      }
-    ]
-  },
-  {
-    "type": "get",
     "url": "/api/send_controller_reset_config:serialNumber",
     "title": "Reset Controller's configuration",
     "name": "ControllerConfigurationReset",
@@ -353,6 +317,42 @@ define({ "api": [
     "sampleRequest": [
       {
         "url": "http://APITest.entrydns.org:8080/api/send_controller_reset_config:serialNumber"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/api/send_controller_reset_notification_list:serialNumber",
+    "title": "Reset Controller's controllers-to-notify list",
+    "name": "ControllerConfigurationReset",
+    "group": "Controller",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "serialNumber",
+            "description": "<p>The controller's serial number.  If 0 or excluded, all controllers will delete their controllers-to-notify list.</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Sends a SYS_RESET_NOTIFICATION_LIST broadcast UDP message instructing the controller(s) to delete controllers-to-notify list.  The controller responds by sending a /controller/notification_list to the application server.</p>",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "http://localhost:8080/api/send_controller_reset_notification_list?serialNumber=1546165",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "LCSServer/APIController.h",
+    "groupTitle": "Controller",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/send_controller_reset_notification_list:serialNumber"
       }
     ]
   },
@@ -788,97 +788,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/api/copy_device:deviceID",
-    "title": "Copy a device's data to a new device entry",
-    "name": "CopyDevice",
-    "group": "Device",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "deviceID",
-            "description": "<p>The device's id to be coppied.</p>"
-          }
-        ]
-      }
-    },
-    "description": "<p>Creates a copy of an existing device.  The new entry is an exact copy of the original except for the id field which is set to the new entry's id value.</p>",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "controllerModuleID",
-            "description": "<p>Controller Module's ID to which the device is connected.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "deviceClass",
-            "description": "<p>Device's classification.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "deviceDescription",
-            "description": "<p>Device's description.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "deviceName",
-            "description": "<p>Device Device's name.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Device's new ID.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "port/pin",
-            "description": "<p>Port to which the device is connected.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n[{\n        \"controllerModuleID\": \"4\",\n        \"deviceClass\": \"1\",\n        \"deviceDescription\": \"\",\n        \"deviceName\": \"TY30-1\",\n        \"id\": \"82\",\n        \"port\": \"0\"\n    }\n]",
-          "type": "json"
-        }
-      ]
-    },
-    "examples": [
-      {
-        "title": "Example usage:",
-        "content": "http://localhost:8080/api/copy_device?deviceID=1",
-        "type": "json"
-      }
-    ],
-    "version": "0.0.0",
-    "filename": "LCSServer/APIDevice.h",
-    "groupTitle": "Device",
-    "sampleRequest": [
-      {
-        "url": "http://APITest.entrydns.org:8080/api/copy_device:deviceID"
-      }
-    ]
-  },
-  {
-    "type": "get",
     "url": "/api/create_device:deviceClass",
     "title": "Create a device entry",
     "name": "CreateDevice",
@@ -1006,7 +915,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/api/device_list:serialNumber,moduleID,controllerID,classCode",
+    "url": "/api/device_list:serialNumber,moduleID,controllerID,classCode,deviceID",
     "title": "Get a list of devices",
     "name": "GetDeviceList",
     "group": "Device",
@@ -1040,6 +949,13 @@ define({ "api": [
             "optional": true,
             "field": "classCode",
             "description": "<p>filter device list by a specific device classification.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "deviceID",
+            "description": "<p>filter device list by a specific device ID.</p>"
           }
         ]
       }
@@ -1048,27 +964,6 @@ define({ "api": [
     "success": {
       "fields": {
         "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "address",
-            "description": "<p>Address of the module to which the device is connected.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "controllerID",
-            "description": "<p>Controller ID of the controller to which the device is connected.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "controllerModuleID",
-            "description": "<p>Controller Module ID of the controller to which the module the device is connected.</p>"
-          },
           {
             "group": "Success 200",
             "type": "Number",
@@ -1103,34 +998,13 @@ define({ "api": [
             "optional": false,
             "field": "deviceState",
             "description": "<p>Device's current state.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "moduleClass",
-            "description": "<p>Classification of the controller module to which the device is connected.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "port",
-            "description": "<p>Port/pin the device to which the connected.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "serialNumber",
-            "description": "<p>Serial Number of the controller to which the device is connected.</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n[{\n        \"address\": \"0\",\n        \"controllerID\": \"30\",\n        \"controllerModuleID\": \"8\",\n        \"deviceClass\": \"5\",\n        \"deviceDescription\": \"\",\n        \"deviceID\": \"19\",\n        \"deviceName\": \"GK Mine Signal\",\n        \"deviceState\": 0,\n        \"moduleClass\": \"5\",\n        \"port\": \"0\",\n        \"serialNumber\": \"585680\"\n    }\n]",
+          "content": "HTTP/1.1 200 OK\n[{\n        \"deviceClass\": \"5\",\n        \"deviceDescription\": \"\",\n        \"deviceID\": \"19\",\n        \"deviceName\": \"GK Mine Signal\",\n        \"deviceState\": 0,\n    }\n]",
           "type": "json"
         }
       ]
@@ -1147,7 +1021,7 @@ define({ "api": [
     "groupTitle": "Device",
     "sampleRequest": [
       {
-        "url": "http://APITest.entrydns.org:8080/api/device_list:serialNumber,moduleID,controllerID,classCode"
+        "url": "http://APITest.entrydns.org:8080/api/device_list:serialNumber,moduleID,controllerID,classCode,deviceID"
       }
     ]
   },
@@ -1225,6 +1099,90 @@ define({ "api": [
     "sampleRequest": [
       {
         "url": "http://APITest.entrydns.org:8080/api/device_property_list:deviceID"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/api/module_device_port_list:deviceID,moduleID",
+    "title": "Get module/port entries for a given device",
+    "name": "GetModuleDevicePortList",
+    "group": "Device",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "deviceID",
+            "description": "<p>} device's ID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "modleID",
+            "description": "<p>controllerModule's ID.</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Returns a list of moduleDevicePort entries for a given device or module.  This table cross-references a device to one or more modules.  This allows a signled device entry to be used with multiple modules; useful for PanelInputDevice and PanelOutputDevice, etc.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>moduleDevicePort's ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "deviceID",
+            "description": "<p>device's ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "controllerModuleID",
+            "description": "<p>controllerModule's id.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "port",
+            "description": "<p>port the device is connected to.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n[{\n        \"deviceID\": \"1\",\n        \"id\": \"58\",\n        \"controllerModuleID\": \"4\",\n        \"port\": \"0\"\n    }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "http://localhost:8080/api/device_property_list?deviceID=1",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "LCSServer/APIDevice.h",
+    "groupTitle": "Device",
+    "sampleRequest": [
+      {
+        "url": "http://APITest.entrydns.org:8080/api/module_device_port_list:deviceID,moduleID"
       }
     ]
   },
