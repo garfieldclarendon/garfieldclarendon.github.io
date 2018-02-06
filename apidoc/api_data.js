@@ -787,8 +787,8 @@ define({ "api": [
     ]
   },
   {
-    "type": "get",
-    "url": "/api/create_device:deviceClass",
+    "type": "post",
+    "url": "/api/create_device:createExtra",
     "title": "Create a device entry",
     "name": "CreateDevice",
     "group": "Device",
@@ -798,14 +798,14 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
-            "field": "deviceClass",
-            "description": "<p>The classification of the device's to be created.</p>"
+            "optional": true,
+            "field": "createExtra",
+            "description": "<p>Flag that, when set to true, instructs the system to create additional companion devices.</p>"
           }
         ]
       }
     },
-    "description": "<p>Creates a new, blank device entry.  In addition to the device table entry, any required deviceProperty entries are also created.</p>",
+    "description": "<p>Creates a new device entry.  In addition to the device table entry, any required deviceProperty entries are also created.  If the createExtra flag is set to 1, additional devices are created.  For turnouts, two PanelOutput devices are created for the red and green panel LEDs.  For a block device, one PanelOutput device is created for the yellow LED.</p>",
     "success": {
       "fields": {
         "Success 200": [
@@ -863,8 +863,8 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "This example creates a new Turnout device entry.  In addition to the device table entry, two entries are also added to the",
-        "content": "deviceProperty table; MOTORPIN and INPUTPIN with values set to 0:\nhttp://localhost:8080/api/create_device?deviceClass=1",
+        "title": "This example creates a new Turnout device entry.  In addition to the device table entry, two entries are also added to the deviceProperty table; MOTORPIN and INPUTPIN with values set to 0:",
+        "content": "http://localhost:8080/api/create_device?createExtra=1\n    body:\n    {\n      \"deviceName\": \"TY-NEW\",\n      \"deviceDescription\": \"Description\",\n      \"deviceClass\": \"1\"\n    }",
         "type": "json"
       }
     ],
@@ -873,7 +873,7 @@ define({ "api": [
     "groupTitle": "Device",
     "sampleRequest": [
       {
-        "url": "http://APITest.entrydns.org:8080/api/create_device:deviceClass"
+        "url": "http://APITest.entrydns.org:8080/api/create_device:createExtra"
       }
     ]
   },
@@ -1128,7 +1128,7 @@ define({ "api": [
         ]
       }
     },
-    "description": "<p>Returns a list of moduleDevicePort entries for a given device or module.  This table cross-references a device to one or more modules.  This allows a signled device entry to be used with multiple modules; useful for PanelInputDevice and PanelOutputDevice, etc.</p>",
+    "description": "<p>Returns a list of moduleDevicePort entries for a given device or module.  This table cross-references a device to one or more modules.  This allows a single device entry to be used with multiple modules; useful for PanelInputDevice and PanelOutputDevice, etc.</p>",
     "success": {
       "fields": {
         "Success 200": [
@@ -1155,6 +1155,34 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "moduleName",
+            "description": "<p>controllerModule's name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "moduleClass",
+            "description": "<p>controllerModule's class.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "deviceName",
+            "description": "<p>device's name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "deviceClass",
+            "description": "<p>device's class.</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Number",
             "optional": false,
             "field": "port",
@@ -1165,7 +1193,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n[{\n        \"deviceID\": \"1\",\n        \"id\": \"58\",\n        \"controllerModuleID\": \"4\",\n        \"port\": \"0\"\n    }\n]",
+          "content": "HTTP/1.1 200 OK\n[{\n        \"controllerModuleID\": \"13\",\n        \"deviceClass\": \"6\",\n        \"deviceID\": \"11\",\n        \"deviceName\": \"Block 30-1\",\n        \"id\": \"1\",\n        \"moduleClass\": \"8\",\n        \"moduleName\": \"Blocks 30-1, 30-9, 31-1, 31-9\",\n        \"port\": \"7\"\n    }\n]",
           "type": "json"
         }
       ]
@@ -1173,7 +1201,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage:",
-        "content": "http://localhost:8080/api/device_property_list?deviceID=1",
+        "content": "http://localhost:8080/api/device_property_list?deviceID=11",
         "type": "json"
       }
     ],
