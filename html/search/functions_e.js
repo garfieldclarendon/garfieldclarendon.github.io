@@ -9,6 +9,8 @@ var searchData=
   ['serviceflags',['serviceFlags',['../class_qt_service_base.html#aab0b204981c481e098fe72061e3f367a',1,'QtServiceBase']]],
   ['servicename',['serviceName',['../class_qt_service_controller.html#a3df972ecd01a00fff5cda316ae35cbea',1,'QtServiceController::serviceName()'],['../class_qt_service_base.html#a643f253b3931e6a6c4e8caa190756214',1,'QtServiceBase::serviceName()']]],
   ['setcontenettype',['setContenetType',['../class_a_p_i_response.html#a67c8ba2ac3155ae8472f453a36f469f5',1,'APIResponse']]],
+  ['setdeviceid',['setDeviceID',['../class_u_d_p_message.html#a9cf9c5e20119a221ee36412e0c1d39c5',1,'UDPMessage']]],
+  ['setdevicestatus',['setDeviceStatus',['../class_u_d_p_message.html#a2dcad6fc97802808675fb9259727da64',1,'UDPMessage']]],
   ['setfield',['setField',['../class_u_d_p_message.html#ad7f1c729cf357be18e6cda695f5e5d99',1,'UDPMessage']]],
   ['setid',['setID',['../class_u_d_p_message.html#a2fcacc64fbb5598848a391c9fd9aa8c2',1,'UDPMessage']]],
   ['setmessageid',['setMessageID',['../class_u_d_p_message.html#aba4aadebe7b1aa92ba558f3cd4319e79',1,'UDPMessage']]],

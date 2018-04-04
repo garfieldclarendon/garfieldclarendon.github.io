@@ -91,6 +91,18 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a2fcacc64fbb5598848a391c9fd9aa8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7f1c729cf357be18e6cda695f5e5d99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#ad7f1c729cf357be18e6cda695f5e5d99">setField</a> (unsigned char fieldIndex, unsigned char value)</td></tr>
 <tr class="separator:ad7f1c729cf357be18e6cda695f5e5d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b544583226eb4e6b51237c9f350e0f"><td class="memItemLeft" align="right" valign="top"><a id="a83b544583226eb4e6b51237c9f350e0f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a83b544583226eb4e6b51237c9f350e0f">getDeviceID</a> (unsigned char index) const</td></tr>
+<tr class="memdesc:a83b544583226eb4e6b51237c9f350e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the device ID from the device entry at the given index. <br /></td></tr>
+<tr class="separator:a83b544583226eb4e6b51237c9f350e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cf9c5e20119a221ee36412e0c1d39c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a9cf9c5e20119a221ee36412e0c1d39c5">setDeviceID</a> (unsigned char index, int value)</td></tr>
+<tr class="separator:a9cf9c5e20119a221ee36412e0c1d39c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc249c0f6c658bc56c2161946715eb22"><td class="memItemLeft" align="right" valign="top"><a id="acc249c0f6c658bc56c2161946715eb22"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#acc249c0f6c658bc56c2161946715eb22">getDeviceStatus</a> (unsigned char index) const</td></tr>
+<tr class="memdesc:acc249c0f6c658bc56c2161946715eb22"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the status from the device entry at the given index. <br /></td></tr>
+<tr class="separator:acc249c0f6c658bc56c2161946715eb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dcad6fc97802808675fb9259727da64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#a2dcad6fc97802808675fb9259727da64">setDeviceStatus</a> (unsigned char index, int value)</td></tr>
+<tr class="separator:a2dcad6fc97802808675fb9259727da64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeea2288e53b4c6db7861181b5fc8aa5e"><td class="memItemLeft" align="right" valign="top"><a id="aeea2288e53b4c6db7861181b5fc8aa5e"></a>
 char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_message.html#aeea2288e53b4c6db7861181b5fc8aa5e">getRef</a> (void) const</td></tr>
 <tr class="memdesc:aeea2288e53b4c6db7861181b5fc8aa5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a reference to the internal <a class="el" href="struct_u_d_p_message_struct.html">UDPMessageStruct</a> <br /></td></tr>
@@ -292,6 +304,92 @@ unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <p>Assignment Replaces the message data; copying the information from other creating an exact copy (including the transaction number) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>A <a class="el" href="class_u_d_p_message.html" title="A class for handling UDP messages sent between controllers and the application server. ">UDPMessage</a> to use as the soruce </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9cf9c5e20119a221ee36412e0c1d39c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cf9c5e20119a221ee36412e0c1d39c5">&#9670;&nbsp;</a></span>setDeviceID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPMessage::setDeviceID </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setter function. Sets the device ID of one of the device entries. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>index of the field to set </td></tr>
+    <tr><td class="paramname">value</td><td>an int containing the device ID. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2dcad6fc97802808675fb9259727da64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dcad6fc97802808675fb9259727da64">&#9670;&nbsp;</a></span>setDeviceStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPMessage::setDeviceStatus </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Setter function. Sets the status of one of the device entries. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>index of the field to set </td></tr>
+    <tr><td class="paramname">value</td><td>an int containing the status of the device. </td></tr>
   </table>
   </dd>
 </dl>

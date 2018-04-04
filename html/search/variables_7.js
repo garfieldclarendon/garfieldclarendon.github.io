@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['udpbroadcast',['UdpBroadcast',['../_global_defs_8h.html#aef5f1ba5ba8b0f26d0c53dfbe608a365',1,'GlobalDefs.h']]],
-  ['udpport',['UdpPort',['../_global_defs_8h.html#af7f2926475cbe113aba0a136e8426649',1,'GlobalDefs.h']]]
+  ['startsig',['startSig',['../struct_u_d_p_message_struct.html#a40c0afec4be20d7cfaac97b3ec90cb56',1,'UDPMessageStruct']]],
+  ['status',['status',['../struct_message_device_struct.html#a9ae6a97e0b0efeb9f9e6bfbe9a0767db',1,'MessageDeviceStruct']]]
 ];

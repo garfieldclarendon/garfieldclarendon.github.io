@@ -4,6 +4,8 @@ var searchData=
   ['getconnectioncount',['getConnectionCount',['../class_controller_manager.html#ae195bc494eb3d3afeabc4e71471497d3',1,'ControllerManager']]],
   ['getconnectionserialnumber',['getConnectionSerialNumber',['../class_controller_manager.html#a140123d13332dba6947846924c666714',1,'ControllerManager']]],
   ['getcontenttype',['getContentType',['../class_a_p_i_response.html#a6861e22ef4409885114aac404760daeb',1,'APIResponse']]],
+  ['getdeviceid',['getDeviceID',['../class_u_d_p_message.html#a83b544583226eb4e6b51237c9f350e0f',1,'UDPMessage']]],
+  ['getdevicestatus',['getDeviceStatus',['../class_u_d_p_message.html#acc249c0f6c658bc56c2161946715eb22',1,'UDPMessage']]],
   ['getfield',['getField',['../class_u_d_p_message.html#a869585e0916d3b9edf99111f8fc74709',1,'UDPMessage']]],
   ['getid',['getID',['../class_u_d_p_message.html#add45e9751d72e7d789ed6dcdb06c23d2',1,'UDPMessage']]],
   ['getmessageid',['getMessageID',['../class_u_d_p_message.html#a9e762f6c16fa298afe87b9dd6cee41c2',1,'UDPMessage']]],

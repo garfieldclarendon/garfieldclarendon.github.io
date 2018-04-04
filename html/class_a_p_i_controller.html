@@ -105,6 +105,8 @@ Public Slots</h2></td></tr>
 <tr class="separator:a0d4deeaff703bb7d60eb344e6ee9f8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b2f08f4b0a67c0a4f6891a9d8601b93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#a9b2f08f4b0a67c0a4f6891a9d8601b93">handleResetNotificationList</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
 <tr class="separator:a9b2f08f4b0a67c0a4f6891a9d8601b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e140228ff2335d0d1a92d2353702c22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#a2e140228ff2335d0d1a92d2353702c22">handleSendFirmware</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
+<tr class="separator:a2e140228ff2335d0d1a92d2353702c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
@@ -570,9 +572,52 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>API "/api/send_controller_reset_notification_list" Sends a SYS_RESET_NOTIFICATION_LIST broadcast UDP message instructing the controller(s) to delete controllers-to-notify list. The controller responds by sending a /controller/notification_list to the application server. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>API "/api/send_controller_reset_notification_list" Sends a SYS_RESET_NOTIFICATION_LIST broadcast UDP message instructing the controller(s) to delete controllers-to-notify list. The controller responds by sending a /controller/notification_list request to the application server. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for an API web request. ">APIRequest</a> containing the url of the request including the controller's serial number. If the serial number is less than 1, all controllers delete their controllers-to-notify list. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for an API web response. ">APIResponse</a> unused. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2e140228ff2335d0d1a92d2353702c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e140228ff2335d0d1a92d2353702c22">&#9670;&nbsp;</a></span>handleSendFirmware</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APIController::handleSendFirmware </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_a_p_i_response.html">APIResponse</a> *&#160;</td>
+          <td class="paramname"><em>response</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>API "/api/send_controller_firmware" Sends a SYS_DOWNLOAD_FIRMWARE broadcast UDP message instructing the controller(s) to download the firmware. The controller responds by sending a /controller/firmware request to the application server. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for an API web request. ">APIRequest</a> containing the url of the request including the controller's serial number. If the serial number is less than 1, all controllers download the new firmware. </td></tr>
     <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for an API web response. ">APIResponse</a> unused. </td></tr>
   </table>
   </dd>

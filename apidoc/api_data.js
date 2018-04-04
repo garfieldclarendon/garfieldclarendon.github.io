@@ -1687,7 +1687,7 @@ define({ "api": [
         ]
       }
     },
-    "description": "<p>Returns a list conditions that must be met for the aspect to be valid (selected).  All conditions in this list are evaluated by comparing the device's current state specified by deviceID to the entry's deviceState using the conditionOperand (equals or not equals).  If the comparison is successful the Signal Condition is considered to be true/valid.  All conditions in this list must evaluate to true for the aspect to be selected.</p>",
+    "description": "<p>Returns a list conditions that must be met for the aspect to be valid (selected).  All conditions in this list are evaluated by comparing the device's current state specified by deviceID to the entry's deviceState using the conditionOperand (equals or not equals).  If the comparison is successful the Signal Condition is considered to be true/valid.  All conditions in this list must evaluate to true based on the connection type for the aspect to be selected.</p>",
     "success": {
       "fields": {
         "Success 200": [
@@ -1701,6 +1701,17 @@ define({ "api": [
             "optional": false,
             "field": "conditionOperand",
             "description": "<p>Operand used for comparison.  0 = Equals, 1 = Not Equals.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "connectionType",
+            "description": "<p>Operand used for connecting two comparisons.  0 = AND, 1 = OR.</p>"
           },
           {
             "group": "Success 200",
@@ -1735,7 +1746,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n[{\n        \"conditionOperand\": \"0\",\n        \"deviceID\": \"17\",\n        \"deviceState\": \"3\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"19\"\n    }, {\n        \"conditionOperand\": \"0\",\n        \"deviceID\": \"18\",\n        \"deviceState\": \"3\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"20\"\n    }, {\n        \"conditionOperand\": \"0\",\n        \"deviceID\": \"11\",\n        \"deviceState\": \"1\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"21\"\n    }, {\n        \"conditionOperand\": \"0\",\n        \"deviceID\": \"5\",\n        \"deviceState\": \"3\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"22\"\n    }, {\n        \"conditionOperand\": \"0\",\n        \"deviceID\": \"6\",\n        \"deviceState\": \"3\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"23\"\n    }, {\n        \"conditionOperand\": \"0\",\n        \"deviceID\": \"8\",\n        \"deviceState\": \"1\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"24\"\n    }\n]",
+          "content": "HTTP/1.1 200 OK\n[{\n        \"conditionOperand\": \"0\",\n        \"connectionType\": \"0\",\n        \"deviceID\": \"17\",\n        \"deviceState\": \"3\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"19\"\n    }, {\n        \"conditionOperand\": \"0\",\n        \"connectionType\": \"0\",\n        \"deviceID\": \"18\",\n        \"deviceState\": \"3\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"20\"\n    }, {\n        \"conditionOperand\": \"0\",\n        \"connectionType\": \"0\",\n        \"deviceID\": \"11\",\n        \"deviceState\": \"1\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"21\"\n    }, {\n        \"conditionOperand\": \"0\",\n        \"connectionType\": \"0\",\n        \"deviceID\": \"5\",\n        \"deviceState\": \"3\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"22\"\n    }, {\n        \"conditionOperand\": \"0\",\n        \"connectionType\": \"0\",\n        \"deviceID\": \"6\",\n        \"deviceState\": \"3\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"23\"\n    }, {\n        \"conditionOperand\": \"0\",\n        \"connectionType\": \"0\",\n        \"deviceID\": \"8\",\n        \"deviceState\": \"1\",\n        \"signalAspectID\": \"6\",\n        \"signalConditionID\": \"24\"\n    }\n]",
           "type": "json"
         }
       ]

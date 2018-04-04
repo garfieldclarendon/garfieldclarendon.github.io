@@ -78,6 +78,8 @@ $(function() {
 Macros</h2></td></tr>
 <tr class="memitem:a88edd2aa4feabff4af21a997d5d8aa23"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_defs_8h.html#a88edd2aa4feabff4af21a997d5d8aa23">DEBUG_PRINT</a>(...)&#160;&#160;&#160;Serial.printf( __VA_ARGS__ )</td></tr>
 <tr class="separator:a88edd2aa4feabff4af21a997d5d8aa23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc830d030b46e73bd8c94f0e98aad163"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_defs_8h.html#acc830d030b46e73bd8c94f0e98aad163">MAX_I2C_RETRY</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:acc830d030b46e73bd8c94f0e98aad163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90650dd694da82bff003b2c204e30750"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_defs_8h.html#a90650dd694da82bff003b2c204e30750">MAX_TURNOUTS</a>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a90650dd694da82bff003b2c204e30750"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cce4323245f92154efd90478606fe56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_defs_8h.html#a6cce4323245f92154efd90478606fe56">MAX_MODULES</a>&#160;&#160;&#160;8</td></tr>
@@ -100,6 +102,8 @@ Macros</h2></td></tr>
 <tr class="separator:gacf1beacf20d9d977b8a27878039d43d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf8a3426c6f740f351255d50cdda3c9f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#gaf8a3426c6f740f351255d50cdda3c9f8">BLK_STATUS</a>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:gaf8a3426c6f740f351255d50cdda3c9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88466ee7861a482c0ebdd16171184747"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#ga88466ee7861a482c0ebdd16171184747">DEVICE_STATUS</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:ga88466ee7861a482c0ebdd16171184747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab92fe1aa1c17f0c4e37cf31e79fb1419"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#gab92fe1aa1c17f0c4e37cf31e79fb1419">END_STATUS_MESSAGES</a>&#160;&#160;&#160;5</td></tr>
 <tr class="separator:gab92fe1aa1c17f0c4e37cf31e79fb1419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab5a0eacfbf0cfab134534d10890d5c25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#gab5a0eacfbf0cfab134534d10890d5c25">TRN_ACTIVATE</a>&#160;&#160;&#160;6</td></tr>
@@ -148,6 +152,11 @@ Enumerations</h2></td></tr>
  }<tr class="memdesc:a51207b6a49e0da6f9978a3019d93480a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enum describes the current status of a controller.  <a href="_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480a">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:a51207b6a49e0da6f9978a3019d93480a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af309f39f820268e68ac6608068647778"><td class="memItemLeft" align="right" valign="top"><a id="af309f39f820268e68ac6608068647778"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_defs_8h.html#af309f39f820268e68ac6608068647778">ConditionConnectionEnum</a> { <b>ConnectionAND</b>, 
+<b>ConnectionOR</b>
+ }<tr class="memdesc:af309f39f820268e68ac6608068647778"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enum describes the connection between two condition compares. <br /></td></tr>
+</td></tr>
+<tr class="separator:af309f39f820268e68ac6608068647778"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a705748a895b2f4722278227f23819afe"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_defs_8h.html#a705748a895b2f4722278227f23819afe">ConditionEnum</a> { <a class="el" href="_global_defs_8h.html#a705748a895b2f4722278227f23819afead9d73aa08cbcd6171135769662c94cb6">ConditionEquals</a>, 
 <a class="el" href="_global_defs_8h.html#a705748a895b2f4722278227f23819afea5cfe9b940d35bede2caeb94d233000c5">ConditionNotEquals</a>
  }<tr class="memdesc:a705748a895b2f4722278227f23819afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enum describes boolean conditional tests used by the Signal device.  <a href="_global_defs_8h.html#a705748a895b2f4722278227f23819afe">More...</a><br /></td></tr>
@@ -240,7 +249,7 @@ const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>MajorV
 const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>MinorVersion</b> = 0</td></tr>
 <tr class="separator:a3c7cecaf45556b9890c37c7e55cd5a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca31039db4ec2299dd14f79471999133"><td class="memItemLeft" align="right" valign="top"><a id="aca31039db4ec2299dd14f79471999133"></a>
-const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>BuildVersion</b> = 19</td></tr>
+const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>BuildVersion</b> = 25</td></tr>
 <tr class="separator:aca31039db4ec2299dd14f79471999133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef5f1ba5ba8b0f26d0c53dfbe608a365"><td class="memItemLeft" align="right" valign="top">const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_global_defs_8h.html#aef5f1ba5ba8b0f26d0c53dfbe608a365">UdpBroadcast</a> [] = {0xFF, 0xFF, 0xFF, 0xFF}</td></tr>
 <tr class="separator:aef5f1ba5ba8b0f26d0c53dfbe608a365"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -311,6 +320,21 @@ const unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>BuildV
       </table>
 </div><div class="memdoc">
 <p>Total devices per module </p>
+
+</div>
+</div>
+<a id="acc830d030b46e73bd8c94f0e98aad163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc830d030b46e73bd8c94f0e98aad163">&#9670;&nbsp;</a></span>MAX_I2C_RETRY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_I2C_RETRY&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Maximum I2C BUS RETRY COUNT </p>
 
 </div>
 </div>

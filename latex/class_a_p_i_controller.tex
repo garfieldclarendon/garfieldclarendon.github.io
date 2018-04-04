@@ -39,6 +39,8 @@ void \hyperlink{class_a_p_i_controller_a0e01eab749423dcfff0b595abf4175ad}{handle
 void \hyperlink{class_a_p_i_controller_a0d4deeaff703bb7d60eb344e6ee9f8cb}{handle\+Controller\+Reset\+Config} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
 \item 
 void \hyperlink{class_a_p_i_controller_a9b2f08f4b0a67c0a4f6891a9d8601b93}{handle\+Reset\+Notification\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_a2e140228ff2335d0d1a92d2353702c22}{handle\+Send\+Firmware} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
 \end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
@@ -191,9 +193,22 @@ A\+PI \char`\"{}/controller/module/config\char`\"{} Downloads a controller modul
 \subsubsection{\texorpdfstring{handle\+Reset\+Notification\+List}{handleResetNotificationList}}
 {\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Reset\+Notification\+List (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
-A\+PI \char`\"{}/api/send\+\_\+controller\+\_\+reset\+\_\+notification\+\_\+list\char`\"{} Sends a S\+Y\+S\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+O\+T\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+L\+I\+ST broadcast U\+DP message instructing the controller(s) to delete controllers-\/to-\/notify list. The controller responds by sending a /controller/notification\+\_\+list to the application server. 
+A\+PI \char`\"{}/api/send\+\_\+controller\+\_\+reset\+\_\+notification\+\_\+list\char`\"{} Sends a S\+Y\+S\+\_\+\+R\+E\+S\+E\+T\+\_\+\+N\+O\+T\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+L\+I\+ST broadcast U\+DP message instructing the controller(s) to delete controllers-\/to-\/notify list. The controller responds by sending a /controller/notification\+\_\+list request to the application server. 
 \begin{DoxyParams}{Parameters}
 {\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the controller\textquotesingle{}s serial number. If the serial number is less than 1, all controllers delete their controllers-\/to-\/notify list. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} unused. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_a2e140228ff2335d0d1a92d2353702c22}\label{class_a_p_i_controller_a2e140228ff2335d0d1a92d2353702c22}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Send\+Firmware@{handle\+Send\+Firmware}}
+\index{handle\+Send\+Firmware@{handle\+Send\+Firmware}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Send\+Firmware}{handleSendFirmware}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Send\+Firmware (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/api/send\+\_\+controller\+\_\+firmware\char`\"{} Sends a S\+Y\+S\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+I\+R\+M\+W\+A\+RE broadcast U\+DP message instructing the controller(s) to download the firmware. The controller responds by sending a /controller/firmware request to the application server. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the controller\textquotesingle{}s serial number. If the serial number is less than 1, all controllers download the new firmware. \\
 \hline
 {\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} unused. \\
 \hline

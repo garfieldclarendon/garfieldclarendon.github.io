@@ -6,6 +6,8 @@
 \item 
 \#define \hyperlink{_global_defs_8h_a88edd2aa4feabff4af21a997d5d8aa23}{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+NT}(...)~Serial.\+printf( \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+ )
 \item 
+\#define \hyperlink{_global_defs_8h_acc830d030b46e73bd8c94f0e98aad163}{M\+A\+X\+\_\+\+I2\+C\+\_\+\+R\+E\+T\+RY}~3
+\item 
 \#define \hyperlink{_global_defs_8h_a90650dd694da82bff003b2c204e30750}{M\+A\+X\+\_\+\+T\+U\+R\+N\+O\+U\+TS}~2
 \item 
 \#define \hyperlink{_global_defs_8h_a6cce4323245f92154efd90478606fe56}{M\+A\+X\+\_\+\+M\+O\+D\+U\+L\+ES}~8
@@ -27,6 +29,8 @@
 \#define \hyperlink{group___u_d_p_message_i_d_gacf1beacf20d9d977b8a27878039d43d7}{T\+R\+N\+\_\+\+S\+T\+A\+T\+US}~1
 \item 
 \#define \hyperlink{group___u_d_p_message_i_d_gaf8a3426c6f740f351255d50cdda3c9f8}{B\+L\+K\+\_\+\+S\+T\+A\+T\+US}~2
+\item 
+\#define \hyperlink{group___u_d_p_message_i_d_ga88466ee7861a482c0ebdd16171184747}{D\+E\+V\+I\+C\+E\+\_\+\+S\+T\+A\+T\+US}~3
 \item 
 \#define \hyperlink{group___u_d_p_message_i_d_gab92fe1aa1c17f0c4e37cf31e79fb1419}{E\+N\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+E\+S\+S\+A\+G\+ES}~5
 \item 
@@ -73,6 +77,11 @@ enum \hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+S
 \newline
 \hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480aac78dbd8bc110021b3d813ccfbcf27d60}{Controller\+Status\+Conected}
  \}\begin{DoxyCompactList}\small\item\em This enum describes the current status of a controller. \end{DoxyCompactList}
+\item 
+\mbox{\Hypertarget{_global_defs_8h_af309f39f820268e68ac6608068647778}\label{_global_defs_8h_af309f39f820268e68ac6608068647778}} 
+enum \hyperlink{_global_defs_8h_af309f39f820268e68ac6608068647778}{Condition\+Connection\+Enum} \{ {\bfseries Connection\+A\+ND}, 
+{\bfseries Connection\+OR}
+ \}\begin{DoxyCompactList}\small\item\em This enum describes the connection between two condition compares. \end{DoxyCompactList}
 \item 
 enum \hyperlink{_global_defs_8h_a705748a895b2f4722278227f23819afe}{Condition\+Enum} \{ \hyperlink{_global_defs_8h_a705748a895b2f4722278227f23819afead9d73aa08cbcd6171135769662c94cb6}{Condition\+Equals}, 
 \hyperlink{_global_defs_8h_a705748a895b2f4722278227f23819afea5cfe9b940d35bede2caeb94d233000c5}{Condition\+Not\+Equals}
@@ -154,7 +163,7 @@ const unsigned char {\bfseries Major\+Version} = 3
 const unsigned char {\bfseries Minor\+Version} = 0
 \item 
 \mbox{\Hypertarget{_global_defs_8h_aca31039db4ec2299dd14f79471999133}\label{_global_defs_8h_aca31039db4ec2299dd14f79471999133}} 
-const unsigned char {\bfseries Build\+Version} = 19
+const unsigned char {\bfseries Build\+Version} = 25
 \item 
 const unsigned char \hyperlink{_global_defs_8h_aef5f1ba5ba8b0f26d0c53dfbe608a365}{Udp\+Broadcast} \mbox{[}$\,$\mbox{]} = \{0x\+F\+F, 0x\+F\+F, 0x\+F\+F, 0x\+F\+F\}
 \item 
@@ -189,7 +198,13 @@ One minute heatbeat broadcast message interval \mbox{\Hypertarget{_global_defs_8
 \subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+D\+E\+V\+I\+C\+ES}{MAX\_DEVICES}}
 {\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+D\+E\+V\+I\+C\+ES~16}
 
-Total devices per module \mbox{\Hypertarget{_global_defs_8h_a6cce4323245f92154efd90478606fe56}\label{_global_defs_8h_a6cce4323245f92154efd90478606fe56}} 
+Total devices per module \mbox{\Hypertarget{_global_defs_8h_acc830d030b46e73bd8c94f0e98aad163}\label{_global_defs_8h_acc830d030b46e73bd8c94f0e98aad163}} 
+\index{Global\+Defs.\+h@{Global\+Defs.\+h}!M\+A\+X\+\_\+\+I2\+C\+\_\+\+R\+E\+T\+RY@{M\+A\+X\+\_\+\+I2\+C\+\_\+\+R\+E\+T\+RY}}
+\index{M\+A\+X\+\_\+\+I2\+C\+\_\+\+R\+E\+T\+RY@{M\+A\+X\+\_\+\+I2\+C\+\_\+\+R\+E\+T\+RY}!Global\+Defs.\+h@{Global\+Defs.\+h}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+I2\+C\+\_\+\+R\+E\+T\+RY}{MAX\_I2C\_RETRY}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+I2\+C\+\_\+\+R\+E\+T\+RY~3}
+
+Maximum I2C B\+US R\+E\+T\+RY C\+O\+U\+NT \mbox{\Hypertarget{_global_defs_8h_a6cce4323245f92154efd90478606fe56}\label{_global_defs_8h_a6cce4323245f92154efd90478606fe56}} 
 \index{Global\+Defs.\+h@{Global\+Defs.\+h}!M\+A\+X\+\_\+\+M\+O\+D\+U\+L\+ES@{M\+A\+X\+\_\+\+M\+O\+D\+U\+L\+ES}}
 \index{M\+A\+X\+\_\+\+M\+O\+D\+U\+L\+ES@{M\+A\+X\+\_\+\+M\+O\+D\+U\+L\+ES}!Global\+Defs.\+h@{Global\+Defs.\+h}}
 \subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+M\+O\+D\+U\+L\+ES}{MAX\_MODULES}}

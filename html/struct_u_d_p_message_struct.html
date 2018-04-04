@@ -89,10 +89,10 @@ long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_u_d_p_message_struct.html#a98ed3cc3a244ee9637f6b85fcf6165b8">transactionNumber</a></td></tr>
 <tr class="memdesc:a98ed3cc3a244ee9637f6b85fcf6165b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message transaction number. A unique number auto-generated for each message. <br /></td></tr>
 <tr class="separator:a98ed3cc3a244ee9637f6b85fcf6165b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52de02b6a926e10a0ef99c1ae965719e"><td class="memItemLeft" align="right" valign="top"><a id="a52de02b6a926e10a0ef99c1ae965719e"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_u_d_p_message_struct.html#a52de02b6a926e10a0ef99c1ae965719e">payload</a> [14]</td></tr>
-<tr class="memdesc:a52de02b6a926e10a0ef99c1ae965719e"><td class="mdescLeft">&#160;</td><td class="mdescRight">14 byte payload accessable as Field[0] to Field[13] through the getField() member. <br /></td></tr>
-<tr class="separator:a52de02b6a926e10a0ef99c1ae965719e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0b3a3b4ea7e571309e537eec0ebfd1"><td class="memItemLeft" align="right" valign="top"><a id="a4c0b3a3b4ea7e571309e537eec0ebfd1"></a>
+<a class="el" href="union_payload_union.html">PayloadUnion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_u_d_p_message_struct.html#a4c0b3a3b4ea7e571309e537eec0ebfd1">payload</a></td></tr>
+<tr class="memdesc:a4c0b3a3b4ea7e571309e537eec0ebfd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">24 byte payload accessable as Field[0] to Field[23] through the getField() member. <br /></td></tr>
+<tr class="separator:a4c0b3a3b4ea7e571309e537eec0ebfd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68c8ce1a9f79ecb4b3955eaf98a4781c"><td class="memItemLeft" align="right" valign="top"><a id="a68c8ce1a9f79ecb4b3955eaf98a4781c"></a>
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_u_d_p_message_struct.html#a68c8ce1a9f79ecb4b3955eaf98a4781c">endSig</a> [2]</td></tr>
 <tr class="memdesc:a68c8ce1a9f79ecb4b3955eaf98a4781c"><td class="mdescLeft">&#160;</td><td class="mdescRight">2 byte end-of-message signalture set to 0XEF 0XEE. <br /></td></tr>

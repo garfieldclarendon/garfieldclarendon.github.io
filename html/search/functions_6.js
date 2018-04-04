@@ -25,5 +25,6 @@ var searchData=
   ['handlerequest',['handleRequest',['../class_url_handler.html#a2c3f0bc7731a1eb5d732378c3c876043',1,'UrlHandler']]],
   ['handleresetnotificationlist',['handleResetNotificationList',['../class_a_p_i_controller.html#a9b2f08f4b0a67c0a4f6891a9d8601b93',1,'APIController']]],
   ['handlesenddeviceconfig',['handleSendDeviceConfig',['../class_a_p_i_device.html#a794458df71d6f24a8b8dccbbdf9235da',1,'APIDevice']]],
+  ['handlesendfirmware',['handleSendFirmware',['../class_a_p_i_controller.html#a2e140228ff2335d0d1a92d2353702c22',1,'APIController']]],
   ['handleurl',['handleUrl',['../class_url_handler.html#a1a519a9fc5c6e07736f430fb02719b4d',1,'UrlHandler']]]
 ];

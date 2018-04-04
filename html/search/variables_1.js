@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['id',['id',['../struct_u_d_p_message_struct.html#a363553f26a5a6b317dc5b0b4c227f966',1,'UDPMessageStruct']]]
+  ['deviceid',['deviceID',['../struct_message_device_struct.html#afda673f7ffb1b0b0f906b6f839c6445a',1,'MessageDeviceStruct']]],
+  ['devicestatus',['deviceStatus',['../union_payload_union.html#a4f1c0490a4e4dd5136936f432772873f',1,'PayloadUnion']]]
 ];

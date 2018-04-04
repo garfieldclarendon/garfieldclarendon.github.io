@@ -29,6 +29,16 @@ void \hyperlink{class_u_d_p_message_a2fcacc64fbb5598848a391c9fd9aa8c2}{set\+ID} 
 \item 
 void \hyperlink{class_u_d_p_message_ad7f1c729cf357be18e6cda695f5e5d99}{set\+Field} (unsigned char field\+Index, unsigned char value)
 \item 
+\mbox{\Hypertarget{class_u_d_p_message_a83b544583226eb4e6b51237c9f350e0f}\label{class_u_d_p_message_a83b544583226eb4e6b51237c9f350e0f}} 
+int \hyperlink{class_u_d_p_message_a83b544583226eb4e6b51237c9f350e0f}{get\+Device\+ID} (unsigned char index) const
+\begin{DoxyCompactList}\small\item\em returns the device ID from the device entry at the given index. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_d_p_message_a9cf9c5e20119a221ee36412e0c1d39c5}{set\+Device\+ID} (unsigned char index, int value)
+\item 
+\mbox{\Hypertarget{class_u_d_p_message_acc249c0f6c658bc56c2161946715eb22}\label{class_u_d_p_message_acc249c0f6c658bc56c2161946715eb22}} 
+int \hyperlink{class_u_d_p_message_acc249c0f6c658bc56c2161946715eb22}{get\+Device\+Status} (unsigned char index) const
+\begin{DoxyCompactList}\small\item\em returns the status from the device entry at the given index. \end{DoxyCompactList}\item 
+void \hyperlink{class_u_d_p_message_a2dcad6fc97802808675fb9259727da64}{set\+Device\+Status} (unsigned char index, int value)
+\item 
 \mbox{\Hypertarget{class_u_d_p_message_aeea2288e53b4c6db7861181b5fc8aa5e}\label{class_u_d_p_message_aeea2288e53b4c6db7861181b5fc8aa5e}} 
 char $\ast$ \hyperlink{class_u_d_p_message_aeea2288e53b4c6db7861181b5fc8aa5e}{get\+Ref} (void) const
 \begin{DoxyCompactList}\small\item\em returns a reference to the internal \hyperlink{struct_u_d_p_message_struct}{U\+D\+P\+Message\+Struct} \end{DoxyCompactList}\item 
@@ -117,6 +127,32 @@ Returns one of the bytes in the 14 byte payload.
 Assignment Replaces the message data; copying the information from other creating an exact copy (including the transaction number) 
 \begin{DoxyParams}{Parameters}
 {\em other} & A \hyperlink{class_u_d_p_message}{U\+D\+P\+Message} to use as the soruce \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_d_p_message_a9cf9c5e20119a221ee36412e0c1d39c5}\label{class_u_d_p_message_a9cf9c5e20119a221ee36412e0c1d39c5}} 
+\index{U\+D\+P\+Message@{U\+D\+P\+Message}!set\+Device\+ID@{set\+Device\+ID}}
+\index{set\+Device\+ID@{set\+Device\+ID}!U\+D\+P\+Message@{U\+D\+P\+Message}}
+\subsubsection{\texorpdfstring{set\+Device\+I\+D()}{setDeviceID()}}
+{\footnotesize\ttfamily void U\+D\+P\+Message\+::set\+Device\+ID (\begin{DoxyParamCaption}\item[{unsigned char}]{index,  }\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Setter function. Sets the device ID of one of the device entries. 
+\begin{DoxyParams}{Parameters}
+{\em index} & index of the field to set \\
+\hline
+{\em value} & an int containing the device ID. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_d_p_message_a2dcad6fc97802808675fb9259727da64}\label{class_u_d_p_message_a2dcad6fc97802808675fb9259727da64}} 
+\index{U\+D\+P\+Message@{U\+D\+P\+Message}!set\+Device\+Status@{set\+Device\+Status}}
+\index{set\+Device\+Status@{set\+Device\+Status}!U\+D\+P\+Message@{U\+D\+P\+Message}}
+\subsubsection{\texorpdfstring{set\+Device\+Status()}{setDeviceStatus()}}
+{\footnotesize\ttfamily void U\+D\+P\+Message\+::set\+Device\+Status (\begin{DoxyParamCaption}\item[{unsigned char}]{index,  }\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Setter function. Sets the status of one of the device entries. 
+\begin{DoxyParams}{Parameters}
+{\em index} & index of the field to set \\
+\hline
+{\em value} & an int containing the status of the device. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_u_d_p_message_ad7f1c729cf357be18e6cda695f5e5d99}\label{class_u_d_p_message_ad7f1c729cf357be18e6cda695f5e5d99}} 
