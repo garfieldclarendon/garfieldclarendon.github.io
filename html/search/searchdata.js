@@ -8,8 +8,7 @@ var indexSectionsWithContent =
   5: "bcdmpst",
   6: "bcdmpt",
   7: "cdhmtu",
-  8: "u",
-  9: "l"
+  8: "u"
 };
 
 var indexSectionNames =
@@ -22,8 +21,7 @@ var indexSectionNames =
   5: "enums",
   6: "enumvalues",
   7: "defines",
-  8: "groups",
-  9: "pages"
+  8: "groups"
 };
 
 var indexSectionLabels =
@@ -36,7 +34,6 @@ var indexSectionLabels =
   5: "Enumerations",
   6: "Enumerator",
   7: "Macros",
-  8: "Modules",
-  9: "Pages"
+  8: "Modules"
 };
 
