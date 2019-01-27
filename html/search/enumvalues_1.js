@@ -7,6 +7,7 @@ var searchData=
   ['controllersemaphore',['ControllerSemaphore',['../_global_defs_8h.html#a6ba595014d34f2095b1a55dcf7ae44eaace6f9ad85cb86a0d8a86798d1d99f5dc',1,'GlobalDefs.h']]],
   ['controllerserver',['ControllerServer',['../_global_defs_8h.html#a6ba595014d34f2095b1a55dcf7ae44eaa2caab087dc9fea0646dc1f85ed30d21e',1,'GlobalDefs.h']]],
   ['controllerstatusconected',['ControllerStatusConected',['../_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480aac78dbd8bc110021b3d813ccfbcf27d60',1,'GlobalDefs.h']]],
+  ['controllerstatusfirmwareupdate',['ControllerStatusFirmwareUpdate',['../_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480aa76060c4bd9ac1de657c7974bd85e057b',1,'GlobalDefs.h']]],
   ['controllerstatusoffline',['ControllerStatusOffline',['../_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480aabc251fd36725d828139ccffb2a351e43',1,'GlobalDefs.h']]],
   ['controllerstatusonline',['ControllerStatusOnline',['../_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480aaf9745934b469024c541b09ce9cd554cf',1,'GlobalDefs.h']]],
   ['controllerstatusrestarting',['ControllerStatusRestarting',['../_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480aa0bf433e8f26aed75dbc6e39c1ea3e41d',1,'GlobalDefs.h']]],

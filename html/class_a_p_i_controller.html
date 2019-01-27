@@ -83,8 +83,8 @@ Inheritance diagram for APIController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a37992872aeb294f51ca323cc25075f69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#a37992872aeb294f51ca323cc25075f69">onControllerStatusChanged</a> (long serialNumber, <a class="el" href="_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480a">ControllerStatusEnum</a> newStatus)</td></tr>
-<tr class="separator:a37992872aeb294f51ca323cc25075f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab26bfad170bcd84e1b2763a0798702ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#ab26bfad170bcd84e1b2763a0798702ad">onControllerStatusChanged</a> (long serialNumber, <a class="el" href="_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480a">ControllerStatusEnum</a> newStatus, const QString &amp;version)</td></tr>
+<tr class="separator:ab26bfad170bcd84e1b2763a0798702ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1fe4dd7b8df2e4cceb554e46bea894d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#ac1fe4dd7b8df2e4cceb554e46bea894d">handleConfigUrl</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
 <tr class="separator:ac1fe4dd7b8df2e4cceb554e46bea894d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6274380cb71807d07d813b7e67e0c0c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#a6274380cb71807d07d813b7e67e0c0c2">handleModuleConfigUrl</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
@@ -95,6 +95,8 @@ Public Slots</h2></td></tr>
 <tr class="separator:a3217b84dcc811d83e4c7241a5e19c35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb480d438e18a2551229810280a65806"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#afb480d438e18a2551229810280a65806">handleDownloadFirmwareUrl</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
 <tr class="separator:afb480d438e18a2551229810280a65806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabd8df21b8058798432d8cc117e23315"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#aabd8df21b8058798432d8cc117e23315">handleGetRouteList</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
+<tr class="separator:aabd8df21b8058798432d8cc117e23315"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad37a3ecaf99e3b7c43ecb4ec4873fea9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#ad37a3ecaf99e3b7c43ecb4ec4873fea9">handleGetControllerList</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
 <tr class="separator:ad37a3ecaf99e3b7c43ecb4ec4873fea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20ce823aeb786d2af26fde41c2dc74a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_controller.html#a20ce823aeb786d2af26fde41c2dc74a1">handleGetControllerModuleList</a> (const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;request, <a class="el" href="class_a_p_i_response.html">APIResponse</a> *response)</td></tr>
@@ -496,6 +498,49 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aabd8df21b8058798432d8cc117e23315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd8df21b8058798432d8cc117e23315">&#9670;&nbsp;</a></span>handleGetRouteList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APIController::handleGetRouteList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_a_p_i_request.html">APIRequest</a> &amp;&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_a_p_i_response.html">APIResponse</a> *&#160;</td>
+          <td class="paramname"><em>response</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>API "/controller/route_list" Downloads a controller's firmware. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td><a class="el" href="class_a_p_i_request.html" title="Contains information for an API web request. ">APIRequest</a> containing the url of the request including the route's id. </td></tr>
+    <tr><td class="paramname">response</td><td><a class="el" href="class_a_p_i_response.html" title="Contains information for an API web response. ">APIResponse</a> with the payload set to the route's turnout list in JSON format. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6274380cb71807d07d813b7e67e0c0c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6274380cb71807d07d813b7e67e0c0c2">&#9670;&nbsp;</a></span>handleModuleConfigUrl</h2>
 
@@ -625,8 +670,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a37992872aeb294f51ca323cc25075f69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37992872aeb294f51ca323cc25075f69">&#9670;&nbsp;</a></span>onControllerStatusChanged</h2>
+<a id="ab26bfad170bcd84e1b2763a0798702ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab26bfad170bcd84e1b2763a0798702ad">&#9670;&nbsp;</a></span>onControllerStatusChanged</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -644,7 +689,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="_global_defs_8h.html#a51207b6a49e0da6f9978a3019d93480a">ControllerStatusEnum</a>&#160;</td>
-          <td class="paramname"><em>newStatus</em>&#160;</td>
+          <td class="paramname"><em>newStatus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>version</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

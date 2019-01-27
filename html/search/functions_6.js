@@ -16,7 +16,7 @@ var searchData=
   ['handlegetmoduledeviceportlist',['handleGetModuleDevicePortList',['../class_a_p_i_device.html#ad5a4f48e5cf4767426fd179446501c53',1,'APIDevice']]],
   ['handlegetnotificationlisturl',['handleGetNotificationListUrl',['../class_a_p_i_controller.html#a3217b84dcc811d83e4c7241a5e19c35c',1,'APIController']]],
   ['handlegetrouteentrylist',['handleGetRouteEntryList',['../class_a_p_i_route.html#a95f38f3fb39801deba8d4a39e14686d2',1,'APIRoute']]],
-  ['handlegetroutelist',['handleGetRouteList',['../class_a_p_i_route.html#a62f9b2e4addb8b60087a02a3e93c1abf',1,'APIRoute']]],
+  ['handlegetroutelist',['handleGetRouteList',['../class_a_p_i_controller.html#aabd8df21b8058798432d8cc117e23315',1,'APIController::handleGetRouteList()'],['../class_a_p_i_route.html#a62f9b2e4addb8b60087a02a3e93c1abf',1,'APIRoute::handleGetRouteList()']]],
   ['handlegetsignalaspectlist',['handleGetSignalAspectList',['../class_a_p_i_signal.html#aa39d78d40fce74c4adff19db446a34c8',1,'APISignal']]],
   ['handlegetsignalconditionlist',['handleGetSignalConditionList',['../class_a_p_i_signal.html#a0d698251dabf70472533fa99e4f53e48',1,'APISignal']]],
   ['handlelockdevice',['handleLockDevice',['../class_a_p_i_device.html#a9fa95a9f88e738477ed5e32e22ae6990',1,'APIDevice']]],

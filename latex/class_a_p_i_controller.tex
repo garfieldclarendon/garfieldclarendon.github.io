@@ -18,7 +18,7 @@ Inheritance diagram for A\+P\+I\+Controller\+:\begin{figure}[H]
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_a_p_i_controller_a37992872aeb294f51ca323cc25075f69}{on\+Controller\+Status\+Changed} (long serial\+Number, \hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+Status\+Enum} new\+Status)
+void \hyperlink{class_a_p_i_controller_ab26bfad170bcd84e1b2763a0798702ad}{on\+Controller\+Status\+Changed} (long serial\+Number, \hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+Status\+Enum} new\+Status, const Q\+String \&version)
 \item 
 void \hyperlink{class_a_p_i_controller_ac1fe4dd7b8df2e4cceb554e46bea894d}{handle\+Config\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
 \item 
@@ -29,6 +29,8 @@ void \hyperlink{class_a_p_i_controller_a3d32a4cf1f6a06697b09d43a2be140cf}{handle
 void \hyperlink{class_a_p_i_controller_a3217b84dcc811d83e4c7241a5e19c35c}{handle\+Get\+Notification\+List\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
 \item 
 void \hyperlink{class_a_p_i_controller_afb480d438e18a2551229810280a65806}{handle\+Download\+Firmware\+Url} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
+\item 
+void \hyperlink{class_a_p_i_controller_aabd8df21b8058798432d8cc117e23315}{handle\+Get\+Route\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
 \item 
 void \hyperlink{class_a_p_i_controller_ad37a3ecaf99e3b7c43ecb4ec4873fea9}{handle\+Get\+Controller\+List} (const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&request, \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$response)
 \item 
@@ -174,6 +176,19 @@ A\+PI \char`\"{}/controller/notification\+\_\+list\char`\"{} Downloads a control
 {\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the controller\textquotesingle{}s list of controllers-\/to-\/notify in J\+S\+ON format. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_a_p_i_controller_aabd8df21b8058798432d8cc117e23315}\label{class_a_p_i_controller_aabd8df21b8058798432d8cc117e23315}} 
+\index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Get\+Route\+List@{handle\+Get\+Route\+List}}
+\index{handle\+Get\+Route\+List@{handle\+Get\+Route\+List}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
+\subsubsection{\texorpdfstring{handle\+Get\+Route\+List}{handleGetRouteList}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::handle\+Get\+Route\+List (\begin{DoxyParamCaption}\item[{const \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} \&}]{request,  }\item[{\hyperlink{class_a_p_i_response}{A\+P\+I\+Response} $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+A\+PI \char`\"{}/controller/route\+\_\+list\char`\"{} Downloads a controller\textquotesingle{}s firmware. 
+\begin{DoxyParams}{Parameters}
+{\em request} & \hyperlink{class_a_p_i_request}{A\+P\+I\+Request} containing the url of the request including the route\textquotesingle{}s id. \\
+\hline
+{\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} with the payload set to the route\textquotesingle{}s turnout list in J\+S\+ON format. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_a_p_i_controller_a6274380cb71807d07d813b7e67e0c0c2}\label{class_a_p_i_controller_a6274380cb71807d07d813b7e67e0c0c2}} 
 \index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!handle\+Module\+Config\+Url@{handle\+Module\+Config\+Url}}
 \index{handle\+Module\+Config\+Url@{handle\+Module\+Config\+Url}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
@@ -213,11 +228,11 @@ A\+PI \char`\"{}/api/send\+\_\+controller\+\_\+firmware\char`\"{} Sends a S\+Y\+
 {\em response} & \hyperlink{class_a_p_i_response}{A\+P\+I\+Response} unused. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_a_p_i_controller_a37992872aeb294f51ca323cc25075f69}\label{class_a_p_i_controller_a37992872aeb294f51ca323cc25075f69}} 
+\mbox{\Hypertarget{class_a_p_i_controller_ab26bfad170bcd84e1b2763a0798702ad}\label{class_a_p_i_controller_ab26bfad170bcd84e1b2763a0798702ad}} 
 \index{A\+P\+I\+Controller@{A\+P\+I\+Controller}!on\+Controller\+Status\+Changed@{on\+Controller\+Status\+Changed}}
 \index{on\+Controller\+Status\+Changed@{on\+Controller\+Status\+Changed}!A\+P\+I\+Controller@{A\+P\+I\+Controller}}
 \subsubsection{\texorpdfstring{on\+Controller\+Status\+Changed}{onControllerStatusChanged}}
-{\footnotesize\ttfamily void A\+P\+I\+Controller\+::on\+Controller\+Status\+Changed (\begin{DoxyParamCaption}\item[{long}]{serial\+Number,  }\item[{\hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+Status\+Enum}}]{new\+Status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+{\footnotesize\ttfamily void A\+P\+I\+Controller\+::on\+Controller\+Status\+Changed (\begin{DoxyParamCaption}\item[{long}]{serial\+Number,  }\item[{\hyperlink{_global_defs_8h_a51207b6a49e0da6f9978a3019d93480a}{Controller\+Status\+Enum}}]{new\+Status,  }\item[{const Q\+String \&}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
 Monitors the \hyperlink{class_controller_manager}{Controller\+Manager} for controller status changes 
 \begin{DoxyParams}{Parameters}

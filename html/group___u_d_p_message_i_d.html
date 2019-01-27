@@ -93,6 +93,8 @@ Macros</h2></td></tr>
 <tr class="separator:ga88b6f619a28320e9136847e9b1b27a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9ed42f3a7fcc253fa49ce8ff33a75422"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#ga9ed42f3a7fcc253fa49ce8ff33a75422">SYS_RESTARTING</a>&#160;&#160;&#160;16</td></tr>
 <tr class="separator:ga9ed42f3a7fcc253fa49ce8ff33a75422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga122f4ab16a4cf3e2dd8b80e02158963d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#ga122f4ab16a4cf3e2dd8b80e02158963d">SYS_FIRMWARE_UPDATING</a>&#160;&#160;&#160;17</td></tr>
+<tr class="separator:ga122f4ab16a4cf3e2dd8b80e02158963d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga596f44c285ab391c72addd0e803b0fc4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#ga596f44c285ab391c72addd0e803b0fc4">SYS_KEEP_ALIVE</a>&#160;&#160;&#160;18</td></tr>
 <tr class="separator:ga596f44c285ab391c72addd0e803b0fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaef042a9ee57e8ddf94286a3263734468"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#gaef042a9ee57e8ddf94286a3263734468">SYS_RESET_DEVICE_CONFIG</a>&#160;&#160;&#160;19</td></tr>
@@ -107,6 +109,10 @@ Macros</h2></td></tr>
 <tr class="separator:ga42644954a92421cfe92c2e3d20f795ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9ba07526db57f9ec44d01fe3eba9cc60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#ga9ba07526db57f9ec44d01fe3eba9cc60">SYS_LOCK_ROUTE</a>&#160;&#160;&#160;24</td></tr>
 <tr class="separator:ga9ba07526db57f9ec44d01fe3eba9cc60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9ea6e4272668196e99cdeb3c63652937"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#ga9ea6e4272668196e99cdeb3c63652937">SYS_ROUTE_CONFIG_CHANGED</a>&#160;&#160;&#160;25</td></tr>
+<tr class="separator:ga9ea6e4272668196e99cdeb3c63652937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga777463f710ba53ab3b9bce0042ae93e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___u_d_p_message_i_d.html#ga777463f710ba53ab3b9bce0042ae93e5">SYS_DEVICE_CONFIG_CHANGED</a>&#160;&#160;&#160;25</td></tr>
+<tr class="separator:ga777463f710ba53ab3b9bce0042ae93e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>UDP Messages are sent between controllers to execute commands and provide status updates. Each message is represented by a <a class="el" href="class_u_d_p_message.html">UDPMessage</a> </p>
@@ -186,6 +192,21 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="ga777463f710ba53ab3b9bce0042ae93e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga777463f710ba53ab3b9bce0042ae93e5">&#9670;&nbsp;</a></span>SYS_DEVICE_CONFIG_CHANGED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SYS_DEVICE_CONFIG_CHANGED&#160;&#160;&#160;25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A Device's configration has changed. ID property contains the deviceID of the device that's been modified. This causes the Devices in each controller to download the new configuration for the device. </p>
+
+</div>
+</div>
 <a id="ga88b6f619a28320e9136847e9b1b27a36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga88b6f619a28320e9136847e9b1b27a36">&#9670;&nbsp;</a></span>SYS_DOWNLOAD_FIRMWARE</h2>
 
@@ -216,6 +237,21 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="ga122f4ab16a4cf3e2dd8b80e02158963d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga122f4ab16a4cf3e2dd8b80e02158963d">&#9670;&nbsp;</a></span>SYS_FIRMWARE_UPDATING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SYS_FIRMWARE_UPDATING&#160;&#160;&#160;17</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Controller Keep-alive message. No longer used. Keeping for future use if needed </p>
+
+</div>
+</div>
 <a id="ga596f44c285ab391c72addd0e803b0fc4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga596f44c285ab391c72addd0e803b0fc4">&#9670;&nbsp;</a></span>SYS_KEEP_ALIVE</h2>
 
@@ -227,7 +263,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Controller Keep-alive message. No longer used. Keeping for future use if needed </p>
+<p>Controller Firmware upgrade message. The controller is downloading and updating its firmware. </p>
 
 </div>
 </div>
@@ -333,6 +369,21 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Controller Restarting message. ID property contains the serialNumber of the controller. Controllers send this message just before the controller is about to restart. </p>
+
+</div>
+</div>
+<a id="ga9ea6e4272668196e99cdeb3c63652937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9ea6e4272668196e99cdeb3c63652937">&#9670;&nbsp;</a></span>SYS_ROUTE_CONFIG_CHANGED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SYS_ROUTE_CONFIG_CHANGED&#160;&#160;&#160;25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A Route's definition/configration has changed. ID property contains the routeID of the route that's been modified. This causes the RouteMonitor in each controller to download the new configuration for the route. </p>
 
 </div>
 </div>

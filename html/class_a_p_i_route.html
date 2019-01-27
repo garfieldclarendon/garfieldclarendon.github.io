@@ -117,6 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ada8e5c770e397fc6ed6602bdbb670a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac110d1999b3afe409d6e341fb9ab06d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_route.html#ac110d1999b3afe409d6e341fb9ab06d6">activateRoute</a> (int routeID)</td></tr>
 <tr class="separator:ac110d1999b3afe409d6e341fb9ab06d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69496cb286e280c033c115e45b43aea7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_p_i_route.html#a69496cb286e280c033c115e45b43aea7">routeUpdated</a> (int routeID)</td></tr>
+<tr class="separator:a69496cb286e280c033c115e45b43aea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -461,6 +463,30 @@ static <a class="el" href="class_a_p_i_route.html">APIRoute</a> *&#160;</td><td 
 </table>
 </div><div class="memdoc">
 <p>Returns true of the given route is currently active. A route is considered active if all turnouts are set to the direction defined in the route's routeEntry list. </p>
+
+</div>
+</div>
+<a id="a69496cb286e280c033c115e45b43aea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69496cb286e280c033c115e45b43aea7">&#9670;&nbsp;</a></span>routeUpdated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void APIRoute::routeUpdated </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>routeID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Route updated. Based on the routeID, force all turouts in the route to re-download their configuration data. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>id fo the route that's either new, updated or deleted. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

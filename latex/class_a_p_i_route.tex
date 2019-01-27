@@ -47,6 +47,8 @@ void \hyperlink{class_a_p_i_route_ad9db78abae10c20cbbec86378ba94db3}{send\+Notif
 \hyperlink{class_a_p_i_route_ada8e5c770e397fc6ed6602bdbb670a29}{A\+P\+I\+Route} (Q\+Object $\ast$parent=nullptr)
 \item 
 void \hyperlink{class_a_p_i_route_ac110d1999b3afe409d6e341fb9ab06d6}{activate\+Route} (int route\+ID)
+\item 
+void \hyperlink{class_a_p_i_route_a69496cb286e280c033c115e45b43aea7}{route\+Updated} (int route\+ID)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -175,7 +177,18 @@ A\+PI \char`\"{}/api/lock\+\_\+route\char`\"{} Activates and locks a route. Once
 \subsubsection{\texorpdfstring{is\+Route\+Active}{isRouteActive}}
 {\footnotesize\ttfamily bool A\+P\+I\+Route\+::is\+Route\+Active (\begin{DoxyParamCaption}\item[{int}]{route\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
 
-Returns true of the given route is currently active. A route is considered active if all turnouts are set to the direction defined in the route\textquotesingle{}s route\+Entry list. 
+Returns true of the given route is currently active. A route is considered active if all turnouts are set to the direction defined in the route\textquotesingle{}s route\+Entry list. \mbox{\Hypertarget{class_a_p_i_route_a69496cb286e280c033c115e45b43aea7}\label{class_a_p_i_route_a69496cb286e280c033c115e45b43aea7}} 
+\index{A\+P\+I\+Route@{A\+P\+I\+Route}!route\+Updated@{route\+Updated}}
+\index{route\+Updated@{route\+Updated}!A\+P\+I\+Route@{A\+P\+I\+Route}}
+\subsubsection{\texorpdfstring{route\+Updated()}{routeUpdated()}}
+{\footnotesize\ttfamily void A\+P\+I\+Route\+::route\+Updated (\begin{DoxyParamCaption}\item[{int}]{route\+ID }\end{DoxyParamCaption})}
+
+Route updated. Based on the route\+ID, force all turouts in the route to re-\/download their configuration data. 
+\begin{DoxyParams}{Parameters}
+{\em int} & id fo the route that\textquotesingle{}s either new, updated or deleted. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

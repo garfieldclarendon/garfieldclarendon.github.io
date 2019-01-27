@@ -29,6 +29,8 @@
 \item 
 \#define \hyperlink{group___u_d_p_message_i_d_ga9ed42f3a7fcc253fa49ce8ff33a75422}{S\+Y\+S\+\_\+\+R\+E\+S\+T\+A\+R\+T\+I\+NG}~16
 \item 
+\#define \hyperlink{group___u_d_p_message_i_d_ga122f4ab16a4cf3e2dd8b80e02158963d}{S\+Y\+S\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+U\+P\+D\+A\+T\+I\+NG}~17
+\item 
 \#define \hyperlink{group___u_d_p_message_i_d_ga596f44c285ab391c72addd0e803b0fc4}{S\+Y\+S\+\_\+\+K\+E\+E\+P\+\_\+\+A\+L\+I\+VE}~18
 \item 
 \#define \hyperlink{group___u_d_p_message_i_d_gaef042a9ee57e8ddf94286a3263734468}{S\+Y\+S\+\_\+\+R\+E\+S\+E\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+C\+O\+N\+F\+IG}~19
@@ -42,6 +44,10 @@
 \#define \hyperlink{group___u_d_p_message_i_d_ga42644954a92421cfe92c2e3d20f795ce}{S\+Y\+S\+\_\+\+L\+O\+C\+K\+\_\+\+D\+E\+V\+I\+CE}~23
 \item 
 \#define \hyperlink{group___u_d_p_message_i_d_ga9ba07526db57f9ec44d01fe3eba9cc60}{S\+Y\+S\+\_\+\+L\+O\+C\+K\+\_\+\+R\+O\+U\+TE}~24
+\item 
+\#define \hyperlink{group___u_d_p_message_i_d_ga9ea6e4272668196e99cdeb3c63652937}{S\+Y\+S\+\_\+\+R\+O\+U\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED}~25
+\item 
+\#define \hyperlink{group___u_d_p_message_i_d_ga777463f710ba53ab3b9bce0042ae93e5}{S\+Y\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED}~25
 \end{DoxyCompactItemize}
 
 
@@ -79,7 +85,13 @@ Message Acknowledgement. ID property and transaction number contains the orignal
 \subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+N\+L\+I\+NE}{SYS\_CONTROLLER\_ONLINE}}
 {\footnotesize\ttfamily \#define S\+Y\+S\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+N\+L\+I\+NE~11}
 
-Controller Online message. ID property contains the sending controller\textquotesingle{}s controller\+ID. The controller checks its list of controllers-\/to-\/notify. If the controller\+ID is in the notification list, the controller responds by sending its own S\+Y\+S\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+N\+L\+I\+NE message back to the sending controller. The controller then has all its devices send their current status messages to the notification list. \mbox{\Hypertarget{group___u_d_p_message_i_d_ga88b6f619a28320e9136847e9b1b27a36}\label{group___u_d_p_message_i_d_ga88b6f619a28320e9136847e9b1b27a36}} 
+Controller Online message. ID property contains the sending controller\textquotesingle{}s controller\+ID. The controller checks its list of controllers-\/to-\/notify. If the controller\+ID is in the notification list, the controller responds by sending its own S\+Y\+S\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+N\+L\+I\+NE message back to the sending controller. The controller then has all its devices send their current status messages to the notification list. \mbox{\Hypertarget{group___u_d_p_message_i_d_ga777463f710ba53ab3b9bce0042ae93e5}\label{group___u_d_p_message_i_d_ga777463f710ba53ab3b9bce0042ae93e5}} 
+\index{U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}!S\+Y\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED@{S\+Y\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED}}
+\index{S\+Y\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED@{S\+Y\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED}!U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED}{SYS\_DEVICE\_CONFIG\_CHANGED}}
+{\footnotesize\ttfamily \#define S\+Y\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED~25}
+
+A Device\textquotesingle{}s configration has changed. ID property contains the device\+ID of the device that\textquotesingle{}s been modified. This causes the Devices in each controller to download the new configuration for the device. \mbox{\Hypertarget{group___u_d_p_message_i_d_ga88b6f619a28320e9136847e9b1b27a36}\label{group___u_d_p_message_i_d_ga88b6f619a28320e9136847e9b1b27a36}} 
 \index{U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}!S\+Y\+S\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+I\+R\+M\+W\+A\+RE@{S\+Y\+S\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+I\+R\+M\+W\+A\+RE}}
 \index{S\+Y\+S\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+I\+R\+M\+W\+A\+RE@{S\+Y\+S\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+I\+R\+M\+W\+A\+RE}!U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}}
 \subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+D\+O\+W\+N\+L\+O\+A\+D\+\_\+\+F\+I\+R\+M\+W\+A\+RE}{SYS\_DOWNLOAD\_FIRMWARE}}
@@ -91,13 +103,19 @@ Download Controller firmware message. ID property contains the serial\+Number of
 \subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+F\+I\+N\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER}{SYS\_FIND\_CONTROLLER}}
 {\footnotesize\ttfamily \#define S\+Y\+S\+\_\+\+F\+I\+N\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER~21}
 
-Find Controller message. ID property contains the conntroller\+ID of the sought after controller. This message is sent as a broadcast message by the sending controller which puts its IP address in field\mbox{[}0\mbox{]}, field\mbox{[}1\mbox{]}, field\mbox{[}2\mbox{]} and field\mbox{[}3\mbox{]} of the message\textquotesingle{}s payload. If the ID matches the receiving controller\textquotesingle{}s controller\+ID it responds by sending a \hyperlink{group___u_d_p_message_i_d_ga23aab89076591390a1dbc412a3a07314}{S\+Y\+S\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+N\+L\+I\+NE} message to the sender followed by device status messages. \mbox{\Hypertarget{group___u_d_p_message_i_d_ga596f44c285ab391c72addd0e803b0fc4}\label{group___u_d_p_message_i_d_ga596f44c285ab391c72addd0e803b0fc4}} 
+Find Controller message. ID property contains the conntroller\+ID of the sought after controller. This message is sent as a broadcast message by the sending controller which puts its IP address in field\mbox{[}0\mbox{]}, field\mbox{[}1\mbox{]}, field\mbox{[}2\mbox{]} and field\mbox{[}3\mbox{]} of the message\textquotesingle{}s payload. If the ID matches the receiving controller\textquotesingle{}s controller\+ID it responds by sending a \hyperlink{group___u_d_p_message_i_d_ga23aab89076591390a1dbc412a3a07314}{S\+Y\+S\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+N\+L\+I\+NE} message to the sender followed by device status messages. \mbox{\Hypertarget{group___u_d_p_message_i_d_ga122f4ab16a4cf3e2dd8b80e02158963d}\label{group___u_d_p_message_i_d_ga122f4ab16a4cf3e2dd8b80e02158963d}} 
+\index{U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}!S\+Y\+S\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+U\+P\+D\+A\+T\+I\+NG@{S\+Y\+S\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+U\+P\+D\+A\+T\+I\+NG}}
+\index{S\+Y\+S\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+U\+P\+D\+A\+T\+I\+NG@{S\+Y\+S\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+U\+P\+D\+A\+T\+I\+NG}!U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+U\+P\+D\+A\+T\+I\+NG}{SYS\_FIRMWARE\_UPDATING}}
+{\footnotesize\ttfamily \#define S\+Y\+S\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+U\+P\+D\+A\+T\+I\+NG~17}
+
+Controller Keep-\/alive message. No longer used. Keeping for future use if needed \mbox{\Hypertarget{group___u_d_p_message_i_d_ga596f44c285ab391c72addd0e803b0fc4}\label{group___u_d_p_message_i_d_ga596f44c285ab391c72addd0e803b0fc4}} 
 \index{U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}!S\+Y\+S\+\_\+\+K\+E\+E\+P\+\_\+\+A\+L\+I\+VE@{S\+Y\+S\+\_\+\+K\+E\+E\+P\+\_\+\+A\+L\+I\+VE}}
 \index{S\+Y\+S\+\_\+\+K\+E\+E\+P\+\_\+\+A\+L\+I\+VE@{S\+Y\+S\+\_\+\+K\+E\+E\+P\+\_\+\+A\+L\+I\+VE}!U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}}
 \subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+K\+E\+E\+P\+\_\+\+A\+L\+I\+VE}{SYS\_KEEP\_ALIVE}}
 {\footnotesize\ttfamily \#define S\+Y\+S\+\_\+\+K\+E\+E\+P\+\_\+\+A\+L\+I\+VE~18}
 
-Controller Keep-\/alive message. No longer used. Keeping for future use if needed \mbox{\Hypertarget{group___u_d_p_message_i_d_ga42644954a92421cfe92c2e3d20f795ce}\label{group___u_d_p_message_i_d_ga42644954a92421cfe92c2e3d20f795ce}} 
+Controller Firmware upgrade message. The controller is downloading and updating its firmware. \mbox{\Hypertarget{group___u_d_p_message_i_d_ga42644954a92421cfe92c2e3d20f795ce}\label{group___u_d_p_message_i_d_ga42644954a92421cfe92c2e3d20f795ce}} 
 \index{U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}!S\+Y\+S\+\_\+\+L\+O\+C\+K\+\_\+\+D\+E\+V\+I\+CE@{S\+Y\+S\+\_\+\+L\+O\+C\+K\+\_\+\+D\+E\+V\+I\+CE}}
 \index{S\+Y\+S\+\_\+\+L\+O\+C\+K\+\_\+\+D\+E\+V\+I\+CE@{S\+Y\+S\+\_\+\+L\+O\+C\+K\+\_\+\+D\+E\+V\+I\+CE}!U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}}
 \subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+L\+O\+C\+K\+\_\+\+D\+E\+V\+I\+CE}{SYS\_LOCK\_DEVICE}}
@@ -139,7 +157,13 @@ Reset Controller Notification List message. ID property contains the serial\+Num
 \subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+R\+E\+S\+T\+A\+R\+T\+I\+NG}{SYS\_RESTARTING}}
 {\footnotesize\ttfamily \#define S\+Y\+S\+\_\+\+R\+E\+S\+T\+A\+R\+T\+I\+NG~16}
 
-Controller Restarting message. ID property contains the serial\+Number of the controller. Controllers send this message just before the controller is about to restart. \mbox{\Hypertarget{group___u_d_p_message_i_d_gaddd0be32c40eb5aa6ff7247ec41d402d}\label{group___u_d_p_message_i_d_gaddd0be32c40eb5aa6ff7247ec41d402d}} 
+Controller Restarting message. ID property contains the serial\+Number of the controller. Controllers send this message just before the controller is about to restart. \mbox{\Hypertarget{group___u_d_p_message_i_d_ga9ea6e4272668196e99cdeb3c63652937}\label{group___u_d_p_message_i_d_ga9ea6e4272668196e99cdeb3c63652937}} 
+\index{U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}!S\+Y\+S\+\_\+\+R\+O\+U\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED@{S\+Y\+S\+\_\+\+R\+O\+U\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED}}
+\index{S\+Y\+S\+\_\+\+R\+O\+U\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED@{S\+Y\+S\+\_\+\+R\+O\+U\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED}!U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+R\+O\+U\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED}{SYS\_ROUTE\_CONFIG\_CHANGED}}
+{\footnotesize\ttfamily \#define S\+Y\+S\+\_\+\+R\+O\+U\+T\+E\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+H\+A\+N\+G\+ED~25}
+
+A Route\textquotesingle{}s definition/configration has changed. ID property contains the route\+ID of the route that\textquotesingle{}s been modified. This causes the Route\+Monitor in each controller to download the new configuration for the route. \mbox{\Hypertarget{group___u_d_p_message_i_d_gaddd0be32c40eb5aa6ff7247ec41d402d}\label{group___u_d_p_message_i_d_gaddd0be32c40eb5aa6ff7247ec41d402d}} 
 \index{U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}!S\+Y\+S\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+H\+E\+A\+R\+T\+B\+E\+AT@{S\+Y\+S\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+H\+E\+A\+R\+T\+B\+E\+AT}}
 \index{S\+Y\+S\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+H\+E\+A\+R\+T\+B\+E\+AT@{S\+Y\+S\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+H\+E\+A\+R\+T\+B\+E\+AT}!U\+D\+P Message I\+Ds@{U\+D\+P Message I\+Ds}}
 \subsubsection{\texorpdfstring{S\+Y\+S\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+H\+E\+A\+R\+T\+B\+E\+AT}{SYS\_SERVER\_HEARTBEAT}}
